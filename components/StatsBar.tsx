@@ -98,8 +98,8 @@ const stats = [
 export default function StatsBar() {
   return (
     /* Card flotante que solapa ligeramente el hero */
-    <div className="relative z-10 -mt-8 px-4 sm:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="relative z-10 -mt-8 px-4 sm:px-8 lg:px-16">
+      <div className="max-w-full">
         <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
           {/* Línea de color superior */}
           <div className="h-1 flex">
