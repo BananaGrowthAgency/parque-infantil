@@ -42,66 +42,70 @@ export default function Galerie() {
     <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Título estilo banner */}
-        <div className="flex items-center justify-between mb-10">
+        {/* Título centrado */}
+        <div className="flex justify-center mb-10">
           <div className="inline-block relative">
             <div className="absolute inset-0 -skew-x-6 rounded" style={{ backgroundColor: "#2E6FCC" }} />
             <h2 className="relative font-fredoka text-2xl md:text-3xl font-700 text-white px-8 py-2 tracking-wide">
               Ludykid en photos 📸
             </h2>
           </div>
-
-          {/* Botones de navegación junto al título */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => scroll("prev")}
-              disabled={!canPrev}
-              className="w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all disabled:opacity-30"
-              style={{ borderColor: "#2E6FCC", color: "#2E6FCC" }}
-              aria-label="Précédent"
-            >
-              ‹
-            </button>
-            <button
-              onClick={() => scroll("next")}
-              disabled={!canNext}
-              className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all disabled:opacity-30"
-              style={{ backgroundColor: "#2E6FCC" }}
-              aria-label="Suivant"
-            >
-              ›
-            </button>
-          </div>
         </div>
 
-        {/* Track del carrusel */}
-        <div
-          ref={trackRef}
-          onScroll={onScroll}
-          className="flex gap-5 overflow-x-auto pb-4 scroll-smooth"
-          style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {photos.map((photo, i) => (
-            <div
-              key={i}
-              className="relative flex-shrink-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
-              style={{ width: CARD_W, height: 240, scrollSnapAlign: "start" }}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="320px"
-              />
-              {/* Label al hacer hover */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-end">
-                <span className="w-full text-center font-fredoka text-white text-sm py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  {photo.alt}
-                </span>
+        {/* Carrusel con flechas a los lados */}
+        <div className="flex items-center gap-3">
+
+          {/* Flecha izquierda */}
+          <button
+            onClick={() => scroll("prev")}
+            disabled={!canPrev}
+            className="w-11 h-11 flex-shrink-0 rounded-full border-2 flex items-center justify-center text-xl font-bold transition-all disabled:opacity-25 hover:scale-110"
+            style={{ borderColor: "#2E6FCC", color: "#2E6FCC" }}
+            aria-label="Précédent"
+          >
+            ‹
+          </button>
+
+          {/* Track */}
+          <div
+            ref={trackRef}
+            onScroll={onScroll}
+            className="flex gap-5 overflow-x-auto pb-2 scroll-smooth flex-1"
+            style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {photos.map((photo, i) => (
+              <div
+                key={i}
+                className="relative flex-shrink-0 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
+                style={{ width: CARD_W, height: 240, scrollSnapAlign: "start" }}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="320px"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-end">
+                  <span className="w-full text-center font-fredoka text-white text-sm py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    {photo.alt}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Flecha derecha */}
+          <button
+            onClick={() => scroll("next")}
+            disabled={!canNext}
+            className="w-11 h-11 flex-shrink-0 rounded-full flex items-center justify-center text-xl font-bold text-white transition-all disabled:opacity-25 hover:scale-110"
+            style={{ backgroundColor: "#2E6FCC" }}
+            aria-label="Suivant"
+          >
+            ›
+          </button>
+
         </div>
 
         {/* Scrollbar invisible en WebKit */}
