@@ -2,38 +2,38 @@ import Doodle from "./Doodle";
 
 const testimonios = [
   {
-    nombre: "María García",
-    avatar: "MG",
-    texto: "Llevamos a nuestra hija para su cumpleaños y fue absolutamente increíble. Las instalaciones están impecables y el personal es muy amable. ¡Ya queremos repetir!",
+    nombre: "Marie Dupont",
+    avatar: "MD",
+    texto: "Nous avons emmené notre fille pour son anniversaire et c'était absolument incroyable. Les installations sont impeccables et le personnel est très attentionné. On revient bientôt !",
     estrellas: 5,
-    detalle: "Mamá de Lucía, 6 años",
+    detalle: "Maman de Léa, 6 ans",
     color: "#E8731A",
     bg: "#FFF4EC",
   },
   {
-    nombre: "Carlos Rodríguez",
-    avatar: "CR",
-    texto: "La estructura multijuegos es una maravilla. Mis hijos no querían marcharse. Sin duda el mejor plan de ocio infantil de la zona.",
+    nombre: "Thomas Martin",
+    avatar: "TM",
+    texto: "La structure multi-jeux est une merveille. Mes enfants ne voulaient pas partir. Sans aucun doute la meilleure sortie famille de la région.",
     estrellas: 5,
-    detalle: "Papá de Mateo y Sofía",
+    detalle: "Papa de Mathis et Sofia",
     color: "#7B35A0",
     bg: "#F5EEFF",
   },
   {
-    nombre: "Ana Martínez",
-    avatar: "AM",
-    texto: "Organizamos el cumpleaños de nuestro hijo aquí y superó todas las expectativas. El animador fue fenomenal y la sala estaba preciosa.",
+    nombre: "Claire Bernard",
+    avatar: "CB",
+    texto: "On a organisé l'anniversaire de notre fils ici et ça a dépassé toutes nos attentes. L'animateur était génial et la salle était magnifiquement décorée.",
     estrellas: 5,
-    detalle: "Mamá de Diego, 7 años",
+    detalle: "Maman de Hugo, 7 ans",
     color: "#E8409A",
     bg: "#FFF0FA",
   },
   {
-    nombre: "Pedro López",
+    nombre: "Pierre Leroy",
     avatar: "PL",
-    texto: "Me gustó especialmente el espacio para padres. Tomé un café tranquilo mientras veía jugar a mi hijo. Se están muy cómodos.",
+    texto: "J'ai particulièrement apprécié l'espace parents. J'ai pris un café tranquillement en regardant mon fils jouer. On s'y sent vraiment bien.",
     estrellas: 5,
-    detalle: "Papá de Iker, 4 años",
+    detalle: "Papa de Théo, 4 ans",
     color: "#2E9E2E",
     bg: "#EDFAED",
   },
@@ -42,7 +42,6 @@ const testimonios = [
 export default function Testimonios() {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      {/* Doodles de fondo */}
       <div className="absolute top-8 left-6 opacity-20">
         <Doodle type="star" color="#FFD600" size={65} />
       </div>
@@ -57,7 +56,7 @@ export default function Testimonios() {
         <div className="text-center mb-12">
           <Doodle type="zigzag" color="#FFD600" size={40} className="mx-auto mb-3" />
           <h2 className="font-fredoka text-3xl md:text-4xl font-600 text-gray-800">
-            Los padres se sienten bien en{" "}
+            Les parents se sentent bien chez{" "}
             <span style={{ color: "#E8731A" }}>Ludy</span>
             <span style={{ color: "#7B35A0" }}>kid</span>
           </h2>
@@ -70,7 +69,6 @@ export default function Testimonios() {
               className="rounded-2xl p-6 flex flex-col gap-4 border-2 border-transparent hover:shadow-lg transition-shadow"
               style={{ backgroundColor: t.bg, borderColor: t.color + "30" }}
             >
-              {/* Estrellas */}
               <div className="flex gap-0.5">
                 {Array.from({ length: t.estrellas }).map((_, i) => (
                   <svg key={i} className="w-4 h-4 fill-current" style={{ color: "#FFD600" }} viewBox="0 0 20 20">

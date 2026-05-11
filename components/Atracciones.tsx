@@ -4,18 +4,18 @@ import Doodle from "./Doodle";
 const secciones = [
   {
     numero: "01",
-    titulo: "Para los más pequeños (1–3 años)",
+    titulo: "Pour les petits (1–3 ans)",
     descripcion:
-      "Vuestros hijos descubren el parque interior, exploran y se divierten con total seguridad, a su ritmo… Y vosotros aprovecháis un momento de tranquilidad.",
+      "Vos enfants découvrent le parc intérieur, explorent et s'amusent en toute sécurité, à leur rythme… Et vous profitez d'un moment de tranquillité.",
     items: [
-      { icon: "🧩", label: "Motricidad", desc: "circuito adaptado, juegos de construcción" },
-      { icon: "🟡", label: "Estimulación sensorial", desc: "piscina de bolas" },
-      { icon: "🛝", label: "Toboganes suaves", desc: "adaptados a su altura" },
-      { icon: "🛵", label: "Juegos móviles", desc: "motos y correpasillos" },
+      { icon: "🧩", label: "Motricité", desc: "parcours adapté, jeux de construction" },
+      { icon: "🟡", label: "Éveil sensoriel", desc: "piscine à balles" },
+      { icon: "🛝", label: "Glisse douce", desc: "toboggans adaptés" },
+      { icon: "🛵", label: "Jeux mobiles", desc: "petites motos" },
     ],
-    precio: "Desde 3,50€ / niño",
+    precio: "Dès 3,50 € / enfant",
     imagen: "/images/seccion1.jpg",
-    alt: "Bebé en piscina de bolas",
+    alt: "Bébé dans la piscine à balles",
     invertida: false,
     color: "#E8731A",
     bgLight: "#FFF4EC",
@@ -23,18 +23,18 @@ const secciones = [
   },
   {
     numero: "02",
-    titulo: "Estructura multijuegos: ¡aventura en altura!",
+    titulo: "Structure multi-jeux : l'aventure en hauteur !",
     descripcion:
-      "Tres niveles de pasarelas, redes, túneles y toboganes que desafían a los niños de 4 a 12 años. El corazón del parque y el favorito de todos.",
+      "Trois niveaux de passerelles, filets, tunnels et toboggans qui challengent les enfants de 4 à 12 ans. Le cœur du parc et le préféré de tous.",
     items: [
-      { icon: "🏗️", label: "3 niveles", desc: "de pasarelas y estructuras" },
-      { icon: "🕳️", label: "Túneles", desc: "laberintos y zonas de gateo" },
-      { icon: "🛝", label: "Toboganes grandes", desc: "de tubo y abiertos" },
-      { icon: "🧗", label: "Escalada", desc: "muros de distintas dificultades" },
+      { icon: "🏗️", label: "3 niveaux", desc: "de passerelles et structures" },
+      { icon: "🕳️", label: "Tunnels", desc: "labyrinthes et espaces de glisse" },
+      { icon: "🛝", label: "Grands toboggans", desc: "en tube et ouverts" },
+      { icon: "🧗", label: "Escalade", desc: "murs de différentes difficultés" },
     ],
-    precio: "Desde 5€ / niño",
+    precio: "Dès 5 € / enfant",
     imagen: "/images/seccion2.jpg",
-    alt: "Niña en estructura multijuegos",
+    alt: "Fille sur la structure multi-jeux",
     invertida: true,
     color: "#7B35A0",
     bgLight: "#F5EEFF",
@@ -42,18 +42,18 @@ const secciones = [
   },
   {
     numero: "03",
-    titulo: "¡Los trampolines: salta hasta el cielo!",
+    titulo: "Les trampolines : sauter jusqu'au ciel !",
     descripcion:
-      "Una zona de trampolines individuales donde los niños desafían la gravedad. Perfecto para desarrollar equilibrio y coordinación con una enorme sonrisa.",
+      "Une zone de trampolines individuels où les enfants défient la gravité. Idéal pour développer l'équilibre et la coordination avec un grand sourire.",
     items: [
-      { icon: "⬆️", label: "Salto libre", desc: "trampolines individuales" },
-      { icon: "🏀", label: "Basket trampoline", desc: "canasta con red" },
-      { icon: "🎯", label: "Zonas de caída", desc: "colchonetas de seguridad" },
-      { icon: "👨‍👩‍👧", label: "Adultos bienvenidos", desc: "¡a saltar con ellos!" },
+      { icon: "⬆️", label: "Saut libre", desc: "trampolines individuels" },
+      { icon: "🏀", label: "Basket trampoline", desc: "panier avec filet" },
+      { icon: "🎯", label: "Zones de réception", desc: "tapis de sécurité" },
+      { icon: "👨‍👩‍👧", label: "Adultes bienvenus", desc: "sautez avec eux !" },
     ],
-    precio: "Desde 4€ / niño",
+    precio: "Dès 4 € / enfant",
     imagen: "/images/seccion3.jpg",
-    alt: "Niño saltando en trampolín",
+    alt: "Enfant qui saute sur un trampoline",
     invertida: false,
     color: "#2E9E2E",
     bgLight: "#EDFAED",
@@ -61,18 +61,18 @@ const secciones = [
   },
   {
     numero: "04",
-    titulo: "El espacio familiar: los padres también descansan",
+    titulo: "L'espace famille : les parents aussi se reposent",
     descripcion:
-      "Mientras los niños juegan, los padres disfrutan de nuestra zona de restauración con café, snacks y menús. Confort y vistas a todas las atracciones.",
+      "Pendant que les enfants jouent, les parents profitent de notre espace restauration avec café, snacks et menus. Confort et vue sur toutes les attractions.",
     items: [
-      { icon: "☕", label: "Cafetería", desc: "café, tés e infusiones" },
-      { icon: "🥪", label: "Menús", desc: "snacks, bocadillos y menú del día" },
-      { icon: "📡", label: "WiFi gratuito", desc: "para los padres" },
-      { icon: "👁️", label: "Vista total", desc: "al área de juegos" },
+      { icon: "☕", label: "Cafétéria", desc: "cafés, thés et infusions" },
+      { icon: "🥪", label: "Menus", desc: "snacks, sandwichs et plat du jour" },
+      { icon: "📡", label: "WiFi gratuit", desc: "pour les parents" },
+      { icon: "👁️", label: "Vue totale", desc: "sur l'espace de jeux" },
     ],
-    precio: "Entrada adultos: gratuita",
+    precio: "Entrée adultes : gratuite",
     imagen: "/images/seccion4.png",
-    alt: "Zona de restauración familiar",
+    alt: "Espace restauration familiale",
     invertida: true,
     color: "#D93030",
     bgLight: "#FFF0F0",
@@ -85,7 +85,6 @@ export default function Atracciones() {
     <section id="atracciones">
       {secciones.map((s) => (
         <div key={s.numero} className={`flex flex-col ${s.invertida ? "md:flex-row-reverse" : "md:flex-row"} min-h-[460px]`}>
-          {/* Imagen */}
           <div className="relative w-full md:w-1/2 min-h-[320px]">
             <Image
               src={s.imagen} alt={s.alt} fill
@@ -94,21 +93,17 @@ export default function Atracciones() {
             />
           </div>
 
-          {/* Texto */}
           <div className="w-full md:w-1/2 flex items-center relative overflow-hidden" style={{ backgroundColor: s.bgLight }}>
-            {/* Número grande decorativo */}
             <span className="absolute top-2 right-4 font-fredoka text-[120px] font-700 leading-none opacity-[0.06] select-none"
               style={{ color: s.color }}>
               {s.numero}
             </span>
 
-            {/* Doodle decorativo */}
             <div className={`absolute ${s.doodle.position} opacity-50`}>
               <Doodle type={s.doodle.type} color={s.doodle.color} size={55} />
             </div>
 
             <div className="relative px-8 md:px-12 py-10 max-w-lg">
-              {/* Badge número */}
               <span className="inline-block font-fredoka font-600 text-white text-sm px-3 py-1 rounded-full mb-4"
                 style={{ backgroundColor: s.color }}>
                 {s.numero}
@@ -119,7 +114,6 @@ export default function Atracciones() {
               </h2>
               <p className="font-nunito text-gray-500 leading-relaxed mb-5 text-sm">{s.descripcion}</p>
 
-              {/* Lista de items */}
               <ul className="space-y-2 mb-5">
                 {s.items.map((item) => (
                   <li key={item.label} className="flex items-center gap-2 text-sm font-nunito text-gray-700">
@@ -130,7 +124,6 @@ export default function Atracciones() {
                 ))}
               </ul>
 
-              {/* Precio */}
               <p className="font-fredoka text-sm font-600 mb-5" style={{ color: s.color }}>
                 👉 {s.precio}
               </p>
@@ -138,7 +131,7 @@ export default function Atracciones() {
               <a href="#infos"
                 className="inline-block font-fredoka font-600 text-white px-6 py-2.5 rounded-full text-base transition-transform hover:scale-105 shadow-md"
                 style={{ backgroundColor: s.color }}>
-                Reservar entrada →
+                Réserver →
               </a>
             </div>
           </div>

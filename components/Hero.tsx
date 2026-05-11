@@ -2,25 +2,23 @@ import Image from "next/image";
 import Doodle from "./Doodle";
 
 const stats = [
-  { icon: "⭐", value: "4.9/5", label: "Valoración", bg: "#E8731A" },
-  { icon: "👶", value: "1 – 12 años", label: "Edades", bg: "#7B35A0" },
-  { icon: "📅", value: "7 días / 7", label: "Abierto", bg: "#2E9E2E" },
-  { icon: "📐", value: "1.500 m²", label: "Superficie", bg: "#D93030" },
+  { icon: "⭐", value: "4.9/5", label: "Avis clients", bg: "#E8731A" },
+  { icon: "👶", value: "1 – 12 ans", label: "Âges", bg: "#7B35A0" },
+  { icon: "📅", value: "7j / 7", label: "Ouvert", bg: "#2E9E2E" },
+  { icon: "📐", value: "1 500 m²", label: "Surface", bg: "#D93030" },
 ];
 
 export default function Hero() {
   return (
     <section id="inicio" className="relative pt-16">
-      {/* Imagen hero */}
       <div className="relative h-[78vh] min-h-[520px] overflow-hidden">
         <Image
           src="/images/tobogan-azul.jpg"
-          alt="Niños disfrutando en Ludykid"
+          alt="Enfants qui s'amusent à Ludykid"
           fill className="object-cover object-center" priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
 
-        {/* Doodles decorativos */}
         <div className="absolute top-8 right-12 opacity-70 animate-wiggle">
           <Doodle type="star" color="#FFD600" size={70} />
         </div>
@@ -34,33 +32,32 @@ export default function Hero() {
           <Doodle type="circle" color="#ffffff" size={40} />
         </div>
 
-        {/* Texto */}
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-6xl mx-auto px-6 w-full">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-1.5 mb-4">
                 <span className="text-sm">🎉</span>
-                <span className="text-white font-fredoka text-sm font-500">El parque indoor favorito de los niños</span>
+                <span className="text-white font-fredoka text-sm font-500">Le parc indoor préféré des enfants</span>
               </div>
               <h1 className="font-fredoka text-5xl md:text-6xl font-700 text-white leading-tight mb-5 drop-shadow-lg">
-                Más de{" "}
-                <span style={{ color: "#FFD600" }}>1.500 m²</span>{" "}
-                de pura{" "}
-                <span style={{ color: "#FFD600" }}>diversión</span>
+                Plus de{" "}
+                <span style={{ color: "#FFD600" }}>1 500 m²</span>{" "}
+                de pure{" "}
+                <span style={{ color: "#FFD600" }}>aventure</span>
               </h1>
               <p className="text-white/90 text-lg mb-8 leading-relaxed font-nunito">
-                Atracciones para todas las edades, cumpleaños únicos y
-                momentos que tus hijos recordarán para siempre.
+                Des attractions pour tous les âges, des anniversaires inoubliables
+                et des moments que vos enfants chériront toute leur vie.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#atracciones"
                   className="font-fredoka font-600 text-white px-7 py-3.5 rounded-full text-lg shadow-xl transition-transform hover:scale-105"
                   style={{ backgroundColor: "#E8731A" }}>
-                  Descubrir atracciones
+                  Découvrir les attractions
                 </a>
                 <a href="#cumple"
                   className="font-fredoka font-600 bg-white/20 backdrop-blur border-2 border-white text-white hover:bg-white hover:text-gray-800 px-7 py-3.5 rounded-full text-lg transition-all hover:scale-105">
-                  🎂 Organizar un cumpleaños
+                  🎂 Organiser un anniversaire
                 </a>
               </div>
             </div>
@@ -68,7 +65,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Barra de stats multicolor */}
       <div className="grid grid-cols-2 md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="py-5 px-4 text-center text-white" style={{ backgroundColor: s.bg }}>

@@ -15,9 +15,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Ludykid – El parque indoor favorito de los niños",
+  title: "Ludykid – Le parc indoor préféré des enfants",
   description:
-    "Más de 1.500 m² de diversión cubierta para niños de 1 a 12 años. Estructura multijuegos, trampolines, piscina de bolas y cumpleaños inolvidables.",
+    "Plus de 1 500 m² de fun couvert pour les enfants de 1 à 12 ans. Structure multi-jeux, trampolines, piscine à balles et anniversaires inoubliables.",
 };
 
 export default function RootLayout({

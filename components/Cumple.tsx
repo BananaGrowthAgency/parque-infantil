@@ -3,15 +3,15 @@ import Doodle from "./Doodle";
 
 const planes = [
   {
-    nombre: "Básico",
+    nombre: "Basique",
     emoji: "🎈",
     precio: "15",
     color: "#2E6FCC",
     caracteristicas: [
-      "2h de juego libre",
-      "Sala privada 1h",
-      "Invitaciones digitales",
-      "Menú niño incluido",
+      "2h de jeu libre",
+      "Salle privée 1h",
+      "Invitations numériques",
+      "Menu enfant inclus",
     ],
     popular: false,
   },
@@ -21,11 +21,11 @@ const planes = [
     precio: "22",
     color: "#E8731A",
     caracteristicas: [
-      "3h de juego libre",
-      "Sala privada 2h decorada",
-      "Animador dedicado 1h",
-      "Menú niño + tarta",
-      "Recuerdo fotográfico",
+      "3h de jeu libre",
+      "Salle privée 2h décorée",
+      "Animateur dédié 1h",
+      "Menu enfant + gâteau",
+      "Souvenir photo",
     ],
     popular: true,
   },
@@ -35,12 +35,12 @@ const planes = [
     precio: "35",
     color: "#7B35A0",
     caracteristicas: [
-      "Parque exclusivo 3h",
-      "Sala privada temática",
-      "Animador todo el evento",
-      "Menú + tarta personalizada",
-      "Photocall + fotos impresas",
-      "Bolsas sorpresa incluidas",
+      "Parc exclusif 3h",
+      "Salle privée thématique",
+      "Animateur tout l'événement",
+      "Menu + gâteau personnalisé",
+      "Photocall + photos imprimées",
+      "Sachets surprises inclus",
     ],
     popular: false,
   },
@@ -49,7 +49,6 @@ const planes = [
 export default function Cumple() {
   return (
     <section id="cumple" className="relative overflow-hidden" style={{ backgroundColor: "#FFF0FA" }}>
-      {/* Doodles de fondo */}
       <div className="absolute top-6 left-4 opacity-30 animate-float">
         <Doodle type="star" color="#E8409A" size={60} />
       </div>
@@ -63,42 +62,38 @@ export default function Cumple() {
         <Doodle type="swirl" color="#2E9E2E" size={52} />
       </div>
 
-      {/* Bloque imagen + texto */}
       <div className="flex flex-col md:flex-row min-h-[460px]">
-        {/* Imagen */}
         <div className="relative w-full md:w-1/2 min-h-[320px]">
-          <Image src="/images/cumple.png" alt="Cumpleaños en Ludykid" fill
+          <Image src="/images/cumple.png" alt="Anniversaire enfant chez Ludykid" fill
             className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-          {/* Badge oferta */}
           <div className="absolute bottom-5 left-5">
             <span className="font-fredoka font-600 text-white text-base px-4 py-2 rounded-full shadow-lg animate-float"
               style={{ backgroundColor: "#D93030" }}>
-              🎉 –20% en enero
+              🎉 –20 % en janvier
             </span>
           </div>
         </div>
 
-        {/* Texto */}
         <div className="w-full md:w-1/2 flex items-center px-8 md:px-12 py-12">
           <div className="max-w-lg">
             <span className="inline-block font-fredoka font-600 text-white text-sm px-4 py-1.5 rounded-full mb-4"
               style={{ backgroundColor: "#E8409A" }}>
-              🎂 Cumpleaños
+              🎂 Anniversaire
             </span>
             <h2 className="font-fredoka text-3xl md:text-4xl font-600 text-gray-800 mb-4 leading-snug">
-              El cumpleaños favorito de los niños
+              L&apos;anniversaire préféré des enfants
             </h2>
             <p className="font-nunito text-gray-500 leading-relaxed mb-5 text-sm">
-              ¿Quieres organizar un cumpleaños único e inolvidable? En Ludykid
-              nos encargamos de todo para que tú solo tengas que disfrutar con
-              tu familia. Sala privada decorada, animación, menús y mucha diversión.
+              Vous souhaitez organiser un anniversaire unique et inoubliable ? Chez Ludykid,
+              on s&apos;occupe de tout pour que vous profitiez pleinement du moment en famille.
+              Salle privée décorée, animation, menus et beaucoup de fun.
             </p>
             <ul className="space-y-2.5 mb-6">
               {[
-                { icon: "🎨", text: "Salas privadas totalmente decoradas" },
-                { icon: "🤹", text: "Animadores profesionales incluidos" },
-                { icon: "🍰", text: "Menús y tartas adaptados a todos" },
-                { icon: "👨‍👩‍👧‍👦", text: "Hasta 30 invitados" },
+                { icon: "🎨", text: "Salles privées entièrement décorées" },
+                { icon: "🤹", text: "Animateurs professionnels inclus" },
+                { icon: "🍰", text: "Menus et gâteaux adaptés à tous" },
+                { icon: "👨‍👩‍👧‍👦", text: "Jusqu'à 30 invités" },
               ].map((item) => (
                 <li key={item.text} className="flex items-center gap-2.5 font-nunito text-gray-700 text-sm">
                   <span className="text-lg">{item.icon}</span>
@@ -109,19 +104,18 @@ export default function Cumple() {
             <a href="#infos"
               className="inline-block font-fredoka font-600 text-white px-7 py-3 rounded-full text-base transition-transform hover:scale-105 shadow-md"
               style={{ backgroundColor: "#E8409A" }}>
-              Consultar disponibilidad →
+              Vérifier les disponibilités →
             </a>
           </div>
         </div>
       </div>
 
-      {/* Pricing */}
       <div id="precios" className="max-w-6xl mx-auto px-6 py-16 relative">
         <div className="text-center mb-10">
           <h3 className="font-fredoka text-3xl md:text-4xl font-600 text-gray-800 mb-2">
-            Paquetes de cumpleaños
+            Nos formules anniversaire
           </h3>
-          <p className="font-nunito text-gray-500 text-sm">Precio mínimo 10 niños · IVA incluido</p>
+          <p className="font-nunito text-gray-500 text-sm">Minimum 10 enfants · TVA incluse</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
@@ -135,7 +129,7 @@ export default function Cumple() {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="font-fredoka font-600 text-white text-sm px-4 py-1.5 rounded-full shadow-md"
                     style={{ backgroundColor: plan.color }}>
-                    ⭐ Más popular
+                    ⭐ La plus populaire
                   </span>
                 </div>
               )}
@@ -144,9 +138,9 @@ export default function Cumple() {
               <h4 className="font-fredoka text-xl font-600 text-gray-800 mb-1">{plan.nombre}</h4>
               <div className="flex items-baseline gap-1 mb-5">
                 <span className="font-fredoka text-4xl font-700" style={{ color: plan.color }}>
-                  {plan.precio}€
+                  {plan.precio} €
                 </span>
-                <span className="font-nunito text-gray-400 text-sm">/ niño</span>
+                <span className="font-nunito text-gray-400 text-sm">/ enfant</span>
               </div>
 
               <ul className="space-y-2.5 flex-1 mb-6">
@@ -164,7 +158,7 @@ export default function Cumple() {
                   ? { backgroundColor: plan.color, color: "white" }
                   : { backgroundColor: "#f3f4f6", color: "#374151" }
                 }>
-                Reservar este plan
+                Choisir cette formule
               </a>
             </div>
           ))}

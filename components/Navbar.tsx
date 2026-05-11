@@ -14,10 +14,10 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { label: "Inicio", href: "#inicio", color: "hover:text-lk-orange" },
-    { label: "Atracciones", href: "#atracciones", color: "hover:text-lk-purple" },
-    { label: "Cumpleaños", href: "#cumple", color: "hover:text-lk-pink" },
-    { label: "Precios", href: "#precios", color: "hover:text-lk-green" },
+    { label: "Accueil", href: "#inicio", color: "hover:text-lk-orange" },
+    { label: "Attractions", href: "#atracciones", color: "hover:text-lk-purple" },
+    { label: "Anniversaire", href: "#cumple", color: "hover:text-lk-pink" },
+    { label: "Tarifs", href: "#precios", color: "hover:text-lk-green" },
     { label: "Infos", href: "#infos", color: "hover:text-lk-blue" },
   ];
 
@@ -45,7 +45,7 @@ export default function Navbar() {
               className="bg-lk-orange hover:opacity-90 text-white font-fredoka font-600 px-5 py-2 rounded-full text-base transition-opacity shadow"
               style={{ backgroundColor: "#E8731A" }}
             >
-              ¡Reservar!
+              Réserver !
             </a>
           </div>
 
@@ -72,7 +72,7 @@ export default function Navbar() {
           <a href="#infos" onClick={() => setMenuOpen(false)}
             className="mt-2 text-white font-fredoka font-600 px-5 py-3 rounded-full text-center text-lg"
             style={{ backgroundColor: "#E8731A" }}>
-            ¡Reservar!
+            Réserver !
           </a>
         </div>
       </div>

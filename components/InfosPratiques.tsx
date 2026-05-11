@@ -4,46 +4,46 @@ import { useState } from "react";
 import Doodle from "./Doodle";
 
 const horarios = [
-  { dia: "Lunes – Viernes", hora: "14:00 – 19:30" },
-  { dia: "Sábado", hora: "10:00 – 20:00" },
-  { dia: "Domingo", hora: "10:00 – 19:00" },
-  { dia: "Festivos", hora: "10:00 – 20:00" },
-  { dia: "Vacaciones escolares", hora: "10:00 – 20:00" },
+  { dia: "Lundi – Vendredi", hora: "14h00 – 19h30" },
+  { dia: "Samedi", hora: "10h00 – 20h00" },
+  { dia: "Dimanche", hora: "10h00 – 19h00" },
+  { dia: "Jours fériés", hora: "10h00 – 20h00" },
+  { dia: "Vacances scolaires", hora: "10h00 – 20h00" },
 ];
 
 const asaber = [
-  "Calcetines obligatorios para todos (disponibles en caja)",
-  "Los adultos acompañantes entran gratis",
-  "Menores de 1 año: acceso gratuito",
-  "No se permite comida del exterior",
-  "Taquillas gratuitas en recepción",
-  "Aparcamiento gratuito con 200 plazas",
+  "Chaussettes obligatoires pour tous (disponibles à la caisse)",
+  "Les adultes accompagnants entrent gratuitement",
+  "Moins d'1 an : entrée gratuite",
+  "Nourriture extérieure non autorisée",
+  "Casiers gratuits à l'accueil",
+  "Parking gratuit avec 200 places",
 ];
 
 const faqs = [
   {
-    pregunta: "¿Puedo quedarme dentro del parque con mi hijo?",
-    respuesta: "Sí. Los adultos acompañantes entran gratis y tienen acceso a la zona de restauración. El acceso a las atracciones tiene un coste adicional de 5€.",
+    pregunta: "Puis-je rester à l'intérieur du parc avec mon enfant ?",
+    respuesta: "Oui. Les adultes accompagnants entrent gratuitement et ont accès à l'espace restauration. L'accès aux attractions est en supplément (5 €).",
   },
   {
-    pregunta: "¿Hay límite de aforo?",
-    respuesta: "Sí, limitamos el aforo para garantizar la seguridad y comodidad de todos. En temporada alta recomendamos reservar con antelación.",
+    pregunta: "Y a-t-il une limite de capacité ?",
+    respuesta: "Oui, nous limitons la capacité pour garantir la sécurité et le confort de tous. En haute saison, nous recommandons de réserver à l'avance.",
   },
   {
-    pregunta: "¿Las atracciones son seguras para bebés?",
-    respuesta: "Contamos con una zona específica adaptada para niños de 1 a 3 años, separada de las atracciones para mayores.",
+    pregunta: "Les attractions sont-elles adaptées aux bébés ?",
+    respuesta: "Nous disposons d'un espace spécifique entièrement adapté aux enfants de 1 à 3 ans, séparé des attractions pour les plus grands.",
   },
   {
-    pregunta: "¿Cómo reservo un cumpleaños?",
-    respuesta: "Puedes contactarnos por teléfono, email o redes sociales. Recomendamos reservar con al menos 3 semanas de antelación.",
+    pregunta: "Comment réserver un anniversaire ?",
+    respuesta: "Vous pouvez nous contacter par téléphone, e-mail ou réseaux sociaux. Nous recommandons de réserver au moins 3 semaines à l'avance.",
   },
 ];
 
 const bloques = [
-  { emoji: "🕐", titulo: "Horarios", color: "#E8731A", bg: "#FFF4EC" },
-  { emoji: "💡", titulo: "A saber", color: "#7B35A0", bg: "#F5EEFF" },
-  { emoji: "📍", titulo: "Cómo llegar", color: "#2E9E2E", bg: "#EDFAED" },
-  { emoji: "❓", titulo: "Preguntas frecuentes", color: "#2E6FCC", bg: "#EEF4FF" },
+  { emoji: "🕐", titulo: "Horaires", color: "#E8731A", bg: "#FFF4EC" },
+  { emoji: "💡", titulo: "Bon à savoir", color: "#7B35A0", bg: "#F5EEFF" },
+  { emoji: "📍", titulo: "Comment venir", color: "#2E9E2E", bg: "#EDFAED" },
+  { emoji: "❓", titulo: "Questions fréquentes", color: "#2E6FCC", bg: "#EEF4FF" },
 ];
 
 export default function InfosPratiques() {
@@ -51,7 +51,6 @@ export default function InfosPratiques() {
 
   return (
     <section id="infos" className="py-20 bg-gray-50 relative overflow-hidden">
-      {/* Doodles */}
       <div className="absolute top-6 right-8 opacity-20 animate-float">
         <Doodle type="star" color="#FFD600" size={70} />
       </div>
@@ -60,19 +59,18 @@ export default function InfosPratiques() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
-        {/* Título con el estilo "HORAIRES" del diseño */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-4">
             <div className="absolute inset-0 -skew-x-6 rounded" style={{ backgroundColor: "#E8731A" }} />
             <h2 className="relative font-fredoka text-3xl md:text-4xl font-700 text-white px-8 py-2 tracking-wide">
-              INFORMACIÓN PRÁCTICA
+              INFOS PRATIQUES
             </h2>
           </div>
-          <p className="font-nunito text-gray-500 mt-3">Todo lo que necesitas saber antes de venir</p>
+          <p className="font-nunito text-gray-500 mt-3">Tout ce que vous devez savoir avant de venir</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* Horarios */}
+          {/* Horaires */}
           <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[0].bg, borderColor: bloques[0].color + "40" }}>
             <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
               <span className="text-2xl">{bloques[0].emoji}</span>
@@ -92,7 +90,7 @@ export default function InfosPratiques() {
             </table>
           </div>
 
-          {/* A saber */}
+          {/* Bon à savoir */}
           <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[1].bg, borderColor: bloques[1].color + "40" }}>
             <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
               <span className="text-2xl">{bloques[1].emoji}</span>
@@ -113,7 +111,7 @@ export default function InfosPratiques() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Dirección */}
+          {/* Comment venir */}
           <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[2].bg, borderColor: bloques[2].color + "40" }}>
             <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
               <span className="text-2xl">{bloques[2].emoji}</span>
@@ -121,16 +119,16 @@ export default function InfosPratiques() {
             </h3>
             <div className="space-y-3 font-nunito text-sm text-gray-600 mb-5">
               <div>
-                <p className="font-700 text-gray-800">Dirección</p>
-                <p>Av. de la Diversión 123, 28001 Madrid</p>
+                <p className="font-700 text-gray-800">Adresse</p>
+                <p>123 Avenue de l&apos;Aventure, 72000 Le Mans</p>
               </div>
               <div>
-                <p className="font-700 text-gray-800">Teléfono</p>
-                <p>+34 900 123 456</p>
+                <p className="font-700 text-gray-800">Téléphone</p>
+                <p>+33 2 43 00 00 00</p>
               </div>
               <div>
-                <p className="font-700 text-gray-800">Email</p>
-                <p>hola@ludykid.es</p>
+                <p className="font-700 text-gray-800">E-mail</p>
+                <p>contact@ludykid.fr</p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden bg-white h-36 flex items-center justify-center border-2"
@@ -138,7 +136,7 @@ export default function InfosPratiques() {
               <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 transition-transform hover:scale-105">
                 <span className="text-4xl">🗺️</span>
-                <span className="font-fredoka text-sm font-600" style={{ color: bloques[2].color }}>Ver en Google Maps →</span>
+                <span className="font-fredoka text-sm font-600" style={{ color: bloques[2].color }}>Voir sur Google Maps →</span>
               </a>
             </div>
           </div>
