@@ -69,23 +69,20 @@ export default function Cumple() {
         <Doodle type="swirl" color="#2E9E2E" size={52} />
       </div>
 
-      {/* ── Hero anniversaire: card única con imagen dentro ── */}
-      <div className="max-w-3xl mx-auto px-6 py-14">
-        <div className="rounded-3xl overflow-hidden bg-white shadow-xl">
+      {/* ── Hero anniversaire (mismo estilo que Atracciones) ── */}
+      <div className="max-w-6xl mx-auto px-6 py-14">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
 
-          {/* Imagen en la parte superior de la card */}
-          <div className="relative h-[320px] md:h-[400px] w-full">
+          {/* Imagen redondeada */}
+          <div className="w-full md:w-1/2 relative h-[380px] md:h-[440px] rounded-3xl overflow-hidden shadow-xl flex-shrink-0">
             <Image
               src="/images/cumple.png"
               alt="Anniversaire enfant chez Ludykid"
               fill
               className="object-cover transition-transform duration-500 hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 768px"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-            {/* Degradado inferior para transición suave al contenido */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-            {/* Badge oferta */}
-            <div className="absolute top-4 left-4">
+            <div className="absolute bottom-4 left-4">
               <span className="font-fredoka font-600 text-white text-sm px-4 py-2 rounded-full shadow-lg animate-float"
                 style={{ backgroundColor: "#D93030dd" }}>
                 🎉 –20 % en janvier
@@ -93,9 +90,9 @@ export default function Cumple() {
             </div>
           </div>
 
-          {/* Contenido de texto debajo de la imagen */}
-          <div className="px-8 md:px-12 pb-10 pt-4 relative">
-            <div className="absolute top-4 right-6 opacity-20">
+          {/* Texto */}
+          <div className="w-full md:w-1/2 rounded-3xl p-8 md:p-10 relative overflow-hidden bg-white shadow-md">
+            <div className="absolute top-4 right-4 opacity-25">
               <Doodle type="heart" color="#E8409A" size={52} />
             </div>
 
@@ -113,7 +110,7 @@ export default function Cumple() {
               Salle privée décorée, animation, menus et beaucoup de fun.
             </p>
 
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+            <ul className="space-y-3 mb-7">
               {[
                 { icon: "🎨", text: "Salles privées entièrement décorées" },
                 { icon: "🤹", text: "Animateurs professionnels inclus" },
