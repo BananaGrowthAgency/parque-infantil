@@ -59,8 +59,8 @@ export default function Galerie() {
           <button
             onClick={() => scroll("prev")}
             disabled={!canPrev}
-            className="w-11 h-11 flex-shrink-0 rounded-full border-2 flex items-center justify-center text-xl font-bold transition-all disabled:opacity-25 hover:scale-110"
-            style={{ borderColor: "#2E6FCC", color: "#2E6FCC" }}
+            className="w-11 h-11 flex-shrink-0 rounded-full flex items-center justify-center text-xl font-bold text-white transition-all disabled:opacity-25 hover:scale-110"
+            style={{ backgroundColor: "#2E6FCC" }}
             aria-label="Précédent"
           >
             ‹
