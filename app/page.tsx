@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
 import Atracciones from "@/components/Atracciones";
 import Cumple from "@/components/Cumple";
 import Testimonios from "@/components/Testimonios";
@@ -11,6 +12,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <StatsBar />
       <Atracciones />
       <Cumple />
       <Testimonios />

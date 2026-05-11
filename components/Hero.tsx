@@ -1,13 +1,6 @@
 import Image from "next/image";
 import Doodle from "./Doodle";
 
-const stats = [
-  { icon: "⭐", value: "4.9/5", label: "Avis clients", bg: "#E8731A" },
-  { icon: "👶", value: "1 – 12 ans", label: "Âges", bg: "#7B35A0" },
-  { icon: "📅", value: "7j / 7", label: "Ouvert", bg: "#2E9E2E" },
-  { icon: "📐", value: "1 500 m²", label: "Surface", bg: "#D93030" },
-];
-
 export default function Hero() {
   return (
     <section id="inicio" className="relative pt-16">
@@ -65,17 +58,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4">
-        {stats.map((s) => (
-          <div key={s.label} className="py-5 px-4 text-center text-white" style={{ backgroundColor: s.bg }}>
-            <div className="text-3xl mb-1">{s.icon}</div>
-            <div className="font-fredoka text-xl font-600 leading-tight">{s.value}</div>
-            <div className="font-nunito text-xs font-600 mt-0.5 uppercase tracking-wider opacity-80">
-              {s.label}
-            </div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }
