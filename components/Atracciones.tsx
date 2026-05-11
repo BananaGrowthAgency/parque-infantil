@@ -20,6 +20,7 @@ const secciones = [
     bgLight: "#FFF4EC",
     doodle: { type: "star" as const, color: "#E8731A" },
     bgSection: "bg-white",
+    objectPosition: "center 35%",   // centra la cara del bebé
   },
   {
     titulo: "Structure multi-jeux : l'aventure en hauteur !",
@@ -39,6 +40,7 @@ const secciones = [
     bgLight: "#F5EEFF",
     doodle: { type: "swirl" as const, color: "#7B35A0" },
     bgSection: "bg-gray-50",
+    objectPosition: "center center",
   },
   {
     titulo: "Les trampolines : sauter jusqu'au ciel !",
@@ -58,6 +60,7 @@ const secciones = [
     bgLight: "#EDFAED",
     doodle: { type: "zigzag" as const, color: "#2E9E2E" },
     bgSection: "bg-white",
+    objectPosition: "center 20%",   // niño saltando visible completo
   },
   {
     titulo: "L'espace famille : les parents aussi se reposent",
@@ -77,6 +80,7 @@ const secciones = [
     bgLight: "#FFF0F0",
     doodle: { type: "dots" as const, color: "#D93030" },
     bgSection: "bg-gray-50",
+    objectPosition: "center center",
   },
 ];
 
@@ -86,15 +90,16 @@ export default function Atracciones() {
       {secciones.map((s) => (
         <div key={s.titulo} className={`${s.bgSection} py-14`}>
           <div className="max-w-6xl mx-auto px-6">
-            <div className={`flex flex-col ${s.invertida ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-center`}>
+            <div className={`flex flex-col ${s.invertida ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-stretch`}>
 
-              {/* Imagen con radius */}
-              <div className="w-full md:w-1/2 relative h-[380px] md:h-[440px] rounded-3xl overflow-hidden shadow-xl flex-shrink-0">
+              {/* Imagen con radius — mismo alto que el panel de texto */}
+              <div className="w-full md:w-1/2 relative min-h-[340px] rounded-3xl overflow-hidden shadow-xl flex-shrink-0 self-stretch">
                 <Image
                   src={s.imagen}
                   alt={s.alt}
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
+                  style={{ objectPosition: s.objectPosition }}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 {/* Pill de precio sobre la imagen */}
