@@ -54,12 +54,13 @@ export default function Testimonios() {
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="text-center mb-12">
-          <Doodle type="zigzag" color="#FFD600" size={40} className="mx-auto mb-3" />
-          <h2 className="font-fredoka text-3xl md:text-4xl font-600 text-gray-800">
-            Les parents se sentent bien chez{" "}
-            <span style={{ color: "#E8731A" }}>Ludy</span>
-            <span style={{ color: "#7B35A0" }}>kid</span>
-          </h2>
+          <div className="inline-block relative">
+            <div className="absolute inset-0 -skew-x-6 rounded" style={{ backgroundColor: "#7B35A0" }} />
+            <h2 className="relative font-fredoka text-2xl md:text-3xl font-700 text-white px-8 py-2 tracking-wide">
+              Les parents se sentent bien chez{" "}
+              <span style={{ color: "#FFD600" }}>Ludykid</span>
+            </h2>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
