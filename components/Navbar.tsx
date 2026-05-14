@@ -14,19 +14,19 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { label: "Trampoline parc", href: "#atracciones", color: "hover:text-lk-orange" },
-    { label: "Anniversaire", href: "#cumple", color: "hover:text-lk-purple" },
-    { label: "Restauration", href: "#infos", color: "hover:text-lk-purple" },
-    { label: "Tarifs & Horaires", href: "#precios", color: "hover:text-lk-green" },
-    { label: "Garderie", href: "#infos", color: "hover:text-lk-green" },
-    { label: "Contact", href: "#infos", color: "hover:text-lk-orange" },
+    { label: "Trampoline parc", href: "/#atracciones", color: "hover:text-lk-orange" },
+    { label: "Anniversaire", href: "/anniversaire", color: "hover:text-lk-purple" },
+    { label: "Restauration", href: "/#atracciones", color: "hover:text-lk-purple" },
+    { label: "Tarifs & Horaires", href: "/#precios", color: "hover:text-lk-green" },
+    { label: "Garderie", href: "/#infos", color: "hover:text-lk-green" },
+    { label: "Contact", href: "/#infos", color: "hover:text-lk-orange" },
   ];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-lg" : "bg-white/98"}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-2">
-          <a href="#inicio">
+          <a href="/">
             <Logo size="sm" />
           </a>
 

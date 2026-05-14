@@ -43,11 +43,11 @@ export default function Footer() {
             <h4 className="font-fredoka text-base font-600 mb-4" style={{ color: "#E8731A" }}>Navigation</h4>
             <ul className="space-y-2 text-gray-400 text-sm font-nunito">
               {[
-                ["Accueil", "#inicio"],
-                ["Attractions", "#atracciones"],
-                ["Anniversaire", "#cumple"],
-                ["Tarifs", "#precios"],
-                ["Infos pratiques", "#infos"],
+                ["Accueil", "/"],
+                ["Attractions", "/#atracciones"],
+                ["Anniversaire", "/anniversaire"],
+                ["Tarifs", "/#precios"],
+                ["Infos pratiques", "/#infos"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <a href={href} className="hover:text-white transition-colors">{label}</a>
