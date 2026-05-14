@@ -14,11 +14,12 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { label: "Accueil", href: "#inicio", color: "hover:text-lk-orange" },
-    { label: "Attractions", href: "#atracciones", color: "hover:text-lk-purple" },
-    { label: "Anniversaire", href: "#cumple", color: "hover:text-lk-pink" },
-    { label: "Tarifs", href: "#precios", color: "hover:text-lk-green" },
-    { label: "Infos", href: "#infos", color: "hover:text-lk-blue" },
+    { label: "Trampoline parc", href: "#atracciones", color: "hover:text-lk-orange" },
+    { label: "Anniversaire", href: "#cumple", color: "hover:text-lk-purple" },
+    { label: "Restauration", href: "#infos", color: "hover:text-lk-purple" },
+    { label: "Tarifs & Horaires", href: "#precios", color: "hover:text-lk-green" },
+    { label: "Garderie", href: "#infos", color: "hover:text-lk-green" },
+    { label: "Contact", href: "#infos", color: "hover:text-lk-orange" },
   ];
 
   return (
@@ -41,11 +42,14 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#infos"
-              className="bg-lk-orange hover:opacity-90 text-white font-fredoka font-600 px-5 py-2 rounded-full text-base transition-opacity shadow"
-              style={{ backgroundColor: "#E8731A" }}
+              href="tel:+33"
+              className="w-10 h-10 flex items-center justify-center rounded-full transition-colors hover:bg-orange-50"
+              style={{ color: "#E8731A" }}
+              aria-label="Appeler"
             >
-              Réserver !
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
             </a>
           </div>
 
@@ -69,10 +73,10 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="#infos" onClick={() => setMenuOpen(false)}
-            className="mt-2 text-white font-fredoka font-600 px-5 py-3 rounded-full text-center text-lg"
+          <a href="tel:+33" onClick={() => setMenuOpen(false)}
+            className="mt-2 text-white font-fredoka font-600 px-5 py-3 rounded-full text-center text-lg flex items-center justify-center gap-2"
             style={{ backgroundColor: "#E8731A" }}>
-            Réserver !
+            📞 Appeler
           </a>
         </div>
       </div>

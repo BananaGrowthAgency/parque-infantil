@@ -1,14 +1,17 @@
 import Logo from "./Logo";
 import Doodle from "./Doodle";
+import Wave from "./Wave";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-14 pb-8 relative overflow-hidden">
+    <footer className="bg-gray-900 text-white pb-8 relative overflow-hidden">
+      <Wave fill="#111827" bg="#F9FAFB" flip />
+      <div className="pt-10">
       <div className="absolute top-4 right-10 opacity-10 animate-float">
         <Doodle type="star" color="#FFD600" size={70} />
       </div>
       <div className="absolute bottom-6 left-6 opacity-10 animate-wiggle">
-        <Doodle type="heart" color="#E8409A" size={55} />
+        <Doodle type="heart" color="#7B35A0" size={55} />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
@@ -23,8 +26,8 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               {[
-                { label: "Facebook", emoji: "📘", color: "#2E6FCC" },
-                { label: "Instagram", emoji: "📸", color: "#E8409A" },
+                { label: "Facebook", emoji: "📘", color: "#2E9E2E" },
+                { label: "Instagram", emoji: "📸", color: "#7B35A0" },
                 { label: "TikTok", emoji: "🎵", color: "#E8731A" },
               ].map((s) => (
                 <button key={s.label} aria-label={s.label}
@@ -69,8 +72,8 @@ export default function Footer() {
 
         <div className="h-1 rounded-full mb-6 overflow-hidden">
           <div className="h-full flex">
-            {["#E8731A","#7B35A0","#2E9E2E","#FFD600","#D93030","#2E6FCC","#E8409A"].map((c) => (
-              <div key={c} className="flex-1" style={{ backgroundColor: c }} />
+            {["#E8731A", "#7B35A0", "#2E9E2E", "#FFD600", "#E8731A", "#2E9E2E", "#7B35A0"].map((c, i) => (
+              <div key={i} className="flex-1" style={{ backgroundColor: c }} />
             ))}
           </div>
         </div>
@@ -83,6 +86,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

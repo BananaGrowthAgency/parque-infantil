@@ -43,7 +43,7 @@ const bloques = [
   { emoji: "🕐", titulo: "Horaires", color: "#E8731A", bg: "#FFF4EC" },
   { emoji: "💡", titulo: "Bon à savoir", color: "#7B35A0", bg: "#F5EEFF" },
   { emoji: "📍", titulo: "Comment venir", color: "#2E9E2E", bg: "#EDFAED" },
-  { emoji: "❓", titulo: "Questions fréquentes", color: "#2E6FCC", bg: "#EEF4FF" },
+  { emoji: "❓", titulo: "Questions fréquentes", color: "#2E9E2E", bg: "#EEF4FF" },
 ];
 
 export default function InfosPratiques() {
@@ -55,7 +55,7 @@ export default function InfosPratiques() {
         <Doodle type="star" color="#FFD600" size={70} />
       </div>
       <div className="absolute bottom-8 left-6 opacity-15 animate-wiggle">
-        <Doodle type="heart" color="#E8409A" size={60} />
+        <Doodle type="heart" color="#7B35A0" size={60} />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
@@ -120,11 +120,11 @@ export default function InfosPratiques() {
             <div className="space-y-3 font-nunito text-sm text-gray-600 mb-5">
               <div>
                 <p className="font-700 text-gray-800">Adresse</p>
-                <p>123 Avenue de l&apos;Aventure, 72000 Le Mans</p>
+                <p className="whitespace-pre-line">{"Ruaudin, 72230\nRte du Petit Bel Oeuvre\nZAC des Hunaudières"}</p>
               </div>
               <div>
                 <p className="font-700 text-gray-800">Téléphone</p>
-                <p>+33 2 43 00 00 00</p>
+                <p>+33 2 43 41 48 69</p>
               </div>
               <div>
                 <p className="font-700 text-gray-800">E-mail</p>

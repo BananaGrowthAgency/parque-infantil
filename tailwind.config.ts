@@ -18,9 +18,9 @@ const config: Config = {
           purple: "#7B35A0",
           green: "#2E9E2E",
           yellow: "#FFD600",
-          red: "#D93030",
-          blue: "#2E6FCC",
-          pink: "#E8409A",
+          red: "#E8731A",
+          blue: "#2E9E2E",
+          pink: "#7B35A0",
         },
       },
       keyframes: {
