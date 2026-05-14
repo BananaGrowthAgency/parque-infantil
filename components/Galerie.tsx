@@ -90,11 +90,19 @@ export default function Galerie() {
 
   return (
     <section
-      className="relative py-16 overflow-hidden"
-      style={{
-        background: "radial-gradient(ellipse 120% 60% at 50% 0%, #f0fbf0 0%, #ffffff 65%)",
-      }}
+      className="relative py-16 overflow-hidden bg-white"
     >
+      {/* Halo verde suave detrás del carrusel — sin tocar el borde superior */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 pointer-events-none"
+        style={{
+          top: "120px",
+          bottom: "60px",
+          background:
+            "radial-gradient(ellipse 70% 80% at 50% 50%, #eaf8ea 0%, transparent 70%)",
+        }}
+      />
       {/* Título — centrado, ancho contenido */}
       <div className="flex justify-center mb-10 px-6">
         <div className="inline-block relative">
