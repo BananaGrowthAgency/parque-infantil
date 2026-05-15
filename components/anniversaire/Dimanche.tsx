@@ -9,7 +9,10 @@ const BULLETS = [
 
 export default function Dimanche() {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#F5EEFF" }}
+    >
       <div className="absolute top-10 right-10 opacity-15 animate-wiggle">
         <Doodle type="heart" color="#E8731A" size={60} />
       </div>
@@ -17,35 +20,20 @@ export default function Dimanche() {
         <Doodle type="star" color="#7B35A0" size={56} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-6 py-16 relative">
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
-          {/* Card promo */}
+          {/* Card promo — imagen banner full bleed */}
           <div
             className="w-full md:w-1/2 relative rounded-3xl overflow-hidden shadow-xl flex-shrink-0 self-stretch"
-            style={{ minHeight: 380, backgroundColor: "#E8731A" }}
+            style={{ minHeight: 380 }}
           >
             <Image
-              src="/images/cumple.png"
-              alt="Promotion dimanche -20%"
+              src="/images/dimanche-banner.png"
+              alt="Fête ton anniv' chez Ludykid -20% sur les formules le dimanche"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-500 hover:scale-105"
-              style={{ mixBlendMode: "multiply", opacity: 0.85 }}
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-              <p className="font-fredoka text-white text-2xl md:text-3xl font-700 drop-shadow-md mb-2">
-                Fête ton anniv&apos; chez Ludykid
-              </p>
-              <p
-                className="font-fredoka text-white font-700 drop-shadow-md"
-                style={{ fontSize: 92, lineHeight: 1 }}
-              >
-                -20%
-              </p>
-              <p className="font-fredoka text-white text-lg md:text-xl font-600 mt-2 drop-shadow-md">
-                sur les formules le DIMANCHE
-              </p>
-            </div>
           </div>
 
           {/* Card texto */}
