@@ -39,8 +39,8 @@ export default function Dimanche() {
           {/* Card texto */}
           <div className="w-full md:w-1/2 rounded-3xl p-8 md:p-10 relative overflow-hidden bg-white shadow-md border border-orange-100">
             <h2
-              className="font-fredoka text-3xl md:text-4xl font-700 leading-tight mb-3"
-              style={{ color: "#E8731A" }}
+              className="font-fredoka text-3xl md:text-4xl font-bold leading-tight mb-3"
+              style={{ color: "#7B35A0" }}
             >
               🎈 Dimanche malin
             </h2>
