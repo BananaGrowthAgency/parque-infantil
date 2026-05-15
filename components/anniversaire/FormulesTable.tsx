@@ -168,17 +168,23 @@ export default function FormulesTable() {
         </div>
 
         <div className="mt-6 bg-white/70 rounded-2xl p-5 text-sm font-nunito text-gray-600 leading-relaxed border border-orange-100">
-          <p className="font-fredoka font-700 text-gray-800">
+          <p
+            className="font-fredoka font-700 text-base md:text-lg leading-snug"
+            style={{ color: "#E8731A" }}
+          >
             Ludynight : Vendredi soir de 19h30 à 22h00
           </p>
-          <p className="mt-1">
+          <p className="mt-2">
             Les parents peuvent apporter les collations, mais leur présence n&apos;est pas
             obligatoire : l&apos;animateur assure la surveillance des enfants.
           </p>
-          <p className="mt-4 font-fredoka font-700 text-gray-800">
+          <p
+            className="mt-5 font-fredoka font-700 text-base md:text-lg leading-snug"
+            style={{ color: "#E8731A" }}
+          >
             MaxiLudy, Ludykid ou formule Libre
           </p>
-          <p className="mt-1">
+          <p className="mt-2">
             La présence d&apos;un adulte accompagnant est obligatoire. 1€ par adulte
             supplémentaire au-delà de 2.
           </p>
