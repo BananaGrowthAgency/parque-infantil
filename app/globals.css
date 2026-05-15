@@ -7,11 +7,16 @@
   h1, h2, h3, h4, h5 { font-family: var(--font-fredoka), sans-serif; }
 }
 
-/* Elfsight Google Reviews — cards más rectangulares */
+/* Elfsight Google Reviews — cards más rectangulares (home + anniversaire) */
 .elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="ReviewItem"],
 .elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="Review__"],
 .elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="Card"],
 .elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a article,
-.elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="review-item"] {
+.elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a [class*="review-item"],
+.elfsight-app-44366b23-a420-46ae-ab26-7b86ae5bca82 [class*="ReviewItem"],
+.elfsight-app-44366b23-a420-46ae-ab26-7b86ae5bca82 [class*="Review__"],
+.elfsight-app-44366b23-a420-46ae-ab26-7b86ae5bca82 [class*="Card"],
+.elfsight-app-44366b23-a420-46ae-ab26-7b86ae5bca82 article,
+.elfsight-app-44366b23-a420-46ae-ab26-7b86ae5bca82 [class*="review-item"] {
   border-radius: 6px !important;
 }
