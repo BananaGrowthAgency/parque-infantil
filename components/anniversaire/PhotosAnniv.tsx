@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Doodle from "../Doodle";
 
 const PHOTOS = [
   { src: "/images/seccion3.jpg", alt: "Enfant qui saute" },
@@ -10,16 +11,30 @@ export default function PhotosAnniv() {
   return (
     <section
       className="py-16 relative overflow-hidden"
-      style={{ backgroundColor: "#F8F4FF" }}
+      style={{ backgroundColor: "#FFFAD6" }}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      {/* Doodles amarillos/naranjas de fondo */}
+      <div className="absolute top-8 left-6 opacity-25 animate-float">
+        <Doodle type="star" color="#FFD600" size={70} />
+      </div>
+      <div className="absolute top-16 right-10 opacity-20 animate-wiggle">
+        <Doodle type="circle" color="#E8731A" size={56} />
+      </div>
+      <div className="absolute bottom-10 left-20 opacity-20 animate-float">
+        <Doodle type="swirl" color="#FFD600" size={64} />
+      </div>
+      <div className="absolute bottom-12 right-16 opacity-25 animate-wiggle">
+        <Doodle type="star2" color="#FFD600" size={52} />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative">
         <div className="text-center mb-10">
           <div className="inline-block relative">
             <div
-              className="absolute inset-0 -skew-x-6 rounded"
-              style={{ backgroundColor: "#7B35A0" }}
+              className="absolute inset-0 -skew-x-6 rounded shadow-md"
+              style={{ backgroundColor: "#FFD600" }}
             />
-            <h2 className="relative font-fredoka text-2xl md:text-3xl font-700 text-white px-8 py-2 tracking-wide">
+            <h2 className="relative font-fredoka text-2xl md:text-3xl font-bold text-gray-900 px-8 py-2 tracking-wide">
               Anniversaire Ludykid en photos 📸
             </h2>
           </div>

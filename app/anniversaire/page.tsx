@@ -20,7 +20,7 @@ const BG_BODY = "#ffffff";
 const BG_FORMULES = "#FFF8EC"; // crema-amarillo
 const BG_DIMANCHE = "#F5EEFF"; // morado claro
 const BG_AVIS = "#EDFAED"; // verde claro
-const BG_PHOTOS = "#F8F4FF"; // morado claro alt
+const BG_PHOTOS = "#FFFAD6"; // amarillo claro
 const BG_INFOS = "#F9FAFB"; // gris-50
 
 export default function AnniversairePage() {
