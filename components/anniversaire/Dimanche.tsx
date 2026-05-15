@@ -2,9 +2,9 @@ import Image from "next/image";
 import Doodle from "../Doodle";
 
 const BULLETS = [
-  { icon: "🎟️", text: "Remise appliquée directement en caisse" },
+  { icon: "🎁", text: "Remise appliquée directement en caisse" },
   { icon: "📅", text: "Offre valable uniquement le dimanche (hors options)" },
-  { icon: "🗓️", text: "Réserve ta date dès maintenant en ligne" },
+  { icon: "🎈", text: "Réserve ta date dès maintenant en ligne" },
 ];
 
 export default function Dimanche() {
@@ -54,19 +54,19 @@ export default function Dimanche() {
               className="inline-block font-fredoka font-600 text-white text-xs px-3 py-1 rounded-full mb-4"
               style={{ backgroundColor: "#7B35A0" }}
             >
-              🎁 Dimanche malin
+              🎈 Dimanche malin
             </span>
             <h2 className="font-fredoka text-2xl md:text-3xl font-600 text-gray-800 mb-3 leading-snug">
               -20% sur les anniversaires
             </h2>
             <p className="font-nunito text-gray-500 leading-relaxed mb-3 text-sm">
-              🥳 Et si le meilleur jour pour fêter un anniversaire… c&apos;était le dimanche ?
+              Et si le meilleur jour pour fêter un anniversaire… c&apos;était le dimanche ?
             </p>
             <p className="font-nunito text-gray-500 leading-relaxed mb-3 text-sm">
               Chez Ludykid, on rend ce moment encore plus sympa :
             </p>
             <p className="font-nunito text-gray-700 leading-relaxed mb-5 text-sm">
-              👉 -20% sur toutes les formules anniversaires, chaque dimanche.
+              👉 -20 % sur toutes les formules anniversaires, chaque dimanche
             </p>
             <p className="font-nunito text-gray-500 leading-relaxed mb-5 text-sm">
               De quoi offrir une fête mémorable, sans se poser de questions ✨
