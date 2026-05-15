@@ -1,12 +1,17 @@
 import Doodle from "../Doodle";
 
 const FORMULES = [
-  { name: "MaxiLudy", price: "17,50€ / enfant", note: "Dès 8 / 15 enfants" },
-  { name: "Ludykid", price: "14,50€ / enfant", note: "Dès 8 / 15 enfants" },
-  { name: "Libre", price: "10,50€ / enfant", note: "Dès 8 / 15 enfants" },
+  { name: "MaxiLudy", price: "17,50€ / enfant", note: "De 4 à 15 enfants" },
+  { name: "Ludykid", price: "14,50€ / enfant", note: "De 4 à 15 enfants" },
+  { name: "Libre", price: "10,50€ /enfant", note: "De 8 à 15 enfants" },
   { name: "Ludynight", price: "11,00€ / enfant", note: "Minimum 15 enfants" },
 ];
 
+// Convención de valores:
+//   "✓"        → pastilla verde sola
+//   "✕"        → pastilla roja sola
+//   "✓ texto"  → pastilla verde + texto debajo
+//   "texto"    → solo texto
 const ROWS: { label: string; vals: string[] }[] = [
   { label: "Accès au parc", vals: ["Illimité", "Illimité", "Illimité", "Illimité"] },
   {
@@ -20,36 +25,65 @@ const ROWS: { label: string; vals: string[] }[] = [
   },
   {
     label: "Table",
-    vals: ["Table décorée avec thème au choix", "Table décorée", "Espace réservé", "Espace réservé"],
+    vals: [
+      "✓ Table dressée avec thème au choix",
+      "✓ Table dressée",
+      "✓ Espace réservé",
+      "✓ Espace réservé",
+    ],
   },
   { label: "Cartons d'invitations", vals: ["✓", "✓", "✓", "✓"] },
-  { label: "Gâteaux", vals: ["Avec bougies et cadeaux", "Avec bougies", "✕", "✕"] },
-  { label: "Boissons", vals: ["Tous à volonté + adultes", "Tous à volonté", "✕", "✕"] },
-  { label: "Sachet de bonbons", vals: ["1 sac / enfant", "1 sac / enfant", "✕", "✕"] },
+  { label: "Gâteaux", vals: ["✓ Avec bougies scintillante", "✓ Avec bougies", "✕", "✕"] },
+  {
+    label: "Boissons",
+    vals: [
+      "✓ Sirop à l'eau a volonté + champomy 🍾",
+      "✓ Sirop à l'eau a volonté",
+      "✕",
+      "✕",
+    ],
+  },
+  { label: "Sachet de bonbon", vals: ["✓ 130g / enfants", "✓ 50g / enfants", "✕", "✕"] },
   { label: "Photo souvenir", vals: ["✓", "✕", "✕", "✕"] },
   { label: "1 jeton bumper offert / enfant", vals: ["✓", "✕", "✕", "✕"] },
-  { label: "1 entrée offerte pour la star de la journée", vals: ["✓", "✓", "✕", "✕"] },
+  { label: "1 entrée offerte pour la star de la journée", vals: ["✓", "✕", "✕", "✕"] },
 ];
 
+function CheckPill() {
+  return (
+    <span
+      className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-700"
+      style={{ backgroundColor: "#2E9E2E" }}
+    >
+      ✓
+    </span>
+  );
+}
+
+function CrossPill() {
+  return (
+    <span
+      className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-700"
+      style={{ backgroundColor: "#D93030" }}
+    >
+      ✕
+    </span>
+  );
+}
+
 function Cell({ v }: { v: string }) {
-  if (v === "✓")
+  if (v === "✓") return <CheckPill />;
+  if (v === "✕") return <CrossPill />;
+  if (v.startsWith("✓ ")) {
     return (
-      <span
-        className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-700"
-        style={{ backgroundColor: "#2E9E2E" }}
-      >
-        ✓
-      </span>
+      <div className="flex flex-col items-center gap-2">
+        <CheckPill />
+        <span className="font-nunito text-xs text-gray-600 leading-snug text-center">
+          {v.slice(2)}
+        </span>
+      </div>
     );
-  if (v === "✕")
-    return (
-      <span
-        className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-700"
-        style={{ backgroundColor: "#D93030" }}
-      >
-        ✕
-      </span>
-    );
+  }
   return <span className="font-nunito text-xs text-gray-600 leading-snug">{v}</span>;
 }
 
@@ -134,17 +168,18 @@ export default function FormulesTable() {
         </div>
 
         <div className="mt-6 bg-white/70 rounded-2xl p-5 text-sm font-nunito text-gray-600 leading-relaxed border border-orange-100">
-          <p>
-            <strong className="font-fredoka text-gray-800">Ludynight :</strong> Vendredi soir
-            de 19h30 à 22h00. Les parents peuvent apporter les collations, mais leur
-            présence n&apos;est pas obligatoire ; l&apos;animateur assure la surveillance des
-            enfants.
+          <p className="font-fredoka font-700 text-gray-800">
+            Ludynight : Vendredi soir de 19h30 à 22h00
           </p>
-          <p className="mt-2">
-            <strong className="font-fredoka text-gray-800">
-              MaxiLudy, Ludykid ou formule Libre :
-            </strong>{" "}
-            la présence d&apos;un adulte accompagnant est obligatoire. 1 € par adulte
+          <p className="mt-1">
+            Les parents peuvent apporter les collations, mais leur présence n&apos;est pas
+            obligatoire : l&apos;animateur assure la surveillance des enfants.
+          </p>
+          <p className="mt-4 font-fredoka font-700 text-gray-800">
+            MaxiLudy, Ludykid ou formule Libre
+          </p>
+          <p className="mt-1">
+            La présence d&apos;un adulte accompagnant est obligatoire. 1€ par adulte
             supplémentaire au-delà de 2.
           </p>
         </div>
