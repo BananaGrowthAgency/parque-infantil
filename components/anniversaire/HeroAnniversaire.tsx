@@ -22,24 +22,15 @@ export default function HeroAnniversaire() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-6 max-w-3xl">
-            <span
-              className="inline-block font-fredoka font-600 text-white text-xs px-4 py-1.5 rounded-full mb-5"
-              style={{ backgroundColor: "#E8731A" }}
-            >
-              🎂 ANNIVERSAIRE
-            </span>
-            <h1 className="font-fredoka text-3xl md:text-5xl font-700 text-white leading-tight mb-5 drop-shadow-xl">
+            <h1 className="font-fredoka text-3xl md:text-5xl font-bold text-white leading-tight mb-7 drop-shadow-xl">
               Anniversaire enfant Le Mans chez Ludykid
             </h1>
-            <p className="font-nunito text-white/90 text-lg md:text-xl mb-7">
-              Choisissez votre formule
-            </p>
             <a
               href="#formules"
-              className="inline-block font-fredoka font-600 text-white px-8 py-3.5 rounded-full text-lg shadow-xl transition-transform hover:scale-105"
+              className="inline-block font-fredoka font-bold text-white px-8 py-3.5 rounded-full text-lg shadow-xl transition-transform hover:scale-105"
               style={{ backgroundColor: "#E8731A" }}
             >
-              Voir les formules
+              Choisissez votre formule
             </a>
           </div>
         </div>
