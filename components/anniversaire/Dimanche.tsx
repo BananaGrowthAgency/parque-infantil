@@ -50,22 +50,22 @@ export default function Dimanche() {
 
           {/* Card texto */}
           <div className="w-full md:w-1/2 rounded-3xl p-8 md:p-10 relative overflow-hidden bg-white shadow-md border border-orange-100">
-            <span
-              className="inline-block font-fredoka font-600 text-white text-xs px-3 py-1 rounded-full mb-4"
-              style={{ backgroundColor: "#7B35A0" }}
+            <h2
+              className="font-fredoka text-3xl md:text-4xl font-700 leading-tight mb-3"
+              style={{ color: "#E8731A" }}
             >
               🎈 Dimanche malin
-            </span>
-            <h2 className="font-fredoka text-2xl md:text-3xl font-600 text-gray-800 mb-3 leading-snug">
-              -20% sur les anniversaires
             </h2>
-            <p className="font-nunito text-gray-500 leading-relaxed mb-3 text-sm">
-              Et si le meilleur jour pour fêter un anniversaire… c&apos;était le dimanche ?
+            <h3 className="font-fredoka text-xl md:text-2xl font-600 text-gray-800 mb-4 leading-snug">
+              -20% sur les anniversaires
+            </h3>
+            <p className="font-nunito font-700 text-gray-800 leading-relaxed mb-3 text-sm">
+              🎉 Et si le meilleur jour pour fêter un anniversaire… c&apos;était le dimanche ?
             </p>
             <p className="font-nunito text-gray-500 leading-relaxed mb-3 text-sm">
               Chez Ludykid, on rend ce moment encore plus sympa :
             </p>
-            <p className="font-nunito text-gray-700 leading-relaxed mb-5 text-sm">
+            <p className="font-nunito font-700 text-gray-800 leading-relaxed mb-5 text-sm">
               👉 -20 % sur toutes les formules anniversaires, chaque dimanche
             </p>
             <p className="font-nunito text-gray-500 leading-relaxed mb-5 text-sm">
