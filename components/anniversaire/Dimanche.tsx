@@ -59,13 +59,13 @@ export default function Dimanche() {
             <h3 className="font-fredoka text-xl md:text-2xl font-600 text-gray-800 mb-4 leading-snug">
               -20% sur les anniversaires
             </h3>
-            <p className="font-nunito font-700 text-gray-800 leading-relaxed mb-3 text-sm">
+            <p className="font-nunito font-extrabold text-gray-900 leading-relaxed mb-3 text-base">
               🎉 Et si le meilleur jour pour fêter un anniversaire… c&apos;était le dimanche ?
             </p>
             <p className="font-nunito text-gray-500 leading-relaxed mb-3 text-sm">
               Chez Ludykid, on rend ce moment encore plus sympa :
             </p>
-            <p className="font-nunito font-700 text-gray-800 leading-relaxed mb-5 text-sm">
+            <p className="font-nunito font-extrabold text-gray-900 leading-relaxed mb-5 text-base">
               👉 -20 % sur toutes les formules anniversaires, chaque dimanche
             </p>
             <p className="font-nunito text-gray-500 leading-relaxed mb-5 text-sm">
