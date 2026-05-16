@@ -2,172 +2,216 @@
 
 import { useState } from "react";
 import Doodle from "./Doodle";
+import FadeInUp from "./ui/FadeInUp";
+import SquiggleTitle from "./ui/SquiggleTitle";
 
-const horarios = [
-  { dia: "Lundi – Vendredi", hora: "14h00 – 19h30" },
-  { dia: "Samedi", hora: "10h00 – 20h00" },
-  { dia: "Dimanche", hora: "10h00 – 19h00" },
-  { dia: "Jours fériés", hora: "10h00 – 20h00" },
-  { dia: "Vacances scolaires", hora: "10h00 – 20h00" },
+const HORARIOS = [
+  {
+    dia: "PERIODE SCOLAIRE",
+    hora: "Mercredi, Samedi, Dimanche 10h–19h\nVendredi 15h–19h",
+  },
+  {
+    dia: "VACANCES SCOLAIRES",
+    hora:
+      "Tous les jours 10h–19h\n(Fermé les 24, 25 et 31 décembre et le 1er janvier)\nJuillet et août : 10h–18h, fermé le dimanche",
+  },
+  { dia: "JOURS FÉRIÉS", hora: "Nous consulter" },
 ];
 
-const asaber = [
-  "Chaussettes obligatoires pour tous (disponibles à la caisse)",
-  "Les adultes accompagnants entrent gratuitement",
-  "Moins d'1 an : entrée gratuite",
-  "Nourriture extérieure non autorisée",
-  "Casiers gratuits à l'accueil",
-  "Parking gratuit avec 200 places",
+const ASABER = [
+  { icon: "🧦", text: "Chaussettes obligatoires" },
+  { icon: "👨‍👩‍👧", text: "Un adulte accompagnant obligatoire" },
+  { icon: "🍰", text: "Goûter autorisé uniquement pour les anniversaires" },
+  { icon: "🚫", text: "Pas de nourriture extérieure (hors formules autorisées)" },
 ];
 
-const faqs = [
+const FAQS = [
   {
-    pregunta: "Puis-je rester à l'intérieur du parc avec mon enfant ?",
-    respuesta: "Oui. Les adultes accompagnants entrent gratuitement et ont accès à l'espace restauration. L'accès aux attractions est en supplément (5 €).",
+    q: "À partir de quel âge les enfants peuvent venir ?",
+    a: "Notre parc accueille les enfants de 1 à 12 ans. Un espace dédié aux 1–3 ans permet aux plus petits de jouer en toute sécurité, séparé des attractions des plus grands.",
   },
   {
-    pregunta: "Y a-t-il une limite de capacité ?",
-    respuesta: "Oui, nous limitons la capacité pour garantir la sécurité et le confort de tous. En haute saison, nous recommandons de réserver à l'avance.",
+    q: "Faut-il réserver à l'avance ?",
+    a: "Non, l'accès au parc se fait sans réservation. Nous la recommandons toutefois le weekend et pendant les vacances scolaires pour garantir votre place.",
   },
   {
-    pregunta: "Les attractions sont-elles adaptées aux bébés ?",
-    respuesta: "Nous disposons d'un espace spécifique entièrement adapté aux enfants de 1 à 3 ans, séparé des attractions pour les plus grands.",
+    q: "Peut-on organiser un anniversaire chez Ludykid ?",
+    a: "Oui ! Nous proposons 4 formules d'anniversaires clé en main dès 10,50€ / enfant. Toutes les infos sur la page Anniversaire.",
   },
   {
-    pregunta: "Comment réserver un anniversaire ?",
-    respuesta: "Vous pouvez nous contacter par téléphone, e-mail ou réseaux sociaux. Nous recommandons de réserver au moins 3 semaines à l'avance.",
+    q: "Les parents doivent-ils rester sur place ?",
+    a: "Oui, un adulte accompagnant est obligatoire. L'entrée est gratuite pour les adultes, qui ont accès à l'espace restauration. L'accès aux attractions est en supplément (5 €).",
   },
-];
-
-const bloques = [
-  { emoji: "🕐", titulo: "Horaires", color: "#E8731A", bg: "#FFF4EC" },
-  { emoji: "💡", titulo: "Bon à savoir", color: "#7B35A0", bg: "#F5EEFF" },
-  { emoji: "📍", titulo: "Comment venir", color: "#2E9E2E", bg: "#EDFAED" },
-  { emoji: "❓", titulo: "Questions fréquentes", color: "#2E9E2E", bg: "#EEF4FF" },
+  {
+    q: "Y a-t-il de quoi manger sur place ?",
+    a: "Oui, notre espace restauration propose café et boissons chaudes, boissons fraîches, snacks et goûters — avec vue directe sur les enfants depuis la cafétéria.",
+  },
 ];
 
 export default function InfosPratiques() {
-  const [abierto, setAbierto] = useState<number | null>(null);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section id="infos" className="py-20 bg-gray-50 relative overflow-hidden">
-      <div className="absolute top-6 right-8 opacity-20 animate-float">
+      <div className="absolute top-8 right-8 opacity-15 animate-float">
         <Doodle type="star" color="#FFD600" size={70} />
       </div>
-      <div className="absolute bottom-8 left-6 opacity-15 animate-wiggle">
-        <Doodle type="heart" color="#7B35A0" size={60} />
+      <div className="absolute bottom-10 left-6 opacity-15 animate-wiggle">
+        <Doodle type="heart" color="#7B35A0" size={56} />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="text-center mb-12">
-          <div className="inline-block relative mb-4">
-            <div className="absolute inset-0 -skew-x-6 rounded" style={{ backgroundColor: "#E8731A" }} />
-            <h2 className="relative font-fredoka text-3xl md:text-4xl font-700 text-white px-8 py-2 tracking-wide">
-              INFOS PRATIQUES
-            </h2>
-          </div>
-          <p className="font-nunito text-gray-500 mt-3">Tout ce que vous devez savoir avant de venir</p>
-        </div>
+        <FadeInUp className="mb-12">
+          <SquiggleTitle color="#E8731A">Infos pratiques</SquiggleTitle>
+        </FadeInUp>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* Horaires */}
-          <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[0].bg, borderColor: bloques[0].color + "40" }}>
-            <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
-              <span className="text-2xl">{bloques[0].emoji}</span>
-              <span style={{ color: bloques[0].color }}>{bloques[0].titulo}</span>
-            </h3>
-            <table className="w-full">
-              <tbody>
-                {horarios.map((h) => (
-                  <tr key={h.dia} className="border-b border-orange-100 last:border-0">
-                    <td className="py-2.5 font-nunito text-gray-600 text-sm">{h.dia}</td>
-                    <td className="py-2.5 text-right font-fredoka font-600 text-sm" style={{ color: bloques[0].color }}>
+          <FadeInUp delay={0.05}>
+            <div
+              className="h-full rounded-clay-lg p-7 shadow-clay-orange transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#FFF4EC" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  🕐
+                </span>
+                <span style={{ color: "#E8731A" }}>Horaires</span>
+              </h3>
+              <ul className="space-y-4">
+                {HORARIOS.map((h) => (
+                  <li key={h.dia}>
+                    <p className="font-fredoka font-extrabold text-sm" style={{ color: "#E8731A" }}>
+                      {h.dia}
+                    </p>
+                    <p className="font-nunito text-sm text-gray-600 whitespace-pre-line">
                       {h.hora}
-                    </td>
-                  </tr>
+                    </p>
+                  </li>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </ul>
+            </div>
+          </FadeInUp>
 
-          {/* Bon à savoir */}
-          <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[1].bg, borderColor: bloques[1].color + "40" }}>
-            <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
-              <span className="text-2xl">{bloques[1].emoji}</span>
-              <span style={{ color: bloques[1].color }}>{bloques[1].titulo}</span>
-            </h3>
-            <ul className="space-y-3">
-              {asaber.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 font-nunito text-sm text-gray-600">
-                  <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-fredoka font-700 text-white flex-shrink-0 mt-0.5"
-                    style={{ backgroundColor: bloques[1].color }}>
-                    ✓
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FadeInUp delay={0.1}>
+            <div
+              className="h-full rounded-clay-lg p-7 shadow-clay-purple transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#F5EEFF" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  💡
+                </span>
+                <span style={{ color: "#7B35A0" }}>À savoir</span>
+              </h3>
+              <ul className="space-y-3">
+                {ASABER.map((it) => (
+                  <li
+                    key={it.text}
+                    className="flex items-start gap-3 font-nunito text-sm text-gray-700"
+                  >
+                    <span
+                      className="w-9 h-9 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-clay-inset"
+                      style={{ backgroundColor: "#7B35A01F" }}
+                    >
+                      {it.icon}
+                    </span>
+                    {it.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeInUp>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Comment venir */}
-          <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[2].bg, borderColor: bloques[2].color + "40" }}>
-            <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
-              <span className="text-2xl">{bloques[2].emoji}</span>
-              <span style={{ color: bloques[2].color }}>{bloques[2].titulo}</span>
-            </h3>
-            <div className="space-y-3 font-nunito text-sm text-gray-600 mb-5">
-              <div>
-                <p className="font-700 text-gray-800">Adresse</p>
-                <p className="whitespace-pre-line">{"Ruaudin, 72230\nRte du Petit Bel Oeuvre\nZAC des Hunaudières"}</p>
-              </div>
-              <div>
-                <p className="font-700 text-gray-800">Téléphone</p>
-                <p>+33 2 43 41 48 69</p>
-              </div>
-              <div>
-                <p className="font-700 text-gray-800">E-mail</p>
-                <p>contact@ludykid.fr</p>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden bg-white h-36 flex items-center justify-center border-2"
-              style={{ borderColor: bloques[2].color + "30" }}>
-              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 transition-transform hover:scale-105">
-                <span className="text-4xl">🗺️</span>
-                <span className="font-fredoka text-sm font-600" style={{ color: bloques[2].color }}>Voir sur Google Maps →</span>
-              </a>
-            </div>
-          </div>
+          <FadeInUp delay={0.15}>
+            <div
+              className="h-full flex flex-col rounded-clay-lg p-7 shadow-clay-green transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#EDFAED" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  📍
+                </span>
+                <span style={{ color: "#2E9E2E" }}>Adresse</span>
+              </h3>
 
-          {/* FAQ */}
-          <div className="rounded-3xl p-7 border-2" style={{ backgroundColor: bloques[3].bg, borderColor: bloques[3].color + "40" }}>
-            <h3 className="font-fredoka text-xl font-600 text-gray-800 mb-5 flex items-center gap-2">
-              <span className="text-2xl">{bloques[3].emoji}</span>
-              <span style={{ color: bloques[3].color }}>{bloques[3].titulo}</span>
-            </h3>
-            <div className="space-y-2">
-              {faqs.map((faq, i) => (
-                <div key={i} className="rounded-2xl overflow-hidden bg-white border" style={{ borderColor: bloques[3].color + "25" }}>
-                  <button onClick={() => setAbierto(abierto === i ? null : i)}
-                    className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 hover:bg-blue-50 transition-colors">
-                    <span className="font-fredoka text-sm font-500 text-gray-800 leading-snug">{faq.pregunta}</span>
-                    <span className="font-fredoka font-700 flex-shrink-0 text-lg transition-transform"
-                      style={{ color: bloques[3].color, transform: abierto === i ? "rotate(45deg)" : "none" }}>
-                      +
-                    </span>
-                  </button>
-                  {abierto === i && (
-                    <div className="px-4 pb-4 font-nunito text-sm text-gray-500 leading-relaxed border-t"
-                      style={{ borderColor: bloques[3].color + "25" }}>
-                      <p className="pt-3">{faq.respuesta}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ludykid+Ruaudin+72230"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir l'adresse Ludykid dans Google Maps"
+                className="group relative block flex-1 min-h-[220px] rounded-clay overflow-hidden shadow-clay-sm bg-white transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+              >
+                <iframe
+                  title="Carte Ludykid Ruaudin"
+                  src="https://maps.google.com/maps?q=Ludykid+Ruaudin+72230&z=15&output=embed"
+                  className="absolute inset-0 w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  style={{ pointerEvents: "none" }}
+                />
+                <span className="absolute inset-0 ring-2 ring-transparent group-hover:ring-lk-green/40 rounded-clay transition-shadow" />
+              </a>
+
+              <p className="mt-5 font-nunito text-sm text-gray-700 leading-relaxed">
+                <span className="font-fredoka font-extrabold text-gray-800 text-base">📍 Ruaudin, 72230</span>
+                <br />
+                Rte du Petit Bel Oeuvre
+                <br />
+                ZAC des Hunaudières
+              </p>
             </div>
-          </div>
+          </FadeInUp>
+
+          <FadeInUp delay={0.2}>
+            <div
+              className="h-full rounded-clay-lg p-7 shadow-clay-yellow transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#FFF8DB" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  ❓
+                </span>
+                <span style={{ color: "#E8731A" }}>Questions ?</span>
+              </h3>
+              <div className="space-y-2">
+                {FAQS.map((f, i) => (
+                  <div
+                    key={f.q}
+                    className="rounded-clay overflow-hidden bg-white shadow-clay-sm"
+                  >
+                    <button
+                      onClick={() => setOpen(open === i ? null : i)}
+                      className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 hover:bg-orange-50 transition-colors"
+                      aria-expanded={open === i}
+                    >
+                      <span className="font-fredoka text-sm font-semibold text-gray-800 leading-snug">
+                        {f.q}
+                      </span>
+                      <span
+                        className="font-fredoka font-extrabold flex-shrink-0 text-lg transition-transform duration-300"
+                        style={{
+                          color: "#E8731A",
+                          transform: open === i ? "rotate(45deg)" : "none",
+                        }}
+                      >
+                        +
+                      </span>
+                    </button>
+                    <div
+                      className="overflow-hidden transition-[max-height] duration-300 ease-out"
+                      style={{ maxHeight: open === i ? 240 : 0 }}
+                    >
+                      <div className="px-4 pb-4 pt-3 font-nunito text-sm text-gray-500 leading-relaxed border-t" style={{ borderColor: "#E8731A25" }}>
+                        {f.a}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeInUp>
         </div>
       </div>
     </section>

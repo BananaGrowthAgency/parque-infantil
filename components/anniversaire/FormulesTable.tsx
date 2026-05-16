@@ -1,4 +1,5 @@
 import Doodle from "../Doodle";
+import FadeInUp from "../ui/FadeInUp";
 
 const FORMULES = [
   { name: "MaxiLudy", price: "17,50€ / enfant", note: "De 4 à 15 enfants" },
@@ -52,7 +53,7 @@ const ROWS: { label: string; vals: string[] }[] = [
 function CheckPill() {
   return (
     <span
-      className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-700"
+      className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-bold shadow-clay-sm"
       style={{ backgroundColor: "#2E9E2E" }}
     >
       ✓
@@ -63,7 +64,7 @@ function CheckPill() {
 function CrossPill() {
   return (
     <span
-      className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-700"
+      className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white font-bold shadow-clay-sm"
       style={{ backgroundColor: "#D93030" }}
     >
       ✕
@@ -105,27 +106,13 @@ export default function FormulesTable() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="text-center mb-10">
-          <div className="inline-block relative">
-            <div
-              className="absolute inset-0 -skew-x-6 rounded"
-              style={{ backgroundColor: "#7B35A0" }}
-            />
-            <h2 className="relative font-fredoka text-2xl md:text-3xl font-700 text-white px-8 py-2 tracking-wide">
-              Choisissez votre formule 🎉
-            </h2>
-          </div>
-          <p className="font-nunito text-gray-500 mt-4 max-w-2xl mx-auto">
-            4 formules clé en main pour fêter l&apos;anniversaire de votre enfant sans stress.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-          <div className="overflow-x-auto">
+        <FadeInUp delay={0.1}>
+          <div className="bg-white rounded-clay-lg shadow-clay overflow-hidden">
+            <div className="overflow-x-auto">
             <table className="w-full min-w-[720px]">
               <thead>
                 <tr style={{ backgroundColor: "#E8731A" }}>
-                  <th className="text-left font-fredoka font-600 text-white px-5 py-4 text-sm">
+                  <th className="text-left font-fredoka font-bold text-white px-5 py-4 text-sm">
                     Formules
                   </th>
                   {FORMULES.map((f) => (
@@ -133,10 +120,10 @@ export default function FormulesTable() {
                       key={f.name}
                       className="px-5 py-4 text-center border-l border-white/20"
                     >
-                      <div className="font-fredoka font-700 text-white text-base leading-tight">
+                      <div className="font-fredoka font-extrabold text-white text-base leading-tight">
                         {f.name}
                       </div>
-                      <div className="font-fredoka font-600 text-white text-sm mt-1">
+                      <div className="font-fredoka font-bold text-white text-sm mt-1">
                         {f.price}
                       </div>
                       <div className="font-nunito text-white/85 text-[11px] mt-0.5">
@@ -149,7 +136,7 @@ export default function FormulesTable() {
               <tbody>
                 {ROWS.map((r, i) => (
                   <tr key={r.label} className={i % 2 ? "bg-orange-50/40" : "bg-white"}>
-                    <td className="px-5 py-3 font-fredoka font-600 text-gray-700 text-sm border-b border-gray-100 w-[22%]">
+                    <td className="px-5 py-3 font-fredoka font-bold text-gray-700 text-sm border-b border-gray-100 w-[22%]">
                       {r.label}
                     </td>
                     {r.vals.map((v, j) => (
@@ -164,31 +151,34 @@ export default function FormulesTable() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
-        </div>
+        </FadeInUp>
 
-        <div className="mt-6 bg-white/70 rounded-2xl p-5 text-sm font-nunito text-gray-600 leading-relaxed border border-orange-100">
-          <p
-            className="font-fredoka font-700 text-base md:text-lg leading-snug"
-            style={{ color: "#E8731A" }}
-          >
-            Ludynight : Vendredi soir de 19h30 à 22h00
-          </p>
-          <p className="mt-2">
-            Les parents peuvent apporter les collations, mais leur présence n&apos;est pas
-            obligatoire : l&apos;animateur assure la surveillance des enfants.
-          </p>
-          <p
-            className="mt-5 font-fredoka font-700 text-base md:text-lg leading-snug"
-            style={{ color: "#E8731A" }}
-          >
-            MaxiLudy, Ludykid ou formule Libre
-          </p>
-          <p className="mt-2">
-            La présence d&apos;un adulte accompagnant est obligatoire. 1€ par adulte
-            supplémentaire au-delà de 2.
-          </p>
-        </div>
+        <FadeInUp delay={0.15}>
+          <div className="mt-6 bg-white rounded-clay-lg shadow-clay-sm p-6 text-sm font-nunito text-gray-600 leading-relaxed">
+            <p
+              className="font-fredoka font-extrabold text-base md:text-lg leading-snug"
+              style={{ color: "#E8731A" }}
+            >
+              Ludynight : Vendredi soir de 19h30 à 22h00
+            </p>
+            <p className="mt-2">
+              Les parents peuvent apporter les collations, mais leur présence n&apos;est pas
+              obligatoire : l&apos;animateur assure la surveillance des enfants.
+            </p>
+            <p
+              className="mt-5 font-fredoka font-extrabold text-base md:text-lg leading-snug"
+              style={{ color: "#E8731A" }}
+            >
+              MaxiLudy, Ludykid ou formule Libre
+            </p>
+            <p className="mt-2">
+              La présence d&apos;un adulte accompagnant est obligatoire. 1€ par adulte
+              supplémentaire au-delà de 2.
+            </p>
+          </div>
+        </FadeInUp>
       </div>
     </section>
   );

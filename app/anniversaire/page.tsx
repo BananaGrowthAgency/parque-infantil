@@ -16,28 +16,24 @@ export const metadata = {
 };
 
 // Colores de fondo por sección — referenciados aquí para las olas de transición
-const BG_BODY = "#ffffff";
 const BG_FORMULES = "#FFF8EC"; // crema-amarillo
 const BG_DIMANCHE = "#F5EEFF"; // morado claro
-const BG_AVIS = "#EDFAED"; // verde claro
-const BG_PHOTOS = "#FFFAD6"; // amarillo claro
+const BG_PHOTOS_AVIS = "#ffffff"; // PhotosAnniv y Avis comparten fondo blanco (igual que home)
 const BG_INFOS = "#F9FAFB"; // gris-50
 
 export default function AnniversairePage() {
   return (
-    <main>
+    <main className="bg-[#FFF8EC]">
       <Navbar />
       <HeroAnniversaire />
       <StatsBarAnniversaire />
-      <Wave fill={BG_FORMULES} bg={BG_BODY} />
       <FormulesTable />
       <Wave fill={BG_DIMANCHE} bg={BG_FORMULES} />
       <Dimanche />
-      <Wave fill={BG_AVIS} bg={BG_DIMANCHE} />
-      <Avis />
-      <Wave fill={BG_PHOTOS} bg={BG_AVIS} />
+      <Wave fill={BG_PHOTOS_AVIS} bg={BG_DIMANCHE} />
       <PhotosAnniv />
-      <Wave fill={BG_INFOS} bg={BG_PHOTOS} />
+      <Avis />
+      <Wave fill={BG_INFOS} bg={BG_PHOTOS_AVIS} />
       <InfosAnniv />
       <Footer />
     </main>

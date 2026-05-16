@@ -11,7 +11,7 @@ export default function Logo({ size = "sm" }: { size?: "sm" | "md" | "lg" }) {
       width={h * 3}
       height={h}
       priority
-      className="select-none object-contain"
+      className="select-none object-contain rounded-clay"
       style={{ height: h, width: "auto", display: "block" }}
     />
   );

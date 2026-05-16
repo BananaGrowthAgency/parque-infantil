@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import SquiggleTitle from "./ui/SquiggleTitle";
 
 type Slide =
   | { type?: "image"; src: string; alt: string }
@@ -103,18 +104,9 @@ export default function Galerie() {
             "radial-gradient(ellipse 70% 80% at 50% 50%, #eaf8ea 0%, transparent 70%)",
         }}
       />
-      {/* Título — centrado, ancho contenido */}
-      <div className="flex justify-center mb-10 px-6">
-        <div className="inline-block relative">
-          <div
-            className="absolute inset-0 -skew-x-6 rounded shadow-lg"
-            style={{ backgroundColor: BRAND }}
-          />
-          <h2 className="relative font-fredoka text-2xl md:text-3xl font-700 text-white px-8 py-2 tracking-wide">
-            Ludykid en photos 📸
-          </h2>
-        </div>
-      </div>
+      <SquiggleTitle color={BRAND} className="relative z-10 mb-12 px-6">
+        Ludykid en photos 📸
+      </SquiggleTitle>
 
       {/* Carrusel — ancho total */}
       <div
@@ -158,7 +150,7 @@ export default function Galerie() {
                 aria-label={photo.alt}
                 aria-current={isCenter}
                 tabIndex={isCenter ? 0 : -1}
-                className="absolute rounded-2xl overflow-hidden shadow-2xl bg-black cursor-pointer group"
+                className="absolute rounded-clay-lg overflow-hidden bg-black cursor-pointer group"
                 style={{
                   width: CARD_W,
                   height: CARD_H,
@@ -169,8 +161,8 @@ export default function Galerie() {
                     ? "none"
                     : "transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease",
                   boxShadow: isCenter
-                    ? "0 32px 64px -16px rgba(46,158,46,0.4), 0 20px 40px -20px rgba(0,0,0,0.35)"
-                    : "0 16px 40px -16px rgba(0,0,0,0.45)",
+                    ? "0 36px 72px -18px rgba(46,158,46,0.45), 0 16px 32px -12px rgba(0,0,0,0.32), inset 0 -8px 0 0 rgba(0,0,0,0.18), inset 0 4px 0 0 rgba(255,255,255,0.25)"
+                    : "0 18px 40px -16px rgba(0,0,0,0.45)",
                 }}
               >
                 {photo.type === "video" ? (
@@ -236,7 +228,7 @@ export default function Galerie() {
           type="button"
           onClick={() => go(-1)}
           aria-label="Précédent"
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg hover:scale-110 active:scale-95 transition-transform"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full flex items-center justify-center text-2xl font-extrabold text-white shadow-clay-green hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300"
           style={{ backgroundColor: BRAND }}
         >
           ‹
@@ -247,7 +239,7 @@ export default function Galerie() {
           type="button"
           onClick={() => go(1)}
           aria-label="Suivant"
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg hover:scale-110 active:scale-95 transition-transform"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full flex items-center justify-center text-2xl font-extrabold text-white shadow-clay-green hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300"
           style={{ backgroundColor: BRAND }}
         >
           ›

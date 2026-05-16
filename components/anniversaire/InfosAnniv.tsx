@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Doodle from "../Doodle";
+import FadeInUp from "../ui/FadeInUp";
+import SquiggleTitle from "../ui/SquiggleTitle";
 
 const HORARIOS = [
   {
@@ -63,144 +65,157 @@ export default function InfosAnniv() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="text-center mb-12">
-          <div className="inline-block relative mb-3">
-            <div
-              className="absolute inset-0 -skew-x-6 rounded"
-              style={{ backgroundColor: "#E8731A" }}
-            />
-            <h2 className="relative font-fredoka text-3xl md:text-4xl font-700 text-white px-8 py-2 tracking-wide">
-              INFOS PRATIQUES
-            </h2>
-          </div>
-        </div>
+        <FadeInUp className="mb-12">
+          <SquiggleTitle color="#E8731A">Infos pratiques</SquiggleTitle>
+        </FadeInUp>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div
-            className="rounded-3xl p-7 border-2"
-            style={{ backgroundColor: "#FFF4EC", borderColor: "#E8731A40" }}
-          >
-            <h3 className="font-fredoka text-xl font-600 mb-5 flex items-center gap-2">
-              <span className="text-2xl">🕐</span>
-              <span style={{ color: "#E8731A" }}>Horaires</span>
-            </h3>
-            <ul className="space-y-4">
-              {HORARIOS.map((h) => (
-                <li key={h.dia}>
-                  <p className="font-fredoka font-700 text-sm" style={{ color: "#E8731A" }}>
-                    {h.dia}
-                  </p>
-                  <p className="font-nunito text-sm text-gray-600 whitespace-pre-line">
-                    {h.hora}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FadeInUp delay={0.05}>
+            <div
+              className="h-full rounded-clay-lg p-7 shadow-clay-orange transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#FFF4EC" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  🕐
+                </span>
+                <span style={{ color: "#E8731A" }}>Horaires</span>
+              </h3>
+              <ul className="space-y-4">
+                {HORARIOS.map((h) => (
+                  <li key={h.dia}>
+                    <p className="font-fredoka font-extrabold text-sm" style={{ color: "#E8731A" }}>
+                      {h.dia}
+                    </p>
+                    <p className="font-nunito text-sm text-gray-600 whitespace-pre-line">
+                      {h.hora}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeInUp>
 
-          <div
-            className="rounded-3xl p-7 border-2"
-            style={{ backgroundColor: "#F5EEFF", borderColor: "#7B35A040" }}
-          >
-            <h3 className="font-fredoka text-xl font-600 mb-5 flex items-center gap-2">
-              <span className="text-2xl">💡</span>
-              <span style={{ color: "#7B35A0" }}>À savoir</span>
-            </h3>
-            <ul className="space-y-3">
-              {ASABER.map((it) => (
-                <li
-                  key={it.text}
-                  className="flex items-start gap-3 font-nunito text-sm text-gray-700"
-                >
-                  <span
-                    className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "#7B35A020" }}
+          <FadeInUp delay={0.1}>
+            <div
+              className="h-full rounded-clay-lg p-7 shadow-clay-purple transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#F5EEFF" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  💡
+                </span>
+                <span style={{ color: "#7B35A0" }}>À savoir</span>
+              </h3>
+              <ul className="space-y-3">
+                {ASABER.map((it) => (
+                  <li
+                    key={it.text}
+                    className="flex items-start gap-3 font-nunito text-sm text-gray-700"
                   >
-                    {it.icon}
-                  </span>
-                  {it.text}
-                </li>
-              ))}
-            </ul>
-          </div>
+                    <span
+                      className="w-9 h-9 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-clay-inset"
+                      style={{ backgroundColor: "#7B35A01F" }}
+                    >
+                      {it.icon}
+                    </span>
+                    {it.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeInUp>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            className="rounded-3xl p-7 border-2"
-            style={{ backgroundColor: "#EDFAED", borderColor: "#2E9E2E40" }}
-          >
-            <h3 className="font-fredoka text-xl font-600 mb-5 flex items-center gap-2">
-              <span className="text-2xl">📍</span>
-              <span style={{ color: "#2E9E2E" }}>Adresse</span>
-            </h3>
-            <div className="font-nunito text-sm text-gray-600 mb-5 leading-relaxed">
-              <p className="font-fredoka font-700 text-gray-800 text-base">Ruaudin, 72230</p>
-              <p>Rte du Petit Bel Oeuvre</p>
-              <p>ZAC des Hunaudières</p>
-            </div>
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-2xl bg-white px-4 py-3 border-2 transition-transform hover:scale-105"
-              style={{ borderColor: "#2E9E2E30" }}
+          <FadeInUp delay={0.15}>
+            <div
+              className="h-full flex flex-col rounded-clay-lg p-7 shadow-clay-green transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#EDFAED" }}
             >
-              <span className="text-2xl">🗺️</span>
-              <span
-                className="font-fredoka text-sm font-600"
-                style={{ color: "#2E9E2E" }}
-              >
-                Voir sur Google Maps →
-              </span>
-            </a>
-          </div>
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  📍
+                </span>
+                <span style={{ color: "#2E9E2E" }}>Adresse</span>
+              </h3>
 
-          <div
-            className="rounded-3xl p-7 border-2"
-            style={{ backgroundColor: "#FFF8DB", borderColor: "#E8731A40" }}
-          >
-            <h3 className="font-fredoka text-xl font-600 mb-5 flex items-center gap-2">
-              <span className="text-2xl">❓</span>
-              <span style={{ color: "#E8731A" }}>Questions ?</span>
-            </h3>
-            <div className="space-y-2">
-              {FAQS.map((f, i) => (
-                <div
-                  key={f.q}
-                  className="rounded-2xl overflow-hidden bg-white border"
-                  style={{ borderColor: "#E8731A25" }}
-                >
-                  <button
-                    onClick={() => setOpen(open === i ? null : i)}
-                    className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 hover:bg-orange-50 transition-colors"
-                    aria-expanded={open === i}
-                  >
-                    <span className="font-fredoka text-sm font-500 text-gray-800 leading-snug">
-                      {f.q}
-                    </span>
-                    <span
-                      className="font-fredoka font-700 flex-shrink-0 text-lg transition-transform"
-                      style={{
-                        color: "#E8731A",
-                        transform: open === i ? "rotate(45deg)" : "none",
-                      }}
-                    >
-                      +
-                    </span>
-                  </button>
-                  {open === i && (
-                    <div
-                      className="px-4 pb-4 font-nunito text-sm text-gray-500 leading-relaxed border-t"
-                      style={{ borderColor: "#E8731A25" }}
-                    >
-                      <p className="pt-3">{f.a}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ludykid+Ruaudin+72230"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir l'adresse Ludykid dans Google Maps"
+                className="group relative block flex-1 min-h-[220px] rounded-clay overflow-hidden shadow-clay-sm bg-white transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+              >
+                <iframe
+                  title="Carte Ludykid Ruaudin"
+                  src="https://maps.google.com/maps?q=Ludykid+Ruaudin+72230&z=15&output=embed"
+                  className="absolute inset-0 w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  style={{ pointerEvents: "none" }}
+                />
+                <span className="absolute inset-0 ring-2 ring-transparent group-hover:ring-lk-green/40 rounded-clay transition-shadow" />
+              </a>
+
+              <p className="mt-5 font-nunito text-sm text-gray-700 leading-relaxed">
+                <span className="font-fredoka font-extrabold text-gray-800 text-base">📍 Ruaudin, 72230</span>
+                <br />
+                Rte du Petit Bel Oeuvre
+                <br />
+                ZAC des Hunaudières
+              </p>
             </div>
-          </div>
+          </FadeInUp>
+
+          <FadeInUp delay={0.2}>
+            <div
+              className="h-full rounded-clay-lg p-7 shadow-clay-yellow transition-transform duration-300 hover:-translate-y-1"
+              style={{ backgroundColor: "#FFF8DB" }}
+            >
+              <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-clay-inset bg-white/70">
+                  ❓
+                </span>
+                <span style={{ color: "#E8731A" }}>Questions ?</span>
+              </h3>
+              <div className="space-y-2">
+                {FAQS.map((f, i) => (
+                  <div
+                    key={f.q}
+                    className="rounded-clay overflow-hidden bg-white shadow-clay-sm"
+                  >
+                    <button
+                      onClick={() => setOpen(open === i ? null : i)}
+                      className="w-full text-left px-4 py-3 flex items-center justify-between gap-3 hover:bg-orange-50 transition-colors"
+                      aria-expanded={open === i}
+                    >
+                      <span className="font-fredoka text-sm font-semibold text-gray-800 leading-snug">
+                        {f.q}
+                      </span>
+                      <span
+                        className="font-fredoka font-extrabold flex-shrink-0 text-lg transition-transform duration-300"
+                        style={{
+                          color: "#E8731A",
+                          transform: open === i ? "rotate(45deg)" : "none",
+                        }}
+                      >
+                        +
+                      </span>
+                    </button>
+                    <div
+                      className="overflow-hidden transition-[max-height] duration-300 ease-out"
+                      style={{ maxHeight: open === i ? 240 : 0 }}
+                    >
+                      <div className="px-4 pb-4 pt-3 font-nunito text-sm text-gray-500 leading-relaxed border-t" style={{ borderColor: "#E8731A25" }}>
+                        {f.a}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeInUp>
         </div>
       </div>
     </section>
