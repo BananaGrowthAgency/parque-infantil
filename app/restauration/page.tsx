@@ -2,7 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Doodle from "@/components/Doodle";
 import FadeInUp from "@/components/ui/FadeInUp";
+import FadeInOnMount from "@/components/ui/FadeInOnMount";
 import SquiggleTitle from "@/components/ui/SquiggleTitle";
+import CategoryCard from "@/components/restauration/CategoryCard";
 import { CATEGORIES } from "@/components/restauration/data";
 
 export const metadata = {
@@ -53,51 +55,27 @@ export default function RestaurationPage() {
       <section className="pb-16 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {CATEGORIES.map((cat, i) => (
-            <FadeInUp
+            <FadeInOnMount
               key={cat.slug}
-              delay={i * 0.05}
+              delay={i * 0.08}
               className={i === CATEGORIES.length - 1 && CATEGORIES.length % 2 === 1 ? "md:col-span-2 md:max-w-md md:mx-auto md:w-full" : ""}
             >
-              <div
-                className={`h-full rounded-clay-lg p-8 ${cat.shadow} bg-white transition-transform duration-300 hover:-translate-y-1`}
-              >
-                <h2 className="font-fredoka text-2xl md:text-3xl font-extrabold text-gray-800 text-center mb-6">
-                  {cat.label}
-                </h2>
-                <div className="flex justify-center mb-6">
-                  <div
-                    className="w-28 h-28 rounded-full flex items-center justify-center text-5xl shadow-clay-inset"
-                    style={{ backgroundColor: cat.softBg }}
-                    aria-hidden="true"
-                  >
-                    {cat.emoji}
-                  </div>
-                </div>
-                <div className="flex justify-center">
-                  <a
-                    href={`/restauration/${cat.slug}`}
-                    className="font-fredoka font-semibold px-6 py-2 rounded-full text-white shadow-clay-sm transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
-                    style={{ backgroundColor: cat.color }}
-                  >
-                    En savoir plus
-                  </a>
-                </div>
-              </div>
-            </FadeInUp>
+              <CategoryCard cat={cat} />
+            </FadeInOnMount>
           ))}
         </div>
       </section>
 
       {/* Paiements acceptés */}
       <section className="pb-20 px-6">
-        <FadeInUp className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-clay p-5 shadow-clay-sm text-center">
             <p className="font-fredoka text-gray-700 text-base md:text-lg">
               <span className="font-extrabold text-lk-green">Paiements acceptés :</span>{" "}
               Carte bancaire · Espèces · Chèques vacances
             </p>
           </div>
-        </FadeInUp>
+        </div>
       </section>
 
       <Footer waveBg="#F4FBF4" />

@@ -5,7 +5,7 @@ export type Variant = { name: string; description?: string };
 export type Item = {
   name: string;
   note?: string;
-  subnote?: string;
+  subnote?: string | string[];
   price?: string;
   prices?: SizedPrice[];
   supplements?: Supplement[];
@@ -96,8 +96,10 @@ export const CATEGORIES: Categorie[] = [
           },
           {
             name: "Sirop à l'eau",
-            subnote:
-              "(Fraise, pêche, citron, framboise, banane, kiwi, cerise, fruit de la passion, menthe glaciale, coco, vanille)",
+            subnote: [
+              "(Fraise, pêche, citron, framboise, banane, kiwi,",
+              "cerise, fruit de la passion, menthe glaciale, coco, vanille)",
+            ],
             prices: [
               { size: "30 cL (verre)", price: "1,20 €" },
               { size: "1 L (pichet)",  price: "2,90 €" },
@@ -115,15 +117,19 @@ export const CATEGORIES: Categorie[] = [
           },
           {
             name: "Canette 33 cL",
-            subnote:
-              "Fanta Orange, Sprite, Fuzetea pêche, Coca (normal, zéro, cherry), Tropico, Orangina, Bière sans alcool, Volvic Citron, Perrier",
+            subnote: [
+              "Fanta Orange, Sprite, Fuzetea pêche, Coca (normal, zéro, cherry),",
+              "Tropico, Orangina, Bière sans alcool, Volvic Citron, Perrier",
+            ],
             price: "2,40 €",
           },
           {
             name: "Bouteille 50 cL",
             note: "(sauf FuzeTea 40 cL)",
-            subnote:
-              "Fanta Orange, Sprite, Fuzetea pêche, Coca (normal, zéro, cherry), Tropico, Orangina",
+            subnote: [
+              "Fanta Orange, Sprite, Fuzetea pêche,",
+              "Coca (normal, zéro, cherry), Tropico, Orangina",
+            ],
             price: "3,00 €",
           },
           { name: "Perrier sirop", prices: [{ size: "33 cL", price: "2,60 €" }] },

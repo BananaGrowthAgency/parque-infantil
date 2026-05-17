@@ -18,12 +18,13 @@ const RULES_KIDS = [
 
 export default function InfosUtilesContent() {
   return (
-    <div className="font-nunito text-gray-700 space-y-5 leading-relaxed">
+    <div className="font-nunito text-gray-700 text-base md:text-lg space-y-6 leading-relaxed">
       <p>
         <span className="font-semibold text-gray-900">Wifi gratuite</span>, le QR-code d&apos;accès est disponible à l&apos;accueil.
       </p>
       <p>
-        <span className="font-semibold text-gray-900">Jeux de société</span> disponibles à l&apos;accueil (en échange d&apos;une pièce d&apos;identité).
+        <span className="font-semibold text-gray-900">Jeux de société</span>{" "}
+        disponibles à l&apos;accueil (en échange d&apos;une pièce d&apos;identité).
       </p>
       <p>
         <span className="font-semibold text-gray-900">
@@ -33,15 +34,15 @@ export default function InfosUtilesContent() {
       </p>
 
       <div className="pt-3">
-        <h3 className="font-fredoka text-xl md:text-2xl font-extrabold" style={{ color: COLOR }}>
+        <h3 className="font-fredoka text-2xl md:text-3xl font-extrabold" style={{ color: COLOR }}>
           Les règles importantes :
         </h3>
-        <p className="italic text-gray-500 text-sm mt-1">
+        <p className="italic text-gray-500 text-base mt-1">
           (le règlement intérieur est consultable à l&apos;entrée du parc)
         </p>
       </div>
 
-      <ul className="list-disc pl-5 space-y-2">
+      <ul className="list-disc pl-6 space-y-3">
         {RULES_GENERAL.map((r, i) => (
           <li key={i}>{r}</li>
         ))}
@@ -51,14 +52,14 @@ export default function InfosUtilesContent() {
         Les enfants sont sous la responsabilité des adultes accompagnants, merci de leur rappeler qu&apos;il est interdit de :
       </p>
 
-      <ul className="list-disc pl-5 space-y-2">
+      <ul className="list-disc pl-6 space-y-3">
         {RULES_KIDS.map((r, i) => (
           <li key={i}>{r}</li>
         ))}
       </ul>
 
       <p
-        className="font-fredoka text-xl md:text-2xl font-extrabold text-center pt-4"
+        className="font-fredoka text-2xl md:text-3xl font-extrabold text-center pt-4"
         style={{ color: COLOR }}
       >
         Merci à tous ! 💙
