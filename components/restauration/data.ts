@@ -164,7 +164,7 @@ export const CATEGORIES: Categorie[] = [
   {
     slug: "plaisirs-sales",
     label: "Plaisirs Salés",
-    emoji: "🍔",
+    emoji: "🍕",
     color: "#2E9E2E",
     softBg: "#E8F7E8",
     shadow: "shadow-clay-green",

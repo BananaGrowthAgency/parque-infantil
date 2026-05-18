@@ -9,23 +9,13 @@ type Slide =
   | { type?: "image"; src: string; alt: string }
   | { type: "video"; src: string; alt: string };
 
-// TODO: el usuario enviará fotos buenas específicas de anniversaire — mientras tanto reutilizamos las de la galería home
 const photos: Slide[] = [
-  { src: "/images/tobogan-azul.jpg", alt: "Toboggans bleus" },
-  { src: "/images/pelotas2.jpg",     alt: "Piscine à balles interactive" },
-  { src: "/images/IMG_20251018_113459_1.jpg", alt: "Ludykid en action" },
-  { src: "/images/seccion2.jpg",     alt: "Structure multi-jeux" },
-  { src: "/images/autos.jpg",        alt: "Autos tamponneuses" },
-  { src: "/images/1740403305572.jpg", alt: "Ambiance Ludykid" },
-  { src: "/images/seccion1.jpg",     alt: "Bébé dans les balles" },
-  { src: "/images/tunel.jpg",        alt: "Tunnel d'exploration" },
-  { type: "video", src: "/images/VID_20260404_120342.mp4", alt: "Visite du parc" },
-  { src: "/images/seccion3.jpg",     alt: "Trampolines" },
-  { src: "/images/tobogan-tubo.jpg", alt: "Toboggan tube" },
-  { src: "/images/cumple.png",       alt: "Fête d'anniversaire" },
-  { src: "/images/107904131_565022047520507_1011703251537892967_n.jpg", alt: "Moments en famille" },
-  { src: "/images/logo-foto.jpg",    alt: "Ludykid" },
-  { src: "/images/seccion4.png",     alt: "Espace famille" },
+  { type: "video", src: "/images/anniv-fiesta-1.mp4", alt: "Moment de fête chez Ludykid" },
+  { type: "video", src: "/images/anniv-toboggan.mp4", alt: "Toboggan Ludykid" },
+  { type: "video", src: "/images/anniv-fiesta-2.mp4", alt: "Soufflage des bougies" },
+  { type: "video", src: "/images/anniv-autos.mp4",    alt: "Autos tamponneuses" },
+  { type: "video", src: "/images/anniv-fiesta-3.mp4", alt: "Les enfants fêtent ensemble" },
+  { type: "video", src: "/images/anniv-laser.mp4",    alt: "Laser game" },
 ];
 
 const BRAND = "#2E9E2E";
@@ -42,6 +32,7 @@ export default function PhotosAnniv() {
   const [paused, setPaused] = useState(false);
   const [drag, setDrag] = useState<{ startX: number; dx: number } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
   const total = photos.length;
 
   const go = useCallback(
@@ -81,6 +72,17 @@ export default function PhotosAnniv() {
     else if (drag.dx < -SWIPE_THRESHOLD) go(1);
     setDrag(null);
   };
+
+  useEffect(() => {
+    videoRefs.current.forEach((vid, i) => {
+      if (i === index) {
+        vid.currentTime = 0;
+        vid.play().catch(() => {});
+      } else {
+        vid.pause();
+      }
+    });
+  }, [index]);
 
   const offsetOf = (i: number) => {
     let d = i - index;
@@ -176,13 +178,16 @@ export default function PhotosAnniv() {
               >
                 {photo.type === "video" ? (
                   <video
+                    ref={(el) => {
+                      if (el) videoRefs.current.set(i, el);
+                      else videoRefs.current.delete(i);
+                    }}
                     src={photo.src}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    autoPlay={isCenter}
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     draggable={false}
                   />
                 ) : (

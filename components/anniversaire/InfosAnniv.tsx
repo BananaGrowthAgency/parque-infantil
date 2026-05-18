@@ -87,8 +87,16 @@ export default function InfosAnniv() {
                     <p className="font-fredoka font-extrabold text-sm" style={{ color: "#E8731A" }}>
                       {h.dia}
                     </p>
-                    <p className="font-nunito text-sm text-gray-600 whitespace-pre-line">
-                      {h.hora}
+                    <p className="font-nunito text-sm text-gray-600">
+                      {h.hora.split("\n").map((line, j) => {
+                        const BOLD = "Juillet et août :";
+                        const node = line.startsWith(BOLD) ? (
+                          <span key={j}><strong>{BOLD}</strong>{line.slice(BOLD.length)}</span>
+                        ) : (
+                          <span key={j}>{line}</span>
+                        );
+                        return j === 0 ? node : <span key={j}><br />{node.props.children}</span>;
+                      })}
                     </p>
                   </li>
                 ))}

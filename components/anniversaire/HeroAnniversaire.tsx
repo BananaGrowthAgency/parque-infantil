@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
@@ -10,15 +9,16 @@ export default function HeroAnniversaire() {
   return (
     <section className="relative pt-16 bg-[#FFF8EC]">
       <div className="relative overflow-hidden" style={{ height: "72vh", minHeight: 500 }}>
-        <Image
-          src="/images/cumple.png"
-          alt="Anniversaire enfant Ludykid"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
+        <video
+          src="/images/hero-anniversaire.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="Anniversaire enfant chez Ludykid"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
-            objectPosition: "center 40%",
             WebkitMaskImage:
               "linear-gradient(to bottom, black 88%, rgba(0,0,0,0.55) 96%, transparent 100%)",
             maskImage:

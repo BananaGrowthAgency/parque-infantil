@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
 
-type Tone = "orange" | "purple" | "green" | "yellow" | "white";
+type Tone = "orange" | "purple" | "green" | "yellow" | "white" | "blue";
 type Size = "sm" | "md" | "lg";
 
 const tones: Record<
@@ -46,6 +46,14 @@ const tones: Record<
     dotBg: "bg-lk-orange",
     dotText: "text-white",
     ring: "ring-lk-orange/30",
+  },
+  blue: {
+    bg: "bg-[#1877F2]",
+    text: "text-white",
+    shadow: "shadow-clay-blue",
+    dotBg: "bg-white",
+    dotText: "text-[#1877F2]",
+    ring: "ring-white/40",
   },
 };
 

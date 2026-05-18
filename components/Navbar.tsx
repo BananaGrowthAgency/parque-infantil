@@ -23,7 +23,7 @@ export default function Navbar() {
     { label: "Trampoline parc", href: "/#atracciones", hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
     { label: "Anniversaire",    href: "/anniversaire", hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
     { label: "Restauration",    href: "/restauration",  hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
-    { label: "Tarifs & Horaires", href: "/#precios",   hover: "hover:text-lk-yellow", active: "text-lk-yellow", softBg: "#FFF8CC" },
+    { label: "Tarifs & Horaires", href: "/tarifs",     hover: "hover:text-lk-yellow", active: "text-lk-yellow", softBg: "#FFF8CC" },
     { label: "Garderie",        href: "/#infos",       hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
     { label: "Contact",         href: "/#infos",       hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
   ];

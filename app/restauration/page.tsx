@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Doodle from "@/components/Doodle";
 import FadeInUp from "@/components/ui/FadeInUp";
 import FadeInOnMount from "@/components/ui/FadeInOnMount";
-import SquiggleTitle from "@/components/ui/SquiggleTitle";
+import HeroRestauracion from "@/components/restauration/HeroRestauracion";
 import CategoryCard from "@/components/restauration/CategoryCard";
 import { CATEGORIES } from "@/components/restauration/data";
 
@@ -17,42 +16,32 @@ export default function RestaurationPage() {
   return (
     <main className="bg-[#F4FBF4] min-h-screen">
       <Navbar />
+      <HeroRestauracion />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-12 px-6 overflow-hidden">
-        <div className="absolute top-12 left-8 opacity-20 animate-float pointer-events-none">
-          <Doodle type="star" color="#2E9E2E" size={65} />
-        </div>
-        <div className="absolute top-24 right-12 opacity-15 animate-float-slow pointer-events-none">
-          <Doodle type="cloud" color="#E8731A" size={80} />
-        </div>
-        <div className="absolute bottom-6 left-16 opacity-20 animate-wiggle pointer-events-none">
-          <Doodle type="heart" color="#FFD600" size={56} />
-        </div>
-        <div className="absolute top-32 right-24 opacity-15 animate-spin-slow pointer-events-none">
-          <Doodle type="circle" color="#7B35A0" size={50} />
-        </div>
-
-        <div className="max-w-4xl mx-auto relative">
-          <FadeInUp className="mb-10">
-            <SquiggleTitle color="#2E9E2E">Ludy&apos;cafet 🍴</SquiggleTitle>
-          </FadeInUp>
-
-          <FadeInUp delay={0.1}>
-            <div className="bg-white rounded-clay-lg p-8 shadow-clay text-center">
-              <p className="font-nunito text-gray-700 text-base md:text-lg leading-relaxed mb-3">
+      {/* Barra informativa — misma posición que StatsBar en home */}
+      <div className="relative z-10 -mt-10 sm:-mt-14 px-4 sm:px-8 lg:px-16 mb-10">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <FadeInUp delay={0.05}>
+            <div className="h-full flex items-start gap-4 px-6 py-5 rounded-clay-lg bg-white border-[3px] border-lk-green shadow-clay-green">
+              <span className="text-2xl mt-0.5">🍽️</span>
+              <p className="font-nunito text-gray-700 text-sm md:text-base leading-relaxed">
                 Retrouvez ici la carte des consommations : boissons fraîches, boissons chaudes, plaisirs sucrés ou salés…
               </p>
-              <p className="font-nunito text-gray-600 text-sm md:text-base italic">
-                Nous vous rappelons que les goûters et boissons apportés de l&apos;extérieur sont interdits dans l&apos;enceinte du parc !
+            </div>
+          </FadeInUp>
+          <FadeInUp delay={0.12}>
+            <div className="h-full flex items-start gap-4 px-6 py-5 rounded-clay-lg bg-white border-[3px] border-lk-orange shadow-clay-orange">
+              <span className="text-2xl mt-0.5">🚫</span>
+              <p className="font-nunito text-gray-600 text-sm md:text-base leading-relaxed italic">
+                Les goûters et boissons apportés de l&apos;extérieur sont interdits dans l&apos;enceinte du parc.
               </p>
             </div>
           </FadeInUp>
         </div>
-      </section>
+      </div>
 
       {/* Grid de catégories */}
-      <section className="pb-16 px-6">
+      <section id="carte" className="pb-16 px-6 pt-2">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {CATEGORIES.map((cat, i) => (
             <FadeInOnMount
