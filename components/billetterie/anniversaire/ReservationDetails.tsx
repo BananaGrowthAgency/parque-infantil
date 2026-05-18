@@ -66,17 +66,21 @@ function OptionCard({
     <button
       type="button"
       onClick={onClick}
-      className={`flex flex-col items-center gap-1.5 p-2 rounded-clay border-2 text-center transition-all duration-200 hover:scale-[1.04] active:scale-95 min-w-[80px] ${
+      className={`flex flex-col items-center gap-2 rounded-clay border-2 text-center transition-all duration-200 hover:scale-[1.04] active:scale-95 w-[100px] overflow-hidden ${
         selected ? "border-[#1877F2] bg-[#1877F2]/10 ring-2 ring-[#1877F2]/30" : "border-gray-200 bg-white hover:border-[#1877F2]/40"
       }`}
     >
-      <span className="text-2xl leading-none">{emoji}</span>
-      <span className={`font-nunito text-[10px] leading-tight ${selected ? "text-[#1877F2] font-bold" : "text-gray-600"}`}>
-        {label}
-      </span>
-      {extra ? (
-        <span className="font-fredoka font-bold text-[9px] text-lk-orange">+{extra.toFixed(2)} €</span>
-      ) : null}
+      <div className={`w-full h-[72px] flex items-center justify-center text-5xl ${selected ? "bg-[#1877F2]/10" : "bg-gray-50"}`}>
+        {emoji}
+      </div>
+      <div className="px-1.5 pb-2 space-y-0.5">
+        <span className={`block font-nunito text-[10px] leading-tight ${selected ? "text-[#1877F2] font-bold" : "text-gray-600"}`}>
+          {label}
+        </span>
+        {extra ? (
+          <span className="block font-fredoka font-bold text-[9px] text-lk-orange">+{extra.toFixed(2)} €</span>
+        ) : null}
+      </div>
     </button>
   );
 }

@@ -29,6 +29,7 @@ const secciones = [
     doodle: { type: "star" as const, color: "#E8731A" },
     objectPosition: "center 35%",
     cta: "Réserver maintenant",
+    ctaHref: "#infos",
     claySh: "shadow-clay-orange",
     tone: "orange" as Tone,
   },
@@ -51,6 +52,7 @@ const secciones = [
     doodle: { type: "swirl" as const, color: "#7B35A0" },
     objectPosition: "center center",
     cta: "Réserver maintenant",
+    ctaHref: "#infos",
     claySh: "shadow-clay-purple",
     tone: "purple" as Tone,
   },
@@ -73,6 +75,7 @@ const secciones = [
     doodle: { type: "zigzag" as const, color: "#2E9E2E" },
     objectPosition: "center 20%",
     cta: "En savoir plus",
+    ctaHref: "#infos",
     claySh: "shadow-clay-green",
     tone: "green" as Tone,
   },
@@ -96,6 +99,7 @@ const secciones = [
     doodle: { type: "dots" as const, color: "#FFD600" },
     objectPosition: "center center",
     cta: "En savoir plus",
+    ctaHref: "/restauration",
     claySh: "shadow-clay-yellow",
     tone: "yellow" as Tone,
   },
@@ -180,7 +184,7 @@ export default function Atracciones() {
                     ))}
                   </ul>
 
-                  <ClayButton href="#infos" tone={s.tone} size="md">
+                  <ClayButton href={s.ctaHref} tone={s.tone} size="md">
                     {s.cta}
                   </ClayButton>
                 </ClayCard>

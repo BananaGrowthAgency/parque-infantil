@@ -87,7 +87,7 @@ export default function Cumple() {
               </p>
 
               <div className="flex items-center gap-4 flex-wrap">
-                <ClayButton href="#precios" tone="purple" size="md">
+                <ClayButton href="/anniversaire" tone="purple" size="md">
                   Découvrir nos formules
                 </ClayButton>
               </div>

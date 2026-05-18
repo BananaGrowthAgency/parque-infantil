@@ -49,8 +49,11 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
               className="flex items-center justify-center gap-3 flex-wrap"
             >
+              <ClayButton href="/anniversaire" tone="purple" size="lg">
+                Réserver votre anniversaire
+              </ClayButton>
               <ClayButton href="/billetterie" tone="orange" size="lg">
-                Réservez maintenant
+                Billetterie
               </ClayButton>
             </motion.div>
           </div>

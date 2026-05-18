@@ -114,7 +114,7 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
               <ul className="space-y-3 text-gray-200 text-sm font-nunito">
                 <li className="flex items-start gap-2">
                   <span aria-hidden="true">📍</span>
-                  <span>ZAC des Hunaudières, Rte du Petit Bel Oeuvre, 72230 Ruaudin, Francia</span>
+                  <span>ZAC des Hunaudières, Rte du Petit Bel Oeuvre, 72230 Ruaudin, France</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span aria-hidden="true">📞</span>

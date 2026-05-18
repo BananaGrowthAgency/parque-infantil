@@ -114,8 +114,6 @@ export default function Galerie() {
         tabIndex={0}
         aria-roledescription="carousel"
         aria-label="Galerie Ludykid"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -223,27 +221,6 @@ export default function Galerie() {
           })}
         </div>
 
-        {/* Flecha izquierda */}
-        <button
-          type="button"
-          onClick={() => go(-1)}
-          aria-label="Précédent"
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full flex items-center justify-center text-2xl font-extrabold text-white shadow-clay-green hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300"
-          style={{ backgroundColor: BRAND }}
-        >
-          ‹
-        </button>
-
-        {/* Flecha derecha */}
-        <button
-          type="button"
-          onClick={() => go(1)}
-          aria-label="Suivant"
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full flex items-center justify-center text-2xl font-extrabold text-white shadow-clay-green hover:scale-110 hover:-translate-y-1 active:scale-95 transition-transform duration-300"
-          style={{ backgroundColor: BRAND }}
-        >
-          ›
-        </button>
       </div>
 
       {/* Dots */}
