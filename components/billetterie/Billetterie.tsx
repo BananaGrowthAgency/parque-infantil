@@ -1,167 +1,205 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import BilletterieHeader from "./BilletterieHeader";
 
-type Ticket = {
+type Option = {
   id: string;
-  title: string;
-  subtitle: string;
+  label: string;
   description: string;
   price: number;
+};
+
+type Group = {
+  id: string;
+  title: string;
+  subtitle?: string;
   emoji: string;
   accent: string;
   bg: string;
   border: string;
   shadow: string;
+  options: Option[];
 };
 
-const TICKETS: Ticket[] = [
+const GROUPS: Group[] = [
   {
-    id: "carte-1-3",
-    title: "Carte 10 entrées",
-    subtitle: "1 à 3 ans",
-    description: "Carte de 10 entrées pour les 1–3 ans. Pensez à l'imprimer ou à la conserver sur votre smartphone !",
-    price: 65,
-    emoji: "🎟️",
-    accent: "#7B35A0",
-    bg: "#F5EEFF",
-    border: "border-lk-purple",
-    shadow: "shadow-clay-purple",
-  },
-  {
-    id: "carte-4-12",
-    title: "Carte 10 entrées",
-    subtitle: "4 à 12 ans",
-    description: "Carte de 10 entrées pour les 4–12 ans. Pensez à l'imprimer ou à la conserver sur votre smartphone !",
-    price: 90,
-    emoji: "🎟️",
-    accent: "#2E9E2E",
-    bg: "#EAF8EA",
-    border: "border-lk-green",
-    shadow: "shadow-clay-green",
-  },
-  {
-    id: "accompagnateur",
-    title: "Entrée accompagnateur",
-    subtitle: "Web",
-    description: "Billet accompagnateur — utilisable n'importe quel jour, pour la durée de votre choix. Valable 1 an à partir de la date d'achat.",
-    price: 1,
-    emoji: "👨‍👩‍👧",
-    accent: "#E8731A",
-    bg: "#FFF4EC",
-    border: "border-lk-orange",
-    shadow: "shadow-clay-orange",
-  },
-  {
-    id: "entree-4-12",
-    title: "Entrée 4–12 ans",
-    subtitle: "Web · Durée illimitée",
-    description: "Billet pour les enfants de 4 à 12 ans. Utilisable n'importe quel jour, pour la durée de votre choix. Valable 1 an à partir de la date d'achat.",
-    price: 10.5,
-    emoji: "🧗",
-    accent: "#2E9E2E",
-    bg: "#EAF8EA",
-    border: "border-lk-green",
-    shadow: "shadow-clay-green",
-  },
-  {
-    id: "entree-1-3",
-    title: "Entrée 1–3 ans",
-    subtitle: "Web · Durée illimitée",
-    description: "Billet pour les enfants de 1 à 3 ans. Utilisable n'importe quel jour, pour la durée de votre choix. Valable 1 an à partir de la date d'achat.",
-    price: 7.5,
+    id: "1-3",
+    title: "Enfants 1 à 3 ans",
+    subtitle: "Entrée individuelle ou carte 10 entrées",
     emoji: "🧒",
     accent: "#7B35A0",
     bg: "#F5EEFF",
     border: "border-lk-purple",
     shadow: "shadow-clay-purple",
+    options: [
+      {
+        id: "entree-1-3",
+        label: "Entrée 1–3 ans",
+        description: "Web · Durée illimitée · Valable 1 an à partir de l'achat",
+        price: 7.5,
+      },
+      {
+        id: "carte-1-3",
+        label: "Carte 10 entrées 1–3 ans",
+        description: "10 entrées · à conserver sur smartphone ou imprimer",
+        price: 65,
+      },
+    ],
+  },
+  {
+    id: "4-12",
+    title: "Enfants 4 à 12 ans",
+    subtitle: "Entrée individuelle ou carte 10 entrées",
+    emoji: "🧗",
+    accent: "#2E9E2E",
+    bg: "#EAF8EA",
+    border: "border-lk-green",
+    shadow: "shadow-clay-green",
+    options: [
+      {
+        id: "entree-4-12",
+        label: "Entrée 4–12 ans",
+        description: "Web · Durée illimitée · Valable 1 an à partir de l'achat",
+        price: 10.5,
+      },
+      {
+        id: "carte-4-12",
+        label: "Carte 10 entrées 4–12 ans",
+        description: "10 entrées · à conserver sur smartphone ou imprimer",
+        price: 90,
+      },
+    ],
+  },
+  {
+    id: "accompagnateur",
+    title: "Accompagnateur",
+    subtitle: "Adulte accompagnant",
+    emoji: "👨‍👩‍👧",
+    accent: "#E8731A",
+    bg: "#FFF4EC",
+    border: "border-lk-orange",
+    shadow: "shadow-clay-orange",
+    options: [
+      {
+        id: "accompagnateur",
+        label: "Entrée accompagnateur",
+        description: "Web · n'importe quel jour · durée libre · valable 1 an",
+        price: 1,
+      },
+    ],
   },
 ];
 
+const ALL_OPTIONS = GROUPS.flatMap((g) =>
+  g.options.map((o) => ({ ...o, groupTitle: g.title, accent: g.accent }))
+);
+
+function formatPrice(price: number): string {
+  return price % 1 === 0 ? `${price}` : price.toFixed(2).replace(".", ",");
+}
+
 export default function Billetterie() {
-  const pathname = usePathname();
   const [qtys, setQtys] = useState<Record<string, number>>(
-    Object.fromEntries(TICKETS.map((t) => [t.id, 0]))
+    Object.fromEntries(ALL_OPTIONS.map((o) => [o.id, 0]))
   );
 
   const change = (id: string, delta: number) =>
     setQtys((prev) => ({ ...prev, [id]: Math.max(0, prev[id] + delta) }));
 
-  const total = TICKETS.reduce((sum, t) => sum + t.price * qtys[t.id], 0);
+  const total = ALL_OPTIONS.reduce((sum, o) => sum + o.price * qtys[o.id], 0);
   const totalItems = Object.values(qtys).reduce((a, b) => a + b, 0);
 
   return (
     <div className="max-w-5xl mx-auto px-6 pb-20">
-
       <BilletterieHeader />
 
       <div className="flex flex-col lg:flex-row gap-8 items-start">
-
-        {/* Liste de billets */}
-        <div className="flex-1 space-y-4">
-          {TICKETS.map((ticket, i) => (
+        {/* Groupes de billets */}
+        <div className="flex-1 space-y-5 w-full">
+          {GROUPS.map((group, i) => (
             <motion.div
-              key={ticket.id}
+              key={group.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.07, duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
-              className={`rounded-clay-lg border-[3px] ${ticket.border} ${ticket.shadow} overflow-hidden`}
-              style={{ backgroundColor: ticket.bg }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+              className={`rounded-clay-lg border-[3px] ${group.border} ${group.shadow} overflow-hidden bg-white`}
             >
-              <div className="flex items-start gap-4 p-5">
-                {/* Emoji / icono */}
-                <div
-                  className="shrink-0 w-14 h-14 rounded-clay flex items-center justify-center text-2xl shadow-clay-inset bg-white/70"
-                >
-                  {ticket.emoji}
+              {/* En-tête coloré */}
+              <div
+                className="px-5 py-4 flex items-center gap-4"
+                style={{ backgroundColor: group.accent }}
+              >
+                <div className="shrink-0 w-12 h-12 rounded-clay flex items-center justify-center text-2xl bg-white/95 shadow-clay-inset">
+                  {group.emoji}
                 </div>
-
-                {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <p className="font-fredoka font-extrabold text-lg leading-tight" style={{ color: ticket.accent }}>
-                    {ticket.title}
+                  <p className="font-fredoka font-extrabold text-white text-lg leading-tight">
+                    {group.title}
                   </p>
-                  <p className="font-fredoka font-bold text-sm mb-1" style={{ color: ticket.accent + "BB" }}>
-                    {ticket.subtitle}
-                  </p>
-                  <p className="font-nunito text-sm text-gray-600 leading-relaxed">
-                    {ticket.description}
-                  </p>
+                  {group.subtitle && (
+                    <p className="font-nunito text-white/80 text-xs">{group.subtitle}</p>
+                  )}
                 </div>
+              </div>
 
-                {/* Precio + cantidad */}
-                <div className="shrink-0 flex flex-col items-end gap-3">
-                  <span className="font-fredoka font-extrabold text-xl" style={{ color: ticket.accent }}>
-                    {ticket.price % 1 === 0 ? ticket.price : ticket.price.toFixed(2).replace(".", ",")} €
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => change(ticket.id, -1)}
-                      disabled={qtys[ticket.id] === 0}
-                      className="w-9 h-9 rounded-full font-extrabold text-white text-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 disabled:opacity-30"
-                      style={{ backgroundColor: ticket.accent }}
-                      aria-label="Diminuer"
-                    >
-                      −
-                    </button>
-                    <span className="w-8 text-center font-fredoka font-bold text-lg" style={{ color: ticket.accent }}>
-                      {qtys[ticket.id]}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => change(ticket.id, 1)}
-                      className="w-9 h-9 rounded-full font-extrabold text-white text-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-                      style={{ backgroundColor: ticket.accent }}
-                      aria-label="Augmenter"
-                    >
-                      +
-                    </button>
+              {/* Options */}
+              <div className="divide-y divide-gray-100" style={{ backgroundColor: group.bg }}>
+                {group.options.map((opt) => (
+                  <div
+                    key={opt.id}
+                    className="flex items-center gap-4 px-5 py-4 flex-wrap sm:flex-nowrap"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p
+                        className="font-fredoka font-bold text-base leading-tight"
+                        style={{ color: group.accent }}
+                      >
+                        {opt.label}
+                      </p>
+                      <p className="font-nunito text-xs text-gray-600 mt-0.5 leading-snug">
+                        {opt.description}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-4 shrink-0">
+                      <span
+                        className="font-fredoka font-extrabold text-lg"
+                        style={{ color: group.accent }}
+                      >
+                        {formatPrice(opt.price)} €
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => change(opt.id, -1)}
+                          disabled={qtys[opt.id] === 0}
+                          className="w-8 h-8 rounded-full font-extrabold text-white text-base flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 disabled:opacity-30"
+                          style={{ backgroundColor: group.accent }}
+                          aria-label="Diminuer"
+                        >
+                          −
+                        </button>
+                        <span
+                          className="w-7 text-center font-fredoka font-bold text-base"
+                          style={{ color: group.accent }}
+                        >
+                          {qtys[opt.id]}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => change(opt.id, 1)}
+                          className="w-8 h-8 rounded-full font-extrabold text-white text-base flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                          style={{ backgroundColor: group.accent }}
+                          aria-label="Augmenter"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </motion.div>
           ))}
@@ -176,9 +214,9 @@ export default function Billetterie() {
 
             <div className="space-y-2 mb-5">
               <AnimatePresence>
-                {TICKETS.filter((t) => qtys[t.id] > 0).map((t) => (
+                {ALL_OPTIONS.filter((o) => qtys[o.id] > 0).map((o) => (
                   <motion.div
-                    key={t.id}
+                    key={o.id}
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
@@ -186,10 +224,10 @@ export default function Billetterie() {
                     className="flex justify-between items-center text-sm font-nunito text-gray-700 overflow-hidden"
                   >
                     <span className="truncate pr-2">
-                      {qtys[t.id]}× {t.title} ({t.subtitle})
+                      {qtys[o.id]}× {o.label}
                     </span>
-                    <span className="font-bold shrink-0" style={{ color: t.accent }}>
-                      {(t.price * qtys[t.id]).toFixed(2).replace(".", ",")} €
+                    <span className="font-bold shrink-0" style={{ color: o.accent }}>
+                      {(o.price * qtys[o.id]).toFixed(2).replace(".", ",")} €
                     </span>
                   </motion.div>
                 ))}
@@ -215,7 +253,9 @@ export default function Billetterie() {
               className="w-full py-3 rounded-clay font-fredoka font-extrabold text-base text-[#3A2A00] shadow-clay-yellow transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
               style={{ backgroundColor: "#FFD600" }}
             >
-              {totalItems === 0 ? "Sélectionnez vos billets" : `Commander — ${total.toFixed(2).replace(".", ",")} €`}
+              {totalItems === 0
+                ? "Sélectionnez vos billets"
+                : `Commander — ${total.toFixed(2).replace(".", ",")} €`}
             </button>
 
             <p className="font-nunito text-xs text-gray-400 text-center mt-3">
@@ -223,7 +263,6 @@ export default function Billetterie() {
             </p>
           </div>
         </div>
-
       </div>
     </div>
   );
