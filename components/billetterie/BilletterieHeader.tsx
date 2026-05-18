@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ClayButton from "../ui/ClayButton";
 
 const LABELS: Record<string, string> = {
   billetterie:  "Billetterie Ludykid",
@@ -50,34 +49,11 @@ function Breadcrumb({ pathname }: { pathname: string }) {
 
 export default function BilletterieHeader() {
   const pathname = usePathname();
-  const onBilletterie = pathname === "/billetterie";
-  const onAnniversaire = pathname.startsWith("/billetterie/anniversaire");
 
   return (
     <div className="max-w-5xl mx-auto px-6">
-      <div className="flex justify-end mb-2">
+      <div className="flex justify-end mb-10">
         <Breadcrumb pathname={pathname} />
-      </div>
-      <div className="flex flex-wrap gap-3 mb-10">
-        {onAnniversaire ? (
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full font-fredoka font-bold text-sm bg-[#1877F2] text-white opacity-60 cursor-default ring-2 ring-[#1877F2] ring-offset-2">
-            ⭐ Réservations Anniversaire
-          </span>
-        ) : (
-          <ClayButton href="/billetterie/anniversaire" tone="blue" size="md">
-            ⭐ Réservations Anniversaire
-          </ClayButton>
-        )}
-
-        {onBilletterie ? (
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full font-fredoka font-bold text-sm bg-[#1877F2] text-white opacity-60 cursor-default ring-2 ring-[#1877F2] ring-offset-2">
-            🎫 Billetterie Ludykid
-          </span>
-        ) : (
-          <ClayButton href="/billetterie" tone="blue" size="md">
-            🎫 Billetterie Ludykid
-          </ClayButton>
-        )}
       </div>
     </div>
   );

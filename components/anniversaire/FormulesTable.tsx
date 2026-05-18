@@ -2,10 +2,35 @@ import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 
 const FORMULES = [
-  { name: "MaxiLudy", price: "17,50€ / enfant", note: "De 4 à 15 enfants" },
-  { name: "Ludykid", price: "14,50€ / enfant", note: "De 4 à 15 enfants" },
-  { name: "Libre", price: "10,50€ /enfant", note: "De 8 à 15 enfants" },
-  { name: "Ludynight", price: "11,00€ / enfant", note: "Minimum 15 enfants" },
+  {
+    name: "MaxiLudy",
+    price: "17,50€ / enfant",
+    note: "De 4 à 15 enfants",
+    color: "#E8731A",
+    href: "/billetterie/anniversaire/maxiludy",
+  },
+  {
+    name: "Ludykid",
+    price: "14,50€ / enfant",
+    note: "De 4 à 15 enfants",
+    color: "#7B35A0",
+    href: "/billetterie/anniversaire/ludykid",
+  },
+  {
+    name: "Libre",
+    price: "10,50€ /enfant",
+    note: "De 8 à 15 enfants",
+    color: "#2E9E2E",
+    href: "/billetterie/anniversaire/libre",
+  },
+  {
+    name: "Ludynight",
+    price: "11,00€ / enfant",
+    note: "Minimum 15 enfants",
+    color: "#FFD600",
+    textColor: "#3A2A00",
+    href: "/billetterie/anniversaire/ludynight",
+  },
 ];
 
 // Convención de valores:
@@ -118,7 +143,7 @@ export default function FormulesTable() {
                   {FORMULES.map((f) => (
                     <th
                       key={f.name}
-                      className="px-5 py-4 text-center border-l border-white/20"
+                      className="px-3 py-4 text-center border-l border-white/20 align-top"
                     >
                       <div className="font-fredoka font-extrabold text-white text-base leading-tight">
                         {f.name}
@@ -128,6 +153,38 @@ export default function FormulesTable() {
                       </div>
                       <div className="font-nunito text-white/85 text-[11px] mt-0.5">
                         {f.note}
+                      </div>
+                      <div className="mt-3 flex justify-center">
+                        <a
+                          href={f.href}
+                          className="group inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-white font-fredoka font-bold text-[11px] leading-tight whitespace-nowrap transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                          style={{
+                            color: f.textColor ?? f.color,
+                            boxShadow: `0 3px 0 0 color-mix(in srgb, ${f.color} 60%, black)`,
+                          }}
+                        >
+                          Découvrir cette offre
+                          <span
+                            className="flex shrink-0 items-center justify-center w-4 h-4 rounded-full transition-transform duration-200 group-hover:-rotate-45"
+                            style={{
+                              backgroundColor: f.color,
+                              color: f.textColor ?? "white",
+                            }}
+                          >
+                            <svg
+                              width="9"
+                              height="9"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                          </span>
+                        </a>
                       </div>
                     </th>
                   ))}

@@ -30,7 +30,7 @@ export default function ReservationLudynightDetails({
             <h2 className="font-fredoka font-extrabold text-[#1877F2] text-lg">Votre réservation</h2>
           </div>
           <div className="p-6 flex gap-5 flex-wrap">
-            <div className="rounded-clay overflow-hidden shrink-0 border-2 border-[#1A1A6E]/30">
+            <div className="rounded-clay overflow-hidden shrink-0 border-2 border-lk-yellow/40">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/cumple.png" alt="Ludynight" className="w-28 h-28 object-cover" />
             </div>

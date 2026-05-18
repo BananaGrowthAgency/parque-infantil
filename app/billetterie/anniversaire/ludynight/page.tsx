@@ -10,7 +10,8 @@ export const metadata = {
     "Réservez la Ludynight : une soirée entre petits potes de 19h30 à 22h, un vendredi par mois chez Ludykid Le Mans.",
 };
 
-const NAVY = "#1A1A6E";
+const YELLOW = "#FFD600";
+const YELLOW_DARK = "#3A2A00";
 
 export default function LudynightPage() {
   return (
@@ -29,16 +30,21 @@ export default function LudynightPage() {
 
         {/* Fiche formule */}
         <FadeInUp>
-          <div className="rounded-clay-lg border-[3px] border-[#1A1A6E] shadow-clay bg-white overflow-hidden">
+          <div className="rounded-clay-lg border-[3px] border-lk-yellow shadow-clay-yellow bg-white overflow-hidden">
 
-            {/* En-tête navy */}
-            <div className="px-7 py-5 flex items-center gap-4" style={{ backgroundColor: NAVY }}>
+            {/* En-tête jaune */}
+            <div className="px-7 py-5 flex items-center gap-4" style={{ backgroundColor: YELLOW }}>
               <span className="text-4xl">🌙</span>
               <div>
-                <h1 className="font-fredoka font-extrabold text-white text-2xl md:text-3xl leading-tight">
+                <h1
+                  className="font-fredoka font-extrabold text-2xl md:text-3xl leading-tight"
+                  style={{ color: YELLOW_DARK }}
+                >
                   Ludynight
                 </h1>
-                <p className="font-nunito text-white/80 text-sm">Minimum 15 enfants · dès 9 ans · 11,00 € par enfant</p>
+                <p className="font-nunito text-sm" style={{ color: `${YELLOW_DARK}cc` }}>
+                  Minimum 15 enfants · dès 9 ans · 11,00 € par enfant
+                </p>
               </div>
             </div>
 
@@ -46,7 +52,7 @@ export default function LudynightPage() {
 
               {/* Image */}
               <div className="shrink-0 md:w-56">
-                <div className="rounded-clay overflow-hidden shadow-clay border-[3px] border-[#1A1A6E]/30">
+                <div className="rounded-clay overflow-hidden shadow-clay border-[3px] border-lk-yellow/40">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/cumple.png"
@@ -58,7 +64,7 @@ export default function LudynightPage() {
 
               {/* Détails */}
               <div className="flex-1 space-y-4 font-nunito text-gray-700 text-sm leading-relaxed">
-                <p className="text-base font-bold" style={{ color: NAVY }}>
+                <p className="text-base font-bold" style={{ color: YELLOW_DARK }}>
                   Un vendredi par mois pour faire la fête entre petits potes !
                 </p>
                 <p>
@@ -76,7 +82,7 @@ export default function LudynightPage() {
                   <p>Accès libre aux jeux, sous la surveillance du personnel.</p>
                 </div>
 
-                <div className="rounded-clay bg-[#EEEEFF] border-[2px] border-[#1A1A6E]/20 p-4 space-y-2 text-xs text-gray-600">
+                <div className="rounded-clay bg-[#FFFBE0] border-[2px] border-lk-yellow/40 p-4 space-y-2 text-xs text-gray-600">
                   <p>Présence d'adulte accompagnateur non obligatoire !</p>
                   <p>
                     Minimum 15 enfants (laissez nous une annotation après votre réservation
