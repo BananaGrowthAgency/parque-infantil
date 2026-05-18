@@ -1,5 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Doodle from "./Doodle";
+import FadeInUp from "./ui/FadeInUp";
+import ClayCard from "./ui/ClayCard";
+import ClayButton from "./ui/ClayButton";
+
+type Tone = "orange" | "purple" | "green" | "yellow";
 
 const secciones = [
   {
@@ -22,6 +29,9 @@ const secciones = [
     doodle: { type: "star" as const, color: "#E8731A" },
     objectPosition: "center 35%",
     cta: "Réserver maintenant",
+    ctaHref: "/billetterie",
+    claySh: "shadow-clay-orange",
+    tone: "orange" as Tone,
   },
   {
     titulo: "Un parc de jeux indoor pour les plus grands (4–12 ans)",
@@ -42,6 +52,9 @@ const secciones = [
     doodle: { type: "swirl" as const, color: "#7B35A0" },
     objectPosition: "center center",
     cta: "Réserver maintenant",
+    ctaHref: "/billetterie",
+    claySh: "shadow-clay-purple",
+    tone: "purple" as Tone,
   },
   {
     titulo: "Un espace trampoline park unique au Mans",
@@ -62,6 +75,9 @@ const secciones = [
     doodle: { type: "zigzag" as const, color: "#2E9E2E" },
     objectPosition: "center 20%",
     cta: "En savoir plus",
+    ctaHref: "/trampoline-park",
+    claySh: "shadow-clay-green",
+    tone: "green" as Tone,
   },
   {
     titulo: "Restauration sur place pour une vraie pause gourmande",
@@ -83,6 +99,9 @@ const secciones = [
     doodle: { type: "dots" as const, color: "#FFD600" },
     objectPosition: "center center",
     cta: "En savoir plus",
+    ctaHref: "/restauration",
+    claySh: "shadow-clay-yellow",
+    tone: "yellow" as Tone,
   },
 ];
 
@@ -90,8 +109,7 @@ export default function Atracciones() {
   return (
     <section id="atracciones">
       {secciones.map((s, i) => (
-        <div key={s.titulo} className="relative py-14" style={{ backgroundColor: s.bgLight }}>
-          {/* Doodles de fondo */}
+        <div key={s.titulo} className="relative py-16" style={{ backgroundColor: s.bgLight }}>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-6 left-4 opacity-20 animate-float">
               <Doodle type={s.doodle.type} color={s.doodle.color} size={64} />
@@ -109,70 +127,71 @@ export default function Atracciones() {
 
           <div className="max-w-6xl mx-auto px-6 relative">
             <div className={`flex flex-col ${s.invertida ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-stretch`}>
-              {/* Imagen */}
-              <div className="w-full md:w-1/2 relative min-h-[340px] rounded-3xl overflow-hidden shadow-xl flex-shrink-0 self-stretch">
-                <Image
-                  src={s.imagen}
-                  alt={s.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                  style={{ objectPosition: s.objectPosition }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                {s.precio && (
-                  <div className="absolute bottom-4 left-4">
-                    <span
-                      className="font-fredoka font-600 text-white text-sm px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
-                      style={{ backgroundColor: s.color + "dd" }}
-                    >
-                      👉 {s.precio}
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* Texto */}
-              <div className="w-full md:w-1/2 rounded-3xl p-8 md:p-10 relative overflow-hidden bg-white shadow-md">
-                <div className="absolute top-4 right-4 opacity-30">
-                  <Doodle type={s.doodle.type} color={s.doodle.color} size={52} />
-                </div>
-
-                <h2 className="font-fredoka text-2xl md:text-3xl font-600 text-gray-800 mb-3 leading-snug">
-                  {s.titulo}
-                </h2>
-                <p className="font-nunito text-gray-500 leading-relaxed mb-6 text-sm whitespace-pre-line">
-                  {s.descripcion}
-                </p>
-
-                <ul className="space-y-3 mb-7">
-                  {s.items.map((item) => (
-                    <li key={item.label} className="flex items-center gap-3">
+              {/* Imagen — clay frame */}
+              <FadeInUp className="w-full md:w-1/2" delay={0} y={28}>
+                <div className={`group relative h-full min-h-[340px] rounded-clay-lg overflow-hidden ${s.claySh} transition-transform duration-500 hover:-translate-y-1`}>
+                  <Image
+                    src={s.imagen}
+                    alt={s.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: s.objectPosition }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {s.precio && (
+                    <div className="absolute bottom-5 left-5">
                       <span
-                        className="w-9 h-9 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
-                        style={{ backgroundColor: s.color + "20" }}
+                        className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float"
+                        style={{ backgroundColor: s.color }}
                       >
-                        {item.icon}
+                        👉 {s.precio}
                       </span>
-                      <span className="font-nunito text-sm text-gray-700">
-                        <span className="font-700" style={{ color: s.color }}>{item.label}</span>
-                        {item.desc && <span className="text-gray-400"> — {item.desc}</span>}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                    </div>
+                  )}
+                </div>
+              </FadeInUp>
 
-                <a
-                  href="#infos"
-                  className="inline-flex items-center gap-2 font-fredoka font-600 text-white px-6 py-3 rounded-full text-base transition-all hover:scale-105 hover:shadow-lg shadow-md"
-                  style={{ backgroundColor: s.color }}
-                >
-                  {s.cta} <span>→</span>
-                </a>
-              </div>
+              {/* Texto — clay card */}
+              <FadeInUp className="w-full md:w-1/2" delay={0.15} y={28}>
+                <ClayCard size="lg" tone="white" className="relative h-full overflow-hidden">
+                  <div className="absolute top-5 right-5 opacity-25">
+                    <Doodle type={s.doodle.type} color={s.doodle.color} size={56} />
+                  </div>
+
+                  <h2 className="font-fredoka text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
+                    {s.titulo}
+                  </h2>
+                  <p className="font-nunito text-gray-500 leading-relaxed mb-6 text-sm whitespace-pre-line">
+                    {s.descripcion}
+                  </p>
+
+                  <ul className="space-y-3 mb-7">
+                    {s.items.map((item, idx) => (
+                      <FadeInUp key={item.label} delay={0.2 + idx * 0.05} y={12}>
+                        <li className="flex items-center gap-3">
+                          <span
+                            className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg flex-shrink-0 shadow-clay-inset"
+                            style={{ backgroundColor: s.color + "1F" }}
+                          >
+                            {item.icon}
+                          </span>
+                          <span className="font-nunito text-sm text-gray-700">
+                            <span className="font-bold" style={{ color: s.color }}>{item.label}</span>
+                            {item.desc && <span className="text-gray-400"> — {item.desc}</span>}
+                          </span>
+                        </li>
+                      </FadeInUp>
+                    ))}
+                  </ul>
+
+                  <ClayButton href={s.ctaHref} tone={s.tone} size="md">
+                    {s.cta}
+                  </ClayButton>
+                </ClayCard>
+              </FadeInUp>
             </div>
           </div>
 
-          {/* Ola hacia la siguiente sección */}
           <div className="absolute bottom-0 left-0 right-0 leading-none">
             <svg
               viewBox="0 0 1440 80"
