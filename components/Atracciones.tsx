@@ -30,6 +30,8 @@ const secciones = [
     objectPosition: "center 35%",
     cta: "Réserver maintenant",
     ctaHref: "/billetterie",
+    cta2: "En savoir plus",
+    ctaHref2: "/espace-petits",
     claySh: "shadow-clay-orange",
     tone: "orange" as Tone,
   },
@@ -184,9 +186,16 @@ export default function Atracciones() {
                     ))}
                   </ul>
 
-                  <ClayButton href={s.ctaHref} tone={s.tone} size="md">
-                    {s.cta}
-                  </ClayButton>
+                  <div className="flex flex-wrap gap-3">
+                    <ClayButton href={s.ctaHref} tone={s.tone} size="md">
+                      {s.cta}
+                    </ClayButton>
+                    {"cta2" in s && s.cta2 && (
+                      <ClayButton href={(s as { ctaHref2: string }).ctaHref2} tone="orange-outline" size="md">
+                        {s.cta2}
+                      </ClayButton>
+                    )}
+                  </div>
                 </ClayCard>
               </FadeInUp>
             </div>

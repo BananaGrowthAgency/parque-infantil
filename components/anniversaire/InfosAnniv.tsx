@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 import SquiggleTitle from "../ui/SquiggleTitle";
@@ -25,18 +25,29 @@ const ASABER = [
   { icon: "🚫", text: "Pas de nourriture extérieure (hors formules autorisées)" },
 ];
 
-const FAQS = [
+const FAQS: { q: string; a: ReactNode }[] = [
   {
-    q: "Comment réserver un anniversaire chez Ludykid ?",
-    a: "Vous pouvez nous contacter par téléphone, e-mail ou directement en ligne. Nous recommandons de réserver au moins 3 semaines à l'avance.",
+    q: "Comment réserver pour l'anniversaire de mon enfant ?",
+    a: "Vous pouvez réserver votre créneau anniversaire sur www.ludykid.com, par téléphone ou à l'accueil aux horaires d'ouverture. Un acompte vous sera demandé afin de confirmer votre réservation.",
   },
   {
     q: "Combien de temps à l'avance faut-il réserver ?",
-    a: "L'idéal est de réserver 3 à 4 semaines avant la date souhaitée, surtout pour les weekends et vacances scolaires.",
+    a: "Il est conseillé de réserver 2 à 3 semaines à l'avance, notamment pour le samedi, pour être sûr d'obtenir le créneau de votre choix.",
   },
   {
-    q: "Peut-on modifier ou annuler une réservation ?",
-    a: "Oui, les modifications sont possibles jusqu'à 7 jours avant la date. Au-delà, contactez-nous directement.",
+    q: "Quelles sont les conditions d'annulation ou de modification ?",
+    a: (
+      <span className="space-y-2 block">
+        <span className="block">Vous pouvez modifier ou annuler votre réservation jusqu'à 24 heures avant la date prévue.</span>
+        <span className="block">En cas d'annulation dans ce délai, l'acompte versé pourra être :</span>
+        <ul className="list-disc list-inside space-y-1 pl-2">
+          <li>reporté sur une future réservation (en cas de modification de date)</li>
+          <li>ou remboursé</li>
+        </ul>
+        <span className="block">En cas d'annulation le jour même, l'acompte restera acquis à Ludykid.</span>
+        <span className="block">Toute modification du nombre d'enfants le jour J ne pourra être prise en compte : le minimum prévu par formule ainsi que les éventuelles parts de gâteau commandées resteront dues.</span>
+      </span>
+    ),
   },
   {
     q: "Les parents doivent-ils rester sur place ?",
@@ -213,7 +224,7 @@ export default function InfosAnniv() {
                     </button>
                     <div
                       className="overflow-hidden transition-[max-height] duration-300 ease-out"
-                      style={{ maxHeight: open === i ? 240 : 0 }}
+                      style={{ maxHeight: open === i ? 600 : 0 }}
                     >
                       <div className="px-4 pb-4 pt-3 font-nunito text-sm text-gray-500 leading-relaxed border-t" style={{ borderColor: "#E8731A25" }}>
                         {f.a}

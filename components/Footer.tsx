@@ -64,7 +64,7 @@ const SOCIALS = [
 
 export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gray-900 text-white relative overflow-hidden" style={{ marginTop: -2 }}>
       <Wave fill="#111827" bg={waveBg} flip />
 
       <div className="pt-12 pb-8">

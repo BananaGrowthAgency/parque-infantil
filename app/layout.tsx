@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
+import PromoBanner from "@/components/PromoBanner";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${fredoka.variable} ${nunito.variable} font-nunito bg-white`}>
+        <PromoBanner />
         {children}
       </body>
     </html>

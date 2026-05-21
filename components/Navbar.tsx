@@ -6,7 +6,7 @@ import Logo from "./Logo";
 import ClayButton from "./ui/ClayButton";
 
 const CLAY_SCROLLED =
-  "top-0 left-0 right-0 bg-white shadow-clay md:top-3 md:left-3 md:right-3 lg:left-6 lg:right-6 md:rounded-full";
+  "top-9 left-0 right-0 bg-white shadow-clay md:top-12 md:left-3 md:right-3 lg:left-6 lg:right-6 md:rounded-full";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,12 +20,12 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { label: "Trampoline parc", href: "/trampoline-park", hover: "hover:text-lk-green", active: "text-lk-green", softBg: "#E8F7E8" },
-    { label: "Anniversaire",    href: "/anniversaire", hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
-    { label: "Restauration",    href: "/restauration",  hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
-    { label: "Tarifs & Horaires", href: "/tarifs",     hover: "hover:text-lk-yellow", active: "text-lk-yellow", softBg: "#FFF8CC" },
-    { label: "Garderie",        href: "/#infos",       hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
-    { label: "Contact",         href: "/#infos",       hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
+    { label: "Trampoline parc", href: "/trampoline-park", hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
+    { label: "Anniversaire",    href: "/anniversaire",    hover: "hover:text-lk-purple", active: "text-lk-purple", softBg: "#F5EEFF" },
+    { label: "Restauration",    href: "/restauration",    hover: "hover:text-lk-green",  active: "text-lk-green",  softBg: "#E8F7E8" },
+    { label: "Tarifs & Horaires", href: "/tarifs",        hover: "hover:text-lk-yellow", active: "text-lk-yellow", softBg: "#FFF8CC" },
+    { label: "Garderie",        href: "/garderie",        hover: "hover:text-lk-blue",   active: "text-lk-blue",   softBg: "#E8F0FF" },
+    { label: "Contact",         href: "/contact",         hover: "hover:text-lk-orange", active: "text-lk-orange", softBg: "#FFEFE2" },
   ];
 
   const isActive = (href: string) =>
@@ -34,7 +34,7 @@ export default function Navbar() {
     (pathname === href || pathname.startsWith(href + "/"));
 
   const navClass = `fixed z-50 transition-all duration-300 ${
-    scrolled ? CLAY_SCROLLED : "top-0 left-0 right-0 bg-white"
+    scrolled ? CLAY_SCROLLED : "top-9 left-0 right-0 bg-white"
   }`;
 
   return (
@@ -63,7 +63,7 @@ export default function Navbar() {
               );
             })}
             <a
-              href="tel:+33"
+              href="tel:+33243414869"
               className="w-11 h-11 flex items-center justify-center rounded-full bg-[#FFF3E6] shadow-clay-inset transition-transform duration-300 hover:scale-110 hover:rotate-6"
               aria-label="Appeler"
             >

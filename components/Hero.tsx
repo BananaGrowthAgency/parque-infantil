@@ -47,12 +47,12 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
-              className="flex items-center justify-center gap-3 flex-wrap"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xs sm:max-w-none mx-auto"
             >
-              <ClayButton href="/anniversaire" tone="purple" size="lg">
+              <ClayButton href="/anniversaire" tone="purple" size="lg" className="w-full sm:w-auto">
                 Réserver votre anniversaire
               </ClayButton>
-              <ClayButton href="/billetterie" tone="orange" size="lg">
+              <ClayButton href="/billetterie" tone="orange" size="lg" className="w-full sm:w-auto">
                 Billetterie
               </ClayButton>
             </motion.div>

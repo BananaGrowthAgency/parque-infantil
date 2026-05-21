@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
 
-type Tone = "orange" | "purple" | "green" | "yellow" | "white" | "blue";
+type Tone = "orange" | "purple" | "green" | "yellow" | "white" | "blue" | "orange-outline";
 type Size = "sm" | "md" | "lg";
 
 const tones: Record<
@@ -55,6 +55,14 @@ const tones: Record<
     dotText: "text-[#1877F2]",
     ring: "ring-white/40",
   },
+  "orange-outline": {
+    bg: "bg-white border-2 border-lk-orange",
+    text: "text-lk-orange",
+    shadow: "shadow-clay-orange",
+    dotBg: "bg-lk-orange",
+    dotText: "text-white",
+    ring: "ring-lk-orange/30",
+  },
 };
 
 const sizes: Record<Size, { pad: string; text: string; dot: string; iconSize: string }> = {
@@ -66,6 +74,7 @@ const sizes: Record<Size, { pad: string; text: string; dot: string; iconSize: st
 type ClayButtonProps = {
   href?: string;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset";
   tone?: Tone;
   size?: Size;
   children: ReactNode;
@@ -76,6 +85,7 @@ type ClayButtonProps = {
 export default function ClayButton({
   href,
   onClick,
+  type = "button",
   tone = "orange",
   size = "md",
   children,
@@ -88,11 +98,11 @@ export default function ClayButton({
 
   const inner = (
     <>
-      <span className={`font-fredoka font-extrabold ${sz.text} ${t.text} tracking-wide`}>
+      <span className={`flex-1 text-center font-fredoka font-extrabold ${sz.text} ${t.text} tracking-wide`}>
         {children}
       </span>
       <span
-        className={`flex items-center justify-center rounded-full ${t.dotBg} ${t.dotText} ${sz.dot} ring-2 ${t.ring} shadow-clay-inset transition-transform duration-300 ease-out group-hover:rotate-[-45deg] group-hover:scale-110 group-active:scale-95`}
+        className={`flex shrink-0 items-center justify-center rounded-full ${t.dotBg} ${t.dotText} ${sz.dot} ring-2 ${t.ring} shadow-clay-inset transition-transform duration-300 ease-out group-hover:rotate-[-45deg] group-hover:scale-110 group-active:scale-95`}
         aria-hidden="true"
       >
         <svg
@@ -110,7 +120,7 @@ export default function ClayButton({
     </>
   );
 
-  const base = `group inline-flex items-center gap-3 rounded-full ${t.bg} ${t.shadow} ${sz.pad} transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0 active:scale-100 ${className}`;
+  const base = `group inline-flex items-center justify-between gap-3 rounded-full ${t.bg} ${t.shadow} ${sz.pad} transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0 active:scale-100 ${className}`;
 
   if (href) {
     return (
@@ -120,7 +130,7 @@ export default function ClayButton({
     );
   }
   return (
-    <button type="button" onClick={onClick} aria-label={ariaLabel} className={base}>
+    <button type={type} onClick={onClick} aria-label={ariaLabel} className={base}>
       {inner}
     </button>
   );
