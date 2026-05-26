@@ -30,8 +30,6 @@ const secciones = [
     objectPosition: "center 35%",
     cta: "Réserver maintenant",
     ctaHref: "/billetterie",
-    cta2: "En savoir plus",
-    ctaHref2: "/espace-petits",
     claySh: "shadow-clay-orange",
     tone: "orange" as Tone,
   },

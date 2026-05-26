@@ -40,7 +40,7 @@ export default function HeroAnniversaire() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-fredoka text-3xl md:text-5xl font-extrabold text-white leading-tight mb-10 md:mb-7 drop-shadow-xl"
+              className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight mb-10 md:mb-7 drop-shadow-xl"
             >
               Anniversaire enfant{" "}
               <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
@@ -54,7 +54,7 @@ export default function HeroAnniversaire() {
               transition={{ duration: 0.7, delay: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
               className="inline-flex"
             >
-              <ClayButton href="#formules" tone="orange" size="lg">
+              <ClayButton href="#formules" tone="purple" size="lg">
                 Choisissez votre formule
               </ClayButton>
             </motion.div>

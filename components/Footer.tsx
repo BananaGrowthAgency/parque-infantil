@@ -5,14 +5,12 @@ const NAV = [
   { label: "Accueil", href: "/" },
   { label: "Attractions", href: "/#atracciones" },
   { label: "Anniversaire", href: "/anniversaire" },
-  { label: "Tarifs", href: "/#infos" },
+  { label: "Tarifs", href: "/tarifs" },
   { label: "Infos pratiques", href: "/#infos" },
 ];
 
 const LEGAL = [
-  { label: "Confidentialité", href: "#" },
-  { label: "Cookies", href: "#" },
-  { label: "Mentions légales", href: "#" },
+  { label: "Mentions légales", href: "/mentions-legales" },
 ];
 
 const SOCIALS = [

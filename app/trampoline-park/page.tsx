@@ -29,7 +29,7 @@ const RULES = [
 
 export default function TrampolinePage() {
   return (
-    <main className="bg-[#F4FBF4] min-h-screen">
+    <main className="bg-[#FFF8EC] min-h-screen">
       <Navbar />
 
       {/* Hero */}
@@ -37,7 +37,7 @@ export default function TrampolinePage() {
         <div className="relative overflow-hidden" style={{ height: "62vh", minHeight: 440 }}>
           <Image
             src="/images/seccion3.jpg"
-            alt="Trampoline park Ludykid Le Mans"
+            alt="Trampoline parc Ludykid Le Mans"
             fill
             priority
             sizes="100vw"
@@ -48,17 +48,17 @@ export default function TrampolinePage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(46,158,46,0.28) 60%, rgba(244,251,244,0) 100%)",
+                "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(232,115,26,0.28) 60%, rgba(255,248,236,0) 100%)",
             }}
           />
-          <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-transparent to-[#F4FBF4] pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-transparent to-[#FFF8EC] pointer-events-none" />
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-6 max-w-3xl">
-              <h1 className="font-fredoka text-3xl md:text-5xl font-extrabold text-white leading-tight drop-shadow-xl">
+              <h1 className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-xl">
                 Un espace{" "}
-                <span className="inline-block px-3 py-1 rounded-clay bg-lk-green text-white -rotate-2 shadow-clay-green">
-                  Trampoline Park
+                <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
+                  Trampoline Parc
                 </span>{" "}
                 unique au Mans 🤸
               </h1>
@@ -74,9 +74,9 @@ export default function TrampolinePage() {
       <div className="relative z-10 -mt-10 sm:-mt-14 px-4 sm:px-8 lg:px-16 mb-12">
         <div className="max-w-3xl mx-auto">
           <FadeInUp delay={0.05}>
-            <div className="flex items-center justify-center gap-4 px-6 py-5 rounded-clay-lg bg-white border-[3px] border-lk-green shadow-clay-green">
+            <div className="flex items-center justify-center gap-4 px-6 py-5 rounded-clay-lg bg-white border-[3px] border-lk-orange shadow-clay-orange">
               <span className="text-3xl">👉</span>
-              <p className="font-fredoka font-extrabold text-lk-green text-xl md:text-2xl">
+              <p className="font-fredoka font-extrabold text-lk-orange text-xl md:text-2xl">
                 Dès 4,50 € / enfant
               </p>
             </div>
@@ -87,15 +87,15 @@ export default function TrampolinePage() {
       {/* Features */}
       <section className="px-6 pb-16 relative overflow-hidden">
         <div className="absolute top-10 left-6 opacity-15 animate-float pointer-events-none">
-          <Doodle type="star" color="#2E9E2E" size={60} />
+          <Doodle type="star" color="#E8731A" size={60} />
         </div>
         <div className="absolute top-20 right-10 opacity-15 animate-wiggle pointer-events-none">
-          <Doodle type="zigzag" color="#2E9E2E" size={70} />
+          <Doodle type="zigzag" color="#E8731A" size={70} />
         </div>
 
         <div className="max-w-5xl mx-auto relative">
           <FadeInUp>
-            <SquiggleTitle color="#2E9E2E">Au programme ⚡</SquiggleTitle>
+            <SquiggleTitle color="#E8731A">Au programme ⚡</SquiggleTitle>
           </FadeInUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
@@ -104,12 +104,12 @@ export default function TrampolinePage() {
                 <ClayCard size="md" tone="white" className="h-full flex items-start gap-4">
                   <span
                     className="shrink-0 w-12 h-12 rounded-clay flex items-center justify-center text-2xl shadow-clay-inset"
-                    style={{ backgroundColor: "#2E9E2E1F" }}
+                    style={{ backgroundColor: "#E8731A1F" }}
                   >
                     {f.icon}
                   </span>
                   <div>
-                    <p className="font-fredoka font-extrabold text-lk-green text-lg leading-tight mb-1">
+                    <p className="font-fredoka font-extrabold text-lk-orange text-lg leading-tight mb-1">
                       {f.label}
                     </p>
                     <p className="font-nunito text-sm text-gray-600 leading-relaxed">{f.desc}</p>
@@ -125,8 +125,8 @@ export default function TrampolinePage() {
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto">
           <FadeInUp>
-            <div className="rounded-clay-lg border-[3px] border-lk-green shadow-clay-green bg-white overflow-hidden">
-              <div className="bg-lk-green px-6 py-4 flex items-center gap-3">
+            <div className="rounded-clay-lg border-[3px] border-lk-orange shadow-clay-orange bg-white overflow-hidden">
+              <div className="bg-lk-orange px-6 py-4 flex items-center gap-3">
                 <span className="text-2xl">🔒</span>
                 <h2 className="font-fredoka font-extrabold text-white text-xl md:text-2xl">
                   Sécurité & bon esprit
@@ -141,7 +141,7 @@ export default function TrampolinePage() {
                     <li key={r} className="flex items-start gap-3">
                       <span
                         className="shrink-0 mt-0.5 inline-flex items-center justify-center w-6 h-6 rounded-full text-white font-bold text-xs shadow-clay-sm"
-                        style={{ backgroundColor: "#2E9E2E" }}
+                        style={{ backgroundColor: "#E8731A" }}
                       >
                         ✓
                       </span>
@@ -159,7 +159,7 @@ export default function TrampolinePage() {
       <section className="px-6 pb-20">
         <div className="max-w-3xl mx-auto">
           <FadeInUp>
-            <div className="rounded-clay-lg bg-lk-green shadow-clay-green p-8 md:p-10 text-center relative overflow-hidden">
+            <div className="rounded-clay-lg bg-lk-orange shadow-clay-orange p-8 md:p-10 text-center relative overflow-hidden">
               <div className="absolute top-4 right-4 opacity-30">
                 <Doodle type="star" color="#ffffff" size={56} />
               </div>
@@ -176,7 +176,7 @@ export default function TrampolinePage() {
                 <ClayButton href="/billetterie" tone="white" size="lg">
                   🎫 Réserver mes entrées
                 </ClayButton>
-                <ClayButton href="/anniversaire" tone="yellow" size="lg">
+                <ClayButton href="/anniversaire" tone="purple" size="lg">
                   🎂 Anniversaire au trampoline
                 </ClayButton>
               </div>
@@ -185,7 +185,7 @@ export default function TrampolinePage() {
         </div>
       </section>
 
-      <Footer waveBg="#F4FBF4" />
+      <Footer waveBg="#FFF8EC" />
     </main>
   );
 }

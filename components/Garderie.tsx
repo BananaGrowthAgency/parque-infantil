@@ -12,18 +12,12 @@ const TARIFS = [
   { duration: "3 heures",  price: "24,00 €", note: "tarifs dégressifs" },
 ];
 
-const FEATURES = [
-  { icon: "👶", label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
-  { icon: "👩‍🏫", label: "Animateurs qualifiés", desc: "surveillance permanente" },
-  { icon: "🎮", label: "Activités encadrées",  desc: "jeux, jeux de société" },
-  { icon: "🎟️", label: "Entrée incluse",       desc: "accès au parc compris" },
-];
 
 export default function Garderie() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#E8F7FF] pb-0">
+      <section className="relative bg-[#E8F7FF] pb-0">
         {/* Doodles */}
         <div className="absolute top-6 left-4 opacity-20 animate-float pointer-events-none">
           <Doodle type="star" color="#1877F2" size={64} />
@@ -38,54 +32,15 @@ export default function Garderie() {
           <Doodle type="star2" color="#FFD600" size={48} />
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 pt-6 pb-16">
-          {/* Illustration — trois enfants qui sautent */}
-          <FadeInUp y={20} className="flex justify-center mb-8">
-            <div className="relative">
-              <div className="flex items-end justify-center gap-4">
-                <div className="text-[110px] leading-none animate-float" style={{ animationDelay: "0s" }}>🧒</div>
-                <div className="text-[130px] leading-none animate-float -mt-6" style={{ animationDelay: "0.3s" }}>👦</div>
-                <div className="text-[110px] leading-none animate-float" style={{ animationDelay: "0.6s" }}>👧</div>
-              </div>
-              {/* Halo bleu doux */}
-              <div
-                aria-hidden
-                className="absolute inset-0 -z-10 rounded-full pointer-events-none"
-                style={{
-                  background: "radial-gradient(ellipse 80% 60% at 50% 80%, #BFDFFF 0%, transparent 70%)",
-                }}
-              />
-            </div>
-          </FadeInUp>
-
-          {/* Titre */}
-          <FadeInUp y={18} delay={0.1} className="text-center mb-6">
-            <SquiggleTitle color="#1877F2">La garderie 🧸</SquiggleTitle>
-          </FadeInUp>
-
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-16">
           {/* Accroche */}
-          <FadeInUp y={16} delay={0.18} className="text-center mb-10 max-w-xl mx-auto">
+          <FadeInUp y={16} delay={0.1} className="text-center mb-10 max-w-xl mx-auto">
             <p className="font-fredoka text-xl md:text-2xl text-gray-700 font-bold mb-3">
               Besoin de prendre du temps pour vous ?
             </p>
             <p className="font-nunito text-gray-500 text-base leading-relaxed">
               Dès 4 ans, un service garderie vous est proposé. Vos enfants seront sous la surveillance de nos animateurs pendant que vous soufflez.
             </p>
-          </FadeInUp>
-
-          {/* Features */}
-          <FadeInUp y={14} delay={0.24}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              {FEATURES.map((f, i) => (
-                <FadeInUp key={f.label} y={12} delay={0.28 + i * 0.06}>
-                  <div className="rounded-clay-lg border-2 border-[#1877F2]/20 bg-white shadow-clay p-4 text-center space-y-1.5">
-                    <span className="text-3xl">{f.icon}</span>
-                    <p className="font-fredoka font-extrabold text-[#1877F2] text-sm">{f.label}</p>
-                    <p className="font-nunito text-gray-400 text-xs">{f.desc}</p>
-                  </div>
-                </FadeInUp>
-              ))}
-            </div>
           </FadeInUp>
 
           {/* Carte tarifs */}
@@ -134,6 +89,8 @@ export default function Garderie() {
           </FadeInUp>
         </div>
       </section>
+
+      <Wave fill="#FFF8EC" bg="#E8F7FF" />
 
       {/* ── LES JEUDIS DES NOUNOUS ───────────────────────────── */}
       <section className="relative bg-[#FFF8EC] py-16 overflow-hidden">
