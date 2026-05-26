@@ -33,7 +33,7 @@ export default function Testimonios() {
         strategy="lazyOnload"
       />
 
-      <Wave fill="#F9FAFB" bg="white" />
+      <Wave fill="#FFF4EC" bg="white" />
     </section>
   );
 }

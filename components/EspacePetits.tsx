@@ -19,10 +19,10 @@ const FEATURES = [
 ];
 
 const GALLERY = [
-  { src: "/images/seccion1.jpg",     alt: "Bébé dans la piscine à balles" },
+  { src: "/images/home/seccion1.jpg",     alt: "Bébé dans la piscine à balles" },
   { src: "/images/pelotas2.jpg",     alt: "Piscine à balles interactive" },
   { src: "/images/tunel.jpg",        alt: "Tunnel d'exploration" },
-  { src: "/images/tobogan-azul.jpg", alt: "Toboggans bleus" },
+  { src: "/images/home/tobogan-azul.jpg", alt: "Toboggans bleus" },
   { src: "/images/tobogan-tubo.jpg", alt: "Toboggan tube" },
   { src: "/images/seccion4.png",     alt: "Espace famille" },
 ];
@@ -67,7 +67,7 @@ export default function EspacePetits() {
             <FadeInUp className="w-full md:w-1/2" y={24}>
               <div className="group relative h-full min-h-[360px] rounded-clay-lg overflow-hidden shadow-clay-orange">
                 <Image
-                  src="/images/seccion1.jpg"
+                  src="/images/home/seccion1.jpg"
                   alt="Bébé dans la piscine à balles chez Ludykid"
                   fill
                   className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"

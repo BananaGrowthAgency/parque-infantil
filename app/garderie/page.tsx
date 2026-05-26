@@ -7,10 +7,10 @@ import FadeInUp from "@/components/ui/FadeInUp";
 const BLUE = "#1877F2";
 
 const FEATURES = [
-  { icon: "/images/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
-  { icon: "/images/medaille.png",                 label: "Animateurs qualifiés", desc: "surveillance permanente" },
-  { icon: "/images/garderie-icon-activites.png",  label: "Activités encadrées",  desc: "jeux, jeux de société" },
-  { icon: "/images/garderie-icon-entree.png",     label: "Entrée incluse",       desc: "accès au parc compris" },
+  { icon: "/images/iconos/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
+  { icon: "/images/iconos/medaille.png",                 label: "Animateurs qualifiés", desc: "surveillance permanente" },
+  { icon: "/images/iconos/garderie-icon-activites.png",  label: "Activités encadrées",  desc: "jeux, jeux de société" },
+  { icon: "/images/iconos/garderie-icon-entree.png",     label: "Entrée incluse",       desc: "accès au parc compris" },
 ];
 
 export const metadata = {

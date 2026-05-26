@@ -34,11 +34,11 @@ function PngIcon({ src, size = 52 }: { src: string; size?: number }) {
 }
 
 const stats = [
-  { icon: "/images/medaille.png",      label: "Depuis 15 ans" },
-  { icon: "/images/etoile.png",        label: "200+ Avis 5/5" },
-  { icon: "/images/reseau.png",        label: "1200 m2" },
-  { icon: "/images/enfants.png",       label: "1 à 12 ans" },
-  { icon: "/images/faire-la-fete.png", label: "Anniversaire\nclé en main" },
+  { icon: "/images/iconos/medaille.png",      label: "Depuis 15 ans" },
+  { icon: "/images/iconos/etoile.png",        label: "200+ Avis 5/5" },
+  { icon: "/images/iconos/reseau.png",        label: "1200 m2" },
+  { icon: "/images/iconos/enfants.png",       label: "1 à 12 ans" },
+  { icon: "/images/iconos/faire-la-fete.png", label: "Anniversaire\nclé en main" },
 ];
 
 export default function StatsBar() {

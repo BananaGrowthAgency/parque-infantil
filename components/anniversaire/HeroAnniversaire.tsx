@@ -10,7 +10,7 @@ export default function HeroAnniversaire() {
     <section className="relative pt-16 bg-[#FFF8EC]">
       <div className="relative overflow-hidden" style={{ height: "72vh", minHeight: 500 }}>
         <video
-          src="/images/hero-anniversaire.mp4"
+          src="/images/anniversaire/hero-anniversaire.mp4"
           autoPlay
           muted
           loop

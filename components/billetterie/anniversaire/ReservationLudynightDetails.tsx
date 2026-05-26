@@ -32,7 +32,7 @@ export default function ReservationLudynightDetails({
           <div className="p-6 flex gap-5 flex-wrap">
             <div className="rounded-clay overflow-hidden shrink-0 border-2 border-lk-yellow/40">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/cumple.png" alt="Ludynight" className="w-28 h-28 object-cover" />
+              <img src="/images/home/cumple.png" alt="Ludynight" className="w-28 h-28 object-cover" />
             </div>
             <div className="flex-1 min-w-0 space-y-1">
               <p className="font-fredoka font-extrabold text-gray-900 text-lg">Ludynight</p>

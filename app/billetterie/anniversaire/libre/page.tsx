@@ -47,7 +47,7 @@ export default function LibrePage() {
                 <div className="rounded-clay overflow-hidden shadow-clay-green border-[3px] border-lk-green/30">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/cumple.png"
+                    src="/images/home/cumple.png"
                     alt="Formule Libre — anniversaire chez Ludykid"
                     className="w-full h-48 md:h-full object-cover"
                   />

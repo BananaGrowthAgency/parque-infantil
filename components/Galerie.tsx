@@ -9,18 +9,18 @@ type Slide =
   | { type: "video"; src: string; alt: string };
 
 const photos: Slide[] = [
-  { src: "/images/tobogan-azul.jpg", alt: "Toboggans bleus" },
+  { src: "/images/home/tobogan-azul.jpg", alt: "Toboggans bleus" },
   { src: "/images/pelotas2.jpg",     alt: "Piscine à balles interactive" },
   { src: "/images/IMG_20251018_113459_1.jpg", alt: "Ludykid en action" },
-  { src: "/images/seccion2.jpg",     alt: "Structure multi-jeux" },
+  { src: "/images/home/seccion2.jpg",     alt: "Structure multi-jeux" },
   { src: "/images/autos.jpg",        alt: "Autos tamponneuses" },
   { src: "/images/1740403305572.jpg", alt: "Ambiance Ludykid" },
-  { src: "/images/seccion1.jpg",     alt: "Bébé dans les balles" },
+  { src: "/images/home/seccion1.jpg",     alt: "Bébé dans les balles" },
   { src: "/images/tunel.jpg",        alt: "Tunnel d'exploration" },
   { type: "video", src: "/images/VID_20260404_120342.mp4", alt: "Visite du parc" },
-  { src: "/images/seccion3.jpg",     alt: "Trampolines" },
+  { src: "/images/home/seccion3.jpg",     alt: "Trampolines" },
   { src: "/images/tobogan-tubo.jpg", alt: "Toboggan tube" },
-  { src: "/images/cumple.png",       alt: "Fête d'anniversaire" },
+  { src: "/images/home/cumple.png",       alt: "Fête d'anniversaire" },
   { src: "/images/107904131_565022047520507_1011703251537892967_n.jpg", alt: "Moments en famille" },
   { src: "/images/logo-foto.jpg",    alt: "Ludykid" },
   { src: "/images/seccion4.png",     alt: "Espace famille" },

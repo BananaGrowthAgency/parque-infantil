@@ -6,7 +6,7 @@ import FadeInUp from "./ui/FadeInUp";
 import ClayCard from "./ui/ClayCard";
 import ClayButton from "./ui/ClayButton";
 
-type Tone = "orange" | "purple" | "green" | "yellow";
+type Tone = "orange" | "purple" | "green" | "yellow" | "blue";
 
 const secciones = [
   {
@@ -21,7 +21,7 @@ const secciones = [
       { icon: "🔒", label: "Exploration sécurisée", desc: "parcours aventures adapté" },
     ],
     precio: "Dès 3,50€ / enfant",
-    imagen: "/images/seccion1.jpg",
+    imagen: "/images/home/seccion1.jpg",
     alt: "Bébé dans la piscine à balles",
     invertida: false,
     color: "#E8731A",
@@ -44,7 +44,7 @@ const secciones = [
       { icon: "🎮", label: "Interactif", desc: "aire de jeux digitale" },
     ],
     precio: "Dès 4,50€ / enfant",
-    imagen: "/images/seccion2.jpg",
+    imagen: "/images/home/seccion2.jpg",
     alt: "Fille sur la structure multi-jeux",
     invertida: true,
     color: "#7B35A0",
@@ -55,29 +55,6 @@ const secciones = [
     ctaHref: "/billetterie",
     claySh: "shadow-clay-purple",
     tone: "purple" as Tone,
-  },
-  {
-    titulo: "Un espace trampoline park unique au Mans",
-    descripcion:
-      "Sauts, rebonds, figures… les enfants adorent notre espace trampoline park.\n👉 Un terrain de jeu dynamique pour se dépenser à fond, en toute sécurité.",
-    items: [
-      { icon: "⚡", label: "Zones de trampolines", desc: "" },
-      { icon: "🎂", label: "Activité idéale pour anniversaire", desc: "" },
-      { icon: "🐣", label: "Adapté aux enfants", desc: "4–12 ans" },
-      { icon: "🔒", label: "Encadré et sécurisé", desc: "" },
-    ],
-    precio: "Dès 4,50€ / enfant",
-    imagen: "/images/seccion3.jpg",
-    alt: "Enfant qui saute sur un trampoline",
-    invertida: false,
-    color: "#2E9E2E",
-    bgLight: "#EDFAED",
-    doodle: { type: "zigzag" as const, color: "#2E9E2E" },
-    objectPosition: "center 20%",
-    cta: "En savoir plus",
-    ctaHref: "/trampoline-park",
-    claySh: "shadow-clay-green",
-    tone: "green" as Tone,
   },
   {
     titulo: "Restauration sur place pour une vraie pause gourmande",
@@ -91,11 +68,11 @@ const secciones = [
       { icon: "👀", label: "Vue sur les enfants", desc: "depuis la cafétéria" },
     ],
     precio: "",
-    imagen: "/images/bar.png",
+    imagen: "/images/home/bar.png",
     alt: "Espace restauration Ludykid",
     invertida: true,
     color: "#FFD600",
-    bgLight: "#FFF6CC",
+    bgLight: "#FFF9E0",
     doodle: { type: "dots" as const, color: "#FFD600" },
     objectPosition: "center center",
     cta: "En savoir plus",
@@ -103,12 +80,119 @@ const secciones = [
     claySh: "shadow-clay-yellow",
     tone: "yellow" as Tone,
   },
+  {
+    titulo: "Un espace trampoline au Mans",
+    descripcion:
+      "Sauts, rebonds, figures… les enfants adorent notre espace trampoline park.\n👉 Un terrain de jeu dynamique pour se dépenser à fond, en toute sécurité.",
+    items: [
+      { icon: "⚡", label: "2 Grands trampolines", desc: "" },
+      { icon: "🎂", label: "Activité idéale pour anniversaire", desc: "" },
+      { icon: "🐣", label: "Accessible à tout âge", desc: "" },
+      { icon: "🔒", label: "Encadré et sécurisé", desc: "" },
+    ],
+    precio: "Dès 4,50€ / enfant",
+    imagen: "/images/home/seccion3.jpg",
+    alt: "Enfant qui saute sur un trampoline",
+    invertida: false,
+    color: "#E8731A",
+    bgLight: "#FFF4EC",
+    doodle: { type: "zigzag" as const, color: "#E8731A" },
+    objectPosition: "center 20%",
+    cta: "En savoir plus",
+    ctaHref: "/trampoline-park",
+    claySh: "shadow-clay-orange",
+    tone: "orange" as Tone,
+  },
+  {
+    titulo: "Laser game enfant au Mans",
+    descripcion:
+      "Un jeu d'action fun et sans danger où les enfants visent, esquivent et marquent des points en équipe.\nParfait pour se défouler et passer un super moment !",
+    items: [
+      { icon: "🎯", label: "Accessible dès 5 ans", desc: "" },
+      { icon: "👥", label: "Minimum 2 joueurs", desc: "" },
+      { icon: "⏱️", label: "Session de 10 minutes", desc: "" },
+      { icon: "💰", label: "Prix par joueur", desc: "" },
+    ],
+    pricing: [
+      { label: "1 partie", price: "3€" },
+      { label: "5 parties", price: "14€" },
+      { label: "8 parties", price: "20€" },
+    ],
+    precio: "",
+    imagen: "/images/laser-game.jpg",
+    alt: "Laser game enfant Ludykid",
+    invertida: false,
+    color: "#7B35A0",
+    bgLight: "#F5EEFF",
+    doodle: { type: "zigzag" as const, color: "#7B35A0" },
+    objectPosition: "center center",
+    cta: "En savoir plus",
+    ctaHref: "/laser-game",
+    claySh: "shadow-clay-purple",
+    tone: "purple" as Tone,
+  },
+  {
+    titulo: "Escape game enfant en réalité augmentée",
+    descripcion:
+      "Résolvez des énigmes en équipe avec une tablette et vivez une aventure immersive pleine de défis !",
+    items: [
+      { icon: "🥽", label: "Escape game en réalité augmentée", desc: "" },
+      { icon: "🎂", label: "Accessible dès 9 ans", desc: "" },
+      { icon: "👥", label: "À faire en équipe", desc: "min. 2 joueurs" },
+      { icon: "🎉", label: "Idéal anniversaire", desc: "" },
+      { icon: "💰", label: "3€ la partie par enfant", desc: "" },
+    ],
+    precio: "",
+    imagen: "/images/escape-game.png",
+    alt: "Escape game en réalité augmentée Ludykid",
+    invertida: true,
+    color: "#2E9E2E",
+    bgLight: "#E8FAE8",
+    doodle: { type: "swirl" as const, color: "#2E9E2E" },
+    objectPosition: "center center",
+    cta: "En savoir plus",
+    ctaHref: "/escape-game",
+    claySh: "shadow-clay-green",
+    tone: "green" as Tone,
+  },
+  {
+    titulo: "Accrobranche enfant",
+    descripcion:
+      "Prenez de la hauteur et faites le tour de la piste de bumpers ! Un parcours ludique avec ponts, passerelles et obstacles d'équilibre pour se dépasser en toute sécurité.",
+    items: [
+      { icon: "🧒", label: "De 4 à 12 ans", desc: "" },
+      { icon: "🔄", label: "Fait le tour de la piste de bumpers", desc: "" },
+      { icon: "⚖️", label: "Plusieurs éléments d'équilibre", desc: "" },
+      { icon: "🔒", label: "Sécurité ++", desc: "" },
+      { icon: "🎮", label: "Inclus dans la structure de jeux 4-12 ans", desc: "" },
+    ],
+    precio: "",
+    imagen: "/images/accrobranche.jpg",
+    alt: "Accrobranche enfant Ludykid",
+    invertida: false,
+    color: "#FFD600",
+    bgLight: "#FFF6E0",
+    doodle: { type: "star" as const, color: "#FFD600" },
+    objectPosition: "center center",
+    cta: "En savoir plus",
+    ctaHref: "/billetterie",
+    claySh: "shadow-clay-yellow",
+    tone: "yellow" as Tone,
+  },
 ];
 
-export default function Atracciones() {
+type Props = {
+  from?: number;
+  to?: number;
+  lastBg?: string;
+  sectionId?: string;
+};
+
+export default function Atracciones({ from = 0, to = secciones.length, lastBg = "#FFF0FA", sectionId }: Props) {
+  const slice = secciones.slice(from, to);
   return (
-    <section id="atracciones">
-      {secciones.map((s, i) => (
+    <section id={sectionId}>
+      {slice.map((s, i) => (
         <div key={s.titulo} className="relative py-16" style={{ backgroundColor: s.bgLight }}>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-6 left-4 opacity-20 animate-float">
@@ -184,13 +268,27 @@ export default function Atracciones() {
                     ))}
                   </ul>
 
+                  {"pricing" in s && Array.isArray(s.pricing) && s.pricing.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {(s.pricing as { label: string; price: string }[]).map((p) => (
+                        <span
+                          key={p.label}
+                          className="font-fredoka font-bold text-sm px-4 py-1.5 rounded-full shadow-clay-inset"
+                          style={{ backgroundColor: s.color + "22", color: s.color }}
+                        >
+                          {p.label} : {p.price}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-3">
                     <ClayButton href={s.ctaHref} tone={s.tone} size="md">
                       {s.cta}
                     </ClayButton>
-                    {"cta2" in s && s.cta2 && (
-                      <ClayButton href={(s as { ctaHref2: string }).ctaHref2} tone="orange-outline" size="md">
-                        {s.cta2}
+                    {"cta2" in s && (s as unknown as { cta2: string; ctaHref2: string }).cta2 && (
+                      <ClayButton href={(s as unknown as { cta2: string; ctaHref2: string }).ctaHref2} tone="orange-outline" size="md">
+                        {(s as unknown as { cta2: string; ctaHref2: string }).cta2}
                       </ClayButton>
                     )}
                   </div>
@@ -204,7 +302,7 @@ export default function Atracciones() {
               viewBox="0 0 1440 80"
               preserveAspectRatio="none"
               className="w-full h-16 block"
-              fill={i < secciones.length - 1 ? secciones[i + 1].bgLight : "#FFF0FA"}
+              fill={i < slice.length - 1 ? slice[i + 1].bgLight : lastBg}
             >
               <path d="M0,40 C180,80 360,0 540,50 C720,80 900,0 1080,45 C1260,80 1380,10 1440,35 L1440,80 L0,80 Z" />
             </svg>

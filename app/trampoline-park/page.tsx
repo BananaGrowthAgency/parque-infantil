@@ -36,7 +36,7 @@ export default function TrampolinePage() {
       <section className="relative pt-16">
         <div className="relative overflow-hidden" style={{ height: "62vh", minHeight: 440 }}>
           <Image
-            src="/images/seccion3.jpg"
+            src="/images/home/seccion3.jpg"
             alt="Trampoline parc Ludykid Le Mans"
             fill
             priority
