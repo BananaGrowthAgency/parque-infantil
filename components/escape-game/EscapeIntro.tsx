@@ -3,6 +3,7 @@ import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 import ClayCard from "../ui/ClayCard";
 import ClayButton from "../ui/ClayButton";
+import Wave from "../Wave";
 
 const FEATURES = [
   {
@@ -32,7 +33,7 @@ const FEATURES = [
   },
 ];
 
-export default function EscapeIntro() {
+export default function EscapeIntro({ nextBg = "#F4FBF4" }: { nextBg?: string }) {
   return (
     <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#F4FBF4" }}>
       <div className="absolute top-6 left-4 opacity-25 animate-float pointer-events-none">
@@ -116,6 +117,7 @@ export default function EscapeIntro() {
           </FadeInUp>
         </div>
       </div>
+      <Wave fill={nextBg} bg="#F4FBF4" />
     </section>
   );
 }

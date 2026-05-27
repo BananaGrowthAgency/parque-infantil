@@ -19,7 +19,7 @@ export default function EscapeGamePage() {
     <main className="bg-[#F4FBF4]">
       <Navbar />
       <HeroEscape />
-      <EscapeIntro />
+      <EscapeIntro nextBg="#F5EEFF" />
       <Cumple nextBg="white" tone="purple" />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
