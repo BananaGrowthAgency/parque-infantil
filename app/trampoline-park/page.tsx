@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Doodle from "@/components/Doodle";
-import FadeInUp from "@/components/ui/FadeInUp";
-import ClayButton from "@/components/ui/ClayButton";
-import ClayCard from "@/components/ui/ClayCard";
-import SquiggleTitle from "@/components/ui/SquiggleTitle";
 import HeroTrampoline from "@/components/trampoline/HeroTrampoline";
+import TrampolineIntro from "@/components/trampoline/TrampolineIntro";
+import ActivitiesGrid from "@/components/trampoline/ActivitiesGrid";
+import Cumple from "@/components/Cumple";
+import Testimonios from "@/components/Testimonios";
+import Galerie from "@/components/Galerie";
+import InfosPratiques from "@/components/InfosPratiques";
 
 export const metadata = {
   title: "Ludykid | Espace Trampoline Enfant Le Mans",
@@ -14,143 +14,18 @@ export const metadata = {
     "À la recherche d'un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s'amuser chez Ludykid.",
 };
 
-const FEATURES = [
-  { icon: "⚡", label: "Zones de trampolines", desc: "Plusieurs espaces pour sauter, rebondir et tester ses figures." },
-  { icon: "🎂", label: "Idéal anniversaire", desc: "Une activité fun à intégrer à toutes nos formules d'anniversaire." },
-  { icon: "🐣", label: "Adapté 4–12 ans", desc: "Conçu pour les enfants à partir de 4 ans, à leur rythme." },
-  { icon: "🔒", label: "Encadré & sécurisé", desc: "Présence du personnel, mousse de réception, zones balisées." },
-];
-
-const RULES = [
-  "Chaussettes obligatoires (en vente à l'accueil si besoin)",
-  "Un enfant par trampoline pour éviter les collisions",
-  "Pas de saut depuis l'extérieur ni de figures non maîtrisées",
-  "Les enfants restent sous la surveillance d'un adulte accompagnant",
-];
-
 export default function TrampolinePage() {
   return (
     <main className="bg-[#FFF8EC] min-h-screen">
       <Navbar />
-
       <HeroTrampoline />
-
-      {/* Bandeau prix */}
-      <div className="relative z-10 -mt-10 sm:-mt-14 px-4 sm:px-8 lg:px-16 mb-12">
-        <div className="max-w-3xl mx-auto">
-          <FadeInUp delay={0.05}>
-            <div className="flex items-center justify-center gap-4 px-6 py-5 rounded-clay-lg bg-white border-[3px] border-lk-orange shadow-clay-orange">
-              <span className="text-3xl">👉</span>
-              <p className="font-fredoka font-extrabold text-lk-orange text-xl md:text-2xl">
-                Dès 4,50 € / enfant
-              </p>
-            </div>
-          </FadeInUp>
-        </div>
-      </div>
-
-      {/* Features */}
-      <section className="px-6 pb-16 relative overflow-hidden">
-        <div className="absolute top-10 left-6 opacity-15 animate-float pointer-events-none">
-          <Doodle type="star" color="#E8731A" size={60} />
-        </div>
-        <div className="absolute top-20 right-10 opacity-15 animate-wiggle pointer-events-none">
-          <Doodle type="zigzag" color="#E8731A" size={70} />
-        </div>
-
-        <div className="max-w-5xl mx-auto relative">
-          <FadeInUp>
-            <SquiggleTitle color="#E8731A">Au programme ⚡</SquiggleTitle>
-          </FadeInUp>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
-            {FEATURES.map((f, i) => (
-              <FadeInUp key={f.label} delay={0.1 + i * 0.06}>
-                <ClayCard size="md" tone="white" className="h-full flex items-start gap-4">
-                  <span
-                    className="shrink-0 w-12 h-12 rounded-clay flex items-center justify-center text-2xl shadow-clay-inset"
-                    style={{ backgroundColor: "#E8731A1F" }}
-                  >
-                    {f.icon}
-                  </span>
-                  <div>
-                    <p className="font-fredoka font-extrabold text-lk-orange text-lg leading-tight mb-1">
-                      {f.label}
-                    </p>
-                    <p className="font-nunito text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                  </div>
-                </ClayCard>
-              </FadeInUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Règles de sécurité */}
-      <section className="px-6 pb-16">
-        <div className="max-w-4xl mx-auto">
-          <FadeInUp>
-            <div className="rounded-clay-lg border-[3px] border-lk-orange shadow-clay-orange bg-white overflow-hidden">
-              <div className="bg-lk-orange px-6 py-4 flex items-center gap-3">
-                <span className="text-2xl">🔒</span>
-                <h2 className="font-fredoka font-extrabold text-white text-xl md:text-2xl">
-                  Sécurité & bon esprit
-                </h2>
-              </div>
-              <div className="p-6">
-                <p className="font-nunito text-gray-700 text-sm md:text-base mb-4 leading-relaxed">
-                  Pour que tout le monde s&apos;amuse, on respecte quelques règles simples :
-                </p>
-                <ul className="space-y-3">
-                  {RULES.map((r) => (
-                    <li key={r} className="flex items-start gap-3">
-                      <span
-                        className="shrink-0 mt-0.5 inline-flex items-center justify-center w-6 h-6 rounded-full text-white font-bold text-xs shadow-clay-sm"
-                        style={{ backgroundColor: "#E8731A" }}
-                      >
-                        ✓
-                      </span>
-                      <span className="font-nunito text-sm md:text-base text-gray-700">{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="px-6 pb-20">
-        <div className="max-w-3xl mx-auto">
-          <FadeInUp>
-            <div className="rounded-clay-lg bg-lk-orange shadow-clay-orange p-8 md:p-10 text-center relative overflow-hidden">
-              <div className="absolute top-4 right-4 opacity-30">
-                <Doodle type="star" color="#ffffff" size={56} />
-              </div>
-              <div className="absolute bottom-3 left-5 opacity-25">
-                <Doodle type="circle" color="#ffffff" size={44} />
-              </div>
-              <h2 className="font-fredoka font-extrabold text-white text-2xl md:text-3xl leading-tight">
-                Prêt à sauter ?
-              </h2>
-              <p className="font-nunito text-white/90 text-sm md:text-base mt-3 mb-6 max-w-xl mx-auto">
-                Réservez vos entrées en ligne et venez tester nos trampolines avec vos enfants.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <ClayButton href="/billetterie" tone="white" size="lg">
-                  🎫 Réserver mes entrées
-                </ClayButton>
-                <ClayButton href="/anniversaire" tone="purple" size="lg">
-                  🎂 Anniversaire au trampoline
-                </ClayButton>
-              </div>
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
-
-      <Footer waveBg="#FFF8EC" />
+      <TrampolineIntro nextBg="#EDFAED" />
+      <Cumple nextBg="white" />
+      <Testimonios nextBg="white" />
+      <ActivitiesGrid />
+      <Galerie />
+      <InfosPratiques />
+      <Footer waveBg="#F9FAFB" />
     </main>
   );
 }
