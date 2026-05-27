@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ClayButton from "../ui/ClayButton";
 
 export default function HeroTrampoline() {
   return (
@@ -36,11 +37,19 @@ export default function HeroTrampoline() {
               Enfant Le Mans
             </h1>
             <p
-              className="font-nunito text-white/95 text-base md:text-lg mt-5"
+              className="font-nunito text-white/95 text-base md:text-lg mt-5 mb-8"
               style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s&apos;amuser chez Ludykid.
             </p>
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr" tone="orange" size="lg" target="_blank" rel="noopener noreferrer">
+                Réserver votre anniversaire
+              </ClayButton>
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="lg" target="_blank" rel="noopener noreferrer">
+                Billetterie
+              </ClayButton>
+            </div>
           </div>
         </div>
       </div>

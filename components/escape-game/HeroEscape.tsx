@@ -59,10 +59,10 @@ export default function HeroEscape() {
               transition={{ duration: 0.7, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
               className="flex items-center justify-center gap-3 flex-wrap"
             >
-              <ClayButton href="/anniversaire" tone="orange" size="lg">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr" tone="orange" size="lg" target="_blank" rel="noopener noreferrer">
                 Réserver votre anniversaire
               </ClayButton>
-              <ClayButton href="/billetterie" tone="purple" size="lg">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="lg" target="_blank" rel="noopener noreferrer">
                 Billetterie
               </ClayButton>
             </motion.div>

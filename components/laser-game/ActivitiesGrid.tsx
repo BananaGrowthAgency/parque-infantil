@@ -63,7 +63,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Vos enfants prennent de la hauteur, se dépassent et gagnent en confiance !",
     image: "/images/seccion2.jpg",
     alt: "Accrobranche indoor chez Ludykid",
-    href: "/billetterie",
+    href: "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr",
     icon: IconAccrobranche,
   },
   {

@@ -10,21 +10,21 @@ const FORMULES = [
     price: "17,50€ / enfant",
     note: "De 4 à 15 enfants",
     color: "#E8731A",
-    href: "/billetterie/anniversaire/maxiludy",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
   },
   {
     name: "Ludykid",
     price: "14,50€ / enfant",
     note: "De 4 à 15 enfants",
     color: "#7B35A0",
-    href: "/billetterie/anniversaire/ludykid",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
   },
   {
     name: "Libre",
     price: "10,50€ /enfant",
     note: "De 8 à 15 enfants",
     color: "#2E9E2E",
-    href: "/billetterie/anniversaire/libre",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
   },
   {
     name: "Ludynight",
@@ -32,7 +32,7 @@ const FORMULES = [
     note: "Minimum 15 enfants",
     color: "#FFD600",
     textColor: "#3A2A00",
-    href: "/billetterie/anniversaire/ludynight",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
   },
 ];
 
@@ -164,6 +164,8 @@ export default function FormulesTable() {
                         <div className="mt-3 flex justify-center">
                           <a
                             href={f.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-white font-fredoka font-bold text-[11px] leading-tight whitespace-nowrap transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                             style={{
                               color: f.textColor ?? f.color,
@@ -286,6 +288,8 @@ export default function FormulesTable() {
                 </div>
                 <a
                   href={current.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white font-fredoka font-bold text-[11px] leading-tight whitespace-nowrap shrink-0 transition-all duration-200 hover:scale-105 active:scale-95"
                   style={{
                     color: current.textColor ?? current.color,
