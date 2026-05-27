@@ -73,7 +73,7 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
 
               <ul className="space-y-3 mb-4">
                 {[
-                  { icon: "🎂", text: "Goûter inclus" },
+                  { icon: "🎂", text: "Goûter inclus", sub: "Selon la formule choisie" },
                   { icon: "🐣", text: "Animations encadrées" },
                   { icon: "🎁", text: "Surprises & cadeaux" },
                   { icon: "🎈", text: "Accès illimité au parc" },
@@ -86,7 +86,12 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
                       >
                         {item.icon}
                       </span>
-                      <span className="font-nunito text-sm text-gray-700">{item.text}</span>
+                      <span className="font-nunito text-sm text-gray-700 leading-tight">
+                        {item.text}
+                        {"sub" in item && (
+                          <span className="block text-xs text-gray-400">{(item as { sub: string }).sub}</span>
+                        )}
+                      </span>
                     </li>
                   </FadeInUp>
                 ))}
