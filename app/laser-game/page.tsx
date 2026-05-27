@@ -9,9 +9,9 @@ import Galerie from "@/components/Galerie";
 import InfosPratiques from "@/components/InfosPratiques";
 
 export const metadata = {
-  title: "Laser Game enfant au Mans · Ludykid",
+  title: "Ludykid Le Mans | Laser Game Enfant Le Mans",
   description:
-    "Laser Game enfant chez Ludykid Le Mans. Dès 5 ans, en équipe, dans un univers futuriste. À partir de 3 € la partie.",
+    "À la recherche d'un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d'équipe et coordination chez Ludykid.",
 };
 
 export default function LaserGamePage() {
