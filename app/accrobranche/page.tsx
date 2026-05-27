@@ -19,8 +19,8 @@ export default function AccrobranchePage() {
     <main className="bg-[#FFF8CC]">
       <Navbar />
       <HeroAccro />
-      <AccroIntro />
-      <Cumple nextBg="white" />
+      <AccroIntro nextBg="#F5EEFF" />
+      <Cumple nextBg="white" tone="purple" />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />

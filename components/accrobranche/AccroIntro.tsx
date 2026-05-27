@@ -3,6 +3,7 @@ import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 import ClayCard from "../ui/ClayCard";
 import ClayButton from "../ui/ClayButton";
+import Wave from "../Wave";
 
 const FEATURES = [
   {
@@ -32,9 +33,9 @@ const FEATURES = [
   },
 ];
 
-export default function AccroIntro() {
+export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) {
   return (
-    <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#FFF8CC" }}>
+    <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: "#FFF8CC" }}>
       <div className="absolute top-6 left-4 opacity-30 animate-float pointer-events-none">
         <Doodle type="star" color="#FFD600" size={64} />
       </div>
@@ -45,7 +46,7 @@ export default function AccroIntro() {
         <Doodle type="circle" color="#FFD600" size={48} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
           {/* Image gauche */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
@@ -112,6 +113,7 @@ export default function AccroIntro() {
           </FadeInUp>
         </div>
       </div>
+      <Wave fill={nextBg} bg="#FFF8CC" />
     </section>
   );
 }
