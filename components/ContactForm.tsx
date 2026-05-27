@@ -5,6 +5,7 @@ import Doodle from "./Doodle";
 import SquiggleTitle from "./ui/SquiggleTitle";
 import ClayButton from "./ui/ClayButton";
 import FadeInUp from "./ui/FadeInUp";
+
 export default function ContactForm() {
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
@@ -20,17 +21,17 @@ export default function ContactForm() {
     <section className="relative max-w-2xl mx-auto px-6">
       {/* Doodles décoratifs */}
       <div className="absolute -top-4 -left-8 opacity-20 animate-float pointer-events-none">
-        <Doodle type="star" color="#2E9E2E" size={64} />
+        <Doodle type="star" color="#7B35A0" size={64} />
       </div>
       <div className="absolute top-20 -right-6 opacity-15 animate-wiggle pointer-events-none">
         <Doodle type="circle" color="#7B35A0" size={52} />
       </div>
       <div className="absolute bottom-10 -left-4 opacity-15 animate-float-slow pointer-events-none">
-        <Doodle type="swirl" color="#2E9E2E" size={48} />
+        <Doodle type="swirl" color="#7B35A0" size={48} />
       </div>
 
       <FadeInUp y={20} className="mb-10 text-center">
-        <SquiggleTitle color="#2E9E2E">Nous contacter 💬</SquiggleTitle>
+        <SquiggleTitle color="#7B35A0">Nous contacter 💬</SquiggleTitle>
         <p className="font-nunito text-gray-500 text-sm mt-3">
           Une question ? Une demande spéciale ? On vous répond vite !
         </p>
@@ -38,9 +39,9 @@ export default function ContactForm() {
 
       {sent ? (
         <FadeInUp y={16}>
-          <div className="rounded-clay-lg border-[3px] border-[#2E9E2E] bg-white shadow-clay-green p-10 text-center space-y-4">
+          <div className="rounded-clay-lg border-[3px] border-[#7B35A0] bg-white shadow-clay-purple p-10 text-center space-y-4">
             <span className="text-6xl">🎉</span>
-            <p className="font-fredoka font-extrabold text-2xl text-[#2E9E2E]">
+            <p className="font-fredoka font-extrabold text-2xl text-[#7B35A0]">
               Message envoyé !
             </p>
             <p className="font-nunito text-gray-500 text-sm">
@@ -52,7 +53,7 @@ export default function ContactForm() {
         <FadeInUp y={24} delay={0.1}>
           <form
             onSubmit={handleSubmit}
-            className="rounded-clay-lg border-[3px] border-lk-green/30 bg-white shadow-clay-green p-8 space-y-6"
+            className="rounded-clay-lg border-[3px] border-lk-purple/30 bg-white shadow-clay-purple p-8 space-y-6"
           >
             {/* Nom */}
             <div className="space-y-1.5">
@@ -66,7 +67,7 @@ export default function ContactForm() {
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
                 placeholder="ex. Marie Dupont"
-                className="w-full rounded-clay border-2 border-gray-200 bg-gray-50 px-4 py-3 font-nunito text-sm text-gray-800 placeholder-gray-300 outline-none transition-all focus:border-lk-green focus:bg-white focus:shadow-clay-sm"
+                className="w-full rounded-clay border-2 border-gray-200 bg-gray-50 px-4 py-3 font-nunito text-sm text-gray-800 placeholder-gray-300 outline-none transition-all focus:border-lk-purple focus:bg-white focus:shadow-clay-sm"
               />
             </div>
 
@@ -82,7 +83,7 @@ export default function ContactForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ex. marie@email.com"
-                className="w-full rounded-clay border-2 border-gray-200 bg-gray-50 px-4 py-3 font-nunito text-sm text-gray-800 placeholder-gray-300 outline-none transition-all focus:border-lk-green focus:bg-white focus:shadow-clay-sm"
+                className="w-full rounded-clay border-2 border-gray-200 bg-gray-50 px-4 py-3 font-nunito text-sm text-gray-800 placeholder-gray-300 outline-none transition-all focus:border-lk-purple focus:bg-white focus:shadow-clay-sm"
               />
             </div>
 
@@ -97,12 +98,12 @@ export default function ContactForm() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Écrivez votre message ici…"
-                className="w-full rounded-clay border-2 border-gray-200 bg-gray-50 px-4 py-3 font-nunito text-sm text-gray-800 placeholder-gray-300 outline-none transition-all focus:border-lk-green focus:bg-white focus:shadow-clay-sm resize-none"
+                className="w-full rounded-clay border-2 border-gray-200 bg-gray-50 px-4 py-3 font-nunito text-sm text-gray-800 placeholder-gray-300 outline-none transition-all focus:border-lk-purple focus:bg-white focus:shadow-clay-sm resize-none"
               />
             </div>
 
             <div className="flex justify-end">
-              <ClayButton type="submit" tone="green" size="md">
+              <ClayButton type="submit" tone="purple" size="md">
                 Valider ✉️
               </ClayButton>
             </div>

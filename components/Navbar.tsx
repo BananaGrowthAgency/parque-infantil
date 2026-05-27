@@ -14,8 +14,16 @@ const ACTIVITE_ITEMS = [
 
 const PHONE_COLORS: Record<string, { bg: string; icon: string }> = {
   "/":                { bg: "#FFF3E6", icon: "#E8731A" },
+  "/escape-game":     { bg: "#E8F7E8", icon: "#2E9E2E" },
+  "/accrobranche":    { bg: "#FFF9E0", icon: "#FFD600" },
+  "/laser-game":      { bg: "#F5EEFF", icon: "#7B35A0" },
   "/trampoline-park": { bg: "#FFF3E6", icon: "#E8731A" },
   "/anniversaire":    { bg: "#F5EEFF", icon: "#7B35A0" },
+  "/restauration/boissons-chaudes": { bg: "#FFF3E6", icon: "#E8731A" },
+  "/restauration/boissons-fraiches": { bg: "#FFF9E0", icon: "#FFD600" },
+  "/restauration/plaisirs-sales":    { bg: "#E8F7E8", icon: "#2E9E2E" },
+  "/restauration/plaisirs-sucres":   { bg: "#F5EEFF", icon: "#7B35A0" },
+  "/restauration/infos-utiles":      { bg: "#E8F0FF", icon: "#1877F2" },
   "/restauration":    { bg: "#E8F7E8", icon: "#2E9E2E" },
   "/tarifs":          { bg: "#FFF8CC", icon: "#B8940A" },
   "/garderie":        { bg: "#FFF3E6", icon: "#E8731A" },

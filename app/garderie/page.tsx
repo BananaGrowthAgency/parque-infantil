@@ -6,7 +6,7 @@ import Testimonios from "@/components/Testimonios";
 import InfosPratiques from "@/components/InfosPratiques";
 import FadeInUp from "@/components/ui/FadeInUp";
 
-const BLUE = "#1877F2";
+const ORANGE = "#E8731A";
 
 const FEATURES = [
   { icon: "/images/iconos/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
@@ -16,13 +16,13 @@ const FEATURES = [
 ];
 
 export const metadata = {
-  title: "La Garderie – Ludykid Le Mans",
-  description: "Service garderie dès 4 ans chez Ludykid. Vos enfants sont encadrés par nos animateurs pendant que vous soufflez. 1h à partir de 10€.",
+  title: "Ludykid Le Mans | Garderie enfant parc indoor dès 4 ans",
+  description: "À la recherche d'une garderie au Mans ? Confiez votre enfant dès 4 ans à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.",
 };
 
 export default function GarderiePage() {
   return (
-    <main className="bg-[#E8F7FF] min-h-screen">
+    <main className="bg-[#FFF8EC] min-h-screen">
       <Navbar />
       <HeroGarderie />
 
@@ -31,14 +31,14 @@ export default function GarderiePage() {
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 items-stretch">
           {FEATURES.map((f, i) => (
             <FadeInUp key={f.label} y={20} delay={0.08 + i * 0.08} className="h-full">
-              <div className="h-full rounded-clay-lg border-2 border-[#1877F2]/20 bg-white shadow-clay p-4 text-center space-y-1.5">
+              <div className="h-full rounded-clay-lg border-2 border-[#E8731A]/20 bg-white shadow-clay p-4 text-center space-y-1.5">
                 <div
                   aria-hidden="true"
                   className="mx-auto"
                   style={{
                     width: 64,
                     height: 64,
-                    backgroundColor: BLUE,
+                    backgroundColor: ORANGE,
                     WebkitMaskImage: `url(${f.icon})`,
                     maskImage: `url(${f.icon})`,
                     WebkitMaskRepeat: "no-repeat",
@@ -49,7 +49,7 @@ export default function GarderiePage() {
                     maskSize: "contain",
                   }}
                 />
-                <p className="font-fredoka font-extrabold text-[#1877F2] text-sm">{f.label}</p>
+                <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">{f.label}</p>
                 <p className="font-nunito text-gray-400 text-xs">{f.desc}</p>
               </div>
             </FadeInUp>
@@ -59,7 +59,7 @@ export default function GarderiePage() {
 
       <Garderie />
       <Testimonios nextBg="#F9FAFB" />
-      <InfosPratiques />
+      <InfosPratiques showTopWave={false} />
       <Footer waveBg="#F9FAFB" />
     </main>
   );

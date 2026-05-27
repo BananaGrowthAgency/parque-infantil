@@ -35,10 +35,11 @@ export default function HeroLaser() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight mb-5 drop-shadow-xl"
+              className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight mb-5"
+              style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
               Ludykid | Laser Game Enfant{" "}
-              <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
+              <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
                 Le Mans
               </span>
             </motion.h1>
@@ -47,7 +48,8 @@ export default function HeroLaser() {
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-nunito text-white/95 text-base md:text-lg max-w-2xl mx-auto mb-7 drop-shadow-lg leading-relaxed"
+              className="font-nunito text-white/95 text-base md:text-lg max-w-2xl mx-auto mb-7 leading-relaxed"
+              style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
             >
               À la recherche d&apos;un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d&apos;équipe et coordination chez Ludykid.
             </motion.p>

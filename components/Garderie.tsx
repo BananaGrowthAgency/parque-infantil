@@ -1,5 +1,6 @@
 "use client";
 
+import { ReactNode, Fragment } from "react";
 import Image from "next/image";
 import Doodle from "./Doodle";
 import Wave from "./Wave";
@@ -24,13 +25,15 @@ function SectionIntro({
   iconBg = "#E8F4FF",
   shadow = "shadow-clay-blue",
   nextBg,
+  tarifBlock,
+  ctaDotContent,
 }: {
-  title: string;
+  title: ReactNode;
   desc?: string;
   features: { icon: string; label: string; desc?: string }[];
-  cta: string;
-  ctaHref: string;
-  ctaTone: "blue" | "orange" | "purple" | "green";
+  cta?: string;
+  ctaHref?: string;
+  ctaTone?: "blue" | "orange" | "purple" | "green" | "yellow";
   image: string;
   imageAlt: string;
   reverse?: boolean;
@@ -39,6 +42,8 @@ function SectionIntro({
   iconBg?: string;
   shadow?: string;
   nextBg?: string;
+  tarifBlock?: ReactNode;
+  ctaDotContent?: ReactNode;
 }) {
   return (
     <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: bg }}>
@@ -67,9 +72,9 @@ function SectionIntro({
               {desc && (
                 <p className="font-nunito text-gray-500 text-sm leading-relaxed mb-5">{desc}</p>
               )}
-              <ul className="space-y-3 mb-6 flex-1">
+              <ul className="space-y-3 mb-4 flex-1">
                 {features.map((f) => (
-                  <li key={f.label} className="flex items-start gap-3">
+                  <li key={f.label} className={`flex gap-3 ${f.desc?.startsWith("—") ? "items-center" : "items-start"}`}>
                     <span
                       className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg flex-shrink-0 shadow-clay-inset"
                       style={{ backgroundColor: iconBg }}
@@ -77,17 +82,32 @@ function SectionIntro({
                       {f.icon}
                     </span>
                     <span className="font-nunito text-sm text-gray-700 leading-snug">
-                      <span className="font-bold block text-gray-800">{f.label}</span>
-                      {f.desc && <span className="text-gray-500">{f.desc}</span>}
+                      {f.desc?.startsWith("—") ? (
+                        <span>
+                          <span className="font-bold text-gray-800">{f.label}</span>
+                          {" "}
+                          <span className="text-gray-500">{f.desc}</span>
+                        </span>
+                      ) : (
+                        <>
+                          <span className="font-bold block text-gray-800">{f.label}</span>
+                          {f.desc && <span className="text-gray-500">{f.desc}</span>}
+                        </>
+                      )}
                     </span>
                   </li>
                 ))}
               </ul>
-              <div>
-                <ClayButton href={ctaHref} tone={ctaTone} size="md">
-                  {cta}
-                </ClayButton>
-              </div>
+              {tarifBlock && (
+                <div className="mb-5">{tarifBlock}</div>
+              )}
+              {cta && ctaHref && ctaTone && (
+                <div>
+                  <ClayButton href={ctaHref} tone={ctaTone} size="md" dotContent={ctaDotContent}>
+                    {cta}
+                  </ClayButton>
+                </div>
+              )}
             </div>
           </FadeInUp>
         </div>
@@ -106,39 +126,24 @@ export default function Garderie() {
         title="Un espace de jeu et de découvertes en toute confiance"
         desc="Besoin de prendre du temps pour vous ? Dès 4 ans, un service garderie vous est proposé. Vos enfants seront sous la surveillance de nos animateurs."
         features={[
-          { icon: "👦", label: "Dès 4 ans",            desc: "Un service garderie pour les enfants dès 4 ans." },
-          { icon: "🛡️", label: "Encadrement assuré",   desc: "Les enfants sont sous la surveillance d'animateurs." },
-          { icon: "💰", label: "10,00 € / heure",      desc: "Tarif dégressif — renseignements à l'accueil." },
-          { icon: "🎟️", label: "Entrée du parc incluse", desc: "L'accès au parc est compris dans les tarifs." },
+          { icon: "👦", label: "Dès 4 ans",              desc: "Un service garderie pour les enfants dès 4 ans." },
+          { icon: "🛡️", label: "Encadrement assuré",     desc: "Les enfants sont sous la surveillance d'animateurs." },
+          { icon: "🕐", label: "10,00 € l'heure (tarif dégressif)", desc: "Des tarifs dégressifs pour plus de temps et encore plus de plaisir !" },
+          { icon: "🎟️", label: "Entrée incluse",          desc: "L'entrée du parc est comprise dans les tarifs." },
         ]}
+        tarifBlock={
+          <div className="rounded-clay bg-orange-50 border border-[#E8731A]/20 px-4 py-3 space-y-0.5">
+            <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">Tarifs :</p>
+            <p className="font-nunito text-sm text-gray-700">10,00€ l&apos;heure (tarif dégressif)</p>
+            <p className="font-nunito text-sm text-gray-500">(Renseignements à l&apos;accueil)</p>
+            <p className="font-nunito text-xs text-gray-400 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
+          </div>
+        }
         cta="Profitez de l'offre sur place"
         ctaHref="/contact"
-        ctaTone="blue"
-        image="/images/img_2469.jpg"
-        imageAlt="Enfant jouant à la garderie Ludykid"
-        bg="#E8F7FF"
-        accent={BLUE}
-        iconBg="#E8F4FF"
-        shadow="shadow-clay-blue"
-        nextBg="#FFF8EC"
-      />
-
-      {/* 2. Nounous */}
-      <SectionIntro
-        title="Le rendez-vous mensuel des Nounous 👩‍🍼"
-        desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé."
-        features={[
-          { icon: "📅", label: "Un jeudi matin par mois",            desc: "Un moment dédié rien que pour vous et les enfants." },
-          { icon: "🎮", label: "Une activité encadrée",              desc: "Les enfants s'amusent en toute sécurité." },
-          { icon: "💰", label: "6,00 € par enfant de plus d'un an",  desc: "" },
-          { icon: "💛", label: "Un temps privilégié",                desc: "Pour jouer, se dépenser et partager de bons moments." },
-        ]}
-        cta="Contactez-nous pour plus d'infos !"
-        ctaHref="/contact"
         ctaTone="orange"
-        image="/images/img_4094.jpg"
-        imageAlt="Enfants s'amusant à Ludykid"
-        reverse
+        image="/images/garderie-intro.jpg"
+        imageAlt="Enfant jouant à la garderie Ludykid"
         bg="#FFF8EC"
         accent="#E8731A"
         iconBg="#FFF0E0"
@@ -146,21 +151,22 @@ export default function Garderie() {
         nextBg="#F5EEFF"
       />
 
-      {/* 3. Grands */}
+      {/* 2. Nounous */}
       <SectionIntro
-        title="Un parc de jeux indoor pour les plus grands (4–12 ans)"
-        desc="Un espace pensé pour les enfants de 4 à 12 ans qui souhaitent se dépenser dans un cadre sécurisé et stimulant."
+        title={<>Le rendez-vous mensuel <span style={{ color: "#7B35A0" }}>des Nounous</span> 👩‍🍼</>}
+        desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé, au tarif de 6€ par enfant de plus d'un an."
         features={[
-          { icon: "🧗", label: "Accrobranche",    desc: "Parcours en hauteur, passerelles et obstacles." },
-          { icon: "🎯", label: "Laser game",       desc: "Jeu d'équipe dans un univers futuriste." },
-          { icon: "🔒", label: "Escape game",      desc: "Énigmes en réalité augmentée dès 9 ans." },
-          { icon: "⚡", label: "Trampoline",       desc: "Sauts et rebonds en toute liberté." },
+          { icon: "📅", label: "Un jeudi matin par mois",  desc: "Un moment dédié rien que pour vous et les enfants." },
+          { icon: "👫", label: "De 0 à 12 ans",            desc: "Une activité adaptée à tous les âges pour s'amuser en toute sécurité." },
+          { icon: "🎟️", label: "Tarif",                    desc: "6,00 € par enfant de plus d'un an." },
+          { icon: "🎁", label: "Un temps privilégié",      desc: "Pour jouer, se dépenser et partager de bons moments." },
         ]}
-        cta="Voir les activités"
-        ctaHref="/billetterie"
+        cta="Contactez-nous pour plus d'infos !"
+        ctaHref="tel:+33243414869"
         ctaTone="purple"
-        image="/images/home/accrobranche-hero.jpg"
-        imageAlt="Parc de jeux indoor pour les grands chez Ludykid"
+        ctaDotContent={<span className="text-base leading-none">📞</span>}
+        image="/images/img_4094.jpg"
+        imageAlt="Enfants s'amusant à Ludykid"
         reverse
         bg="#F5EEFF"
         accent="#7B35A0"
@@ -169,25 +175,43 @@ export default function Garderie() {
         nextBg="#EDFAED"
       />
 
-      {/* 4. Petits */}
+      {/* 3. Grands */}
       <SectionIntro
-        title="Une aire de jeux intérieure pour les petits (1–3 ans)"
-        desc="Un espace dédié et sécurisé pour les tout-petits, adapté à leur développement et à leur rythme."
+        title="Un parc de jeux indoor pour les plus grands (4–12 ans)"
+        desc="Une aire de jeux intérieure géante pour se défouler : vos enfants grimpent, sautent, courent et relèvent des défis… sans jamais s'ennuyer. Ici, ils dépensent toute leur énergie et ressortent avec des étoiles plein les yeux."
         features={[
-          { icon: "🎈", label: "Accès sécurisé",     desc: "Espace séparé des attractions des plus grands." },
-          { icon: "🎠", label: "Jeux adaptés",       desc: "Structures douces pensées pour les 1–3 ans." },
-          { icon: "👀", label: "Surveillance",        desc: "Animateurs présents en permanence." },
-          { icon: "😊", label: "Éveil et découverte", desc: "Activités sensorielles pour stimuler les tout-petits." },
+          { icon: "🤸", label: "Aventure",          desc: "— parcours, accrobranche, pont de singe" },
+          { icon: "⚡", label: "Fun & sensations",   desc: "— trampolines, toboggans, bouées" },
+          { icon: "🧠", label: "Jeux & défis",       desc: "— laser game, escape game" },
+          { icon: "🎮", label: "Interactif",         desc: "— aire de jeux digitale" },
         ]}
-        cta="En savoir plus"
-        ctaHref="/espace-petits"
-        ctaTone="green"
-        image="/images/pelotas2.jpg"
-        imageAlt="Aire de jeux pour les petits chez Ludykid"
+        image="/images/home/accrobranche-hero.jpg"
+        imageAlt="Parc de jeux indoor pour les grands chez Ludykid"
         bg="#EDFAED"
         accent="#2E9E2E"
         iconBg="#E0F5E0"
         shadow="shadow-clay-green"
+        nextBg="#FFF8DB"
+      />
+
+      {/* 4. Petits */}
+      <SectionIntro
+        title="Une aire de jeux intérieur pour les petits (1–3 ans)"
+        desc="Vos enfants découvrent le parc intérieur, explorent et s'amusent en toute sécurité, à leur rythme… Et vous profitez d'un moment de tranquillité."
+        features={[
+          { icon: "🌿", label: "Motricité",              desc: "— parcours adapté, jeux de construction" },
+          { icon: "🟡", label: "Éveil sensoriel",        desc: "— piscine à balles" },
+          { icon: "🛝", label: "Glisse douce",           desc: "— toboggans" },
+          { icon: "🛵", label: "Jeux mobiles",           desc: "— petites motos" },
+          { icon: "🔒", label: "Exploration sécurisée",  desc: "— parcours aventures adapté" },
+        ]}
+        image="/images/pelotas2.jpg"
+        imageAlt="Aire de jeux pour les petits chez Ludykid"
+        reverse
+        bg="#FFF8DB"
+        accent="#E8731A"
+        iconBg="#FFF5C0"
+        shadow="shadow-clay-yellow"
         nextBg="white"
       />
     </>

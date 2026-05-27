@@ -49,12 +49,12 @@ const FAQS = [
   },
 ];
 
-export default function InfosPratiques() {
+export default function InfosPratiques({ showTopWave = true }: { showTopWave?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section id="infos" className="pb-20 bg-gray-50 relative overflow-hidden">
-      <Wave fill="white" bg="#F9FAFB" flipY />
+      {showTopWave && <Wave fill="white" bg="#F9FAFB" flipY />}
       <div className="absolute top-8 right-8 opacity-15 animate-float">
         <Doodle type="star" color="#FFD600" size={70} />
       </div>
