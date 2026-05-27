@@ -80,6 +80,7 @@ type ClayButtonProps = {
   children: ReactNode;
   className?: string;
   ariaLabel?: string;
+  dotContent?: ReactNode;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "onClick" | "className" | "children" | "aria-label">;
 
 export default function ClayButton({
@@ -91,6 +92,7 @@ export default function ClayButton({
   children,
   className = "",
   ariaLabel,
+  dotContent,
   ...rest
 }: ClayButtonProps) {
   const t = tones[tone];
@@ -102,20 +104,22 @@ export default function ClayButton({
         {children}
       </span>
       <span
-        className={`flex shrink-0 items-center justify-center rounded-full ${t.dotBg} ${t.dotText} ${sz.dot} ring-2 ${t.ring} shadow-clay-inset transition-transform duration-300 ease-out group-hover:rotate-[-45deg] group-hover:scale-110 group-active:scale-95`}
+        className={`flex shrink-0 items-center justify-center rounded-full ${t.dotBg} ${t.dotText} ${sz.dot} ring-2 ${t.ring} shadow-clay-inset transition-transform duration-300 ease-out group-hover:scale-110 group-active:scale-95`}
         aria-hidden="true"
       >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={3}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={sz.iconSize}
-        >
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
+        {dotContent ?? (
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={3}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={sz.iconSize}
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        )}
       </span>
     </>
   );

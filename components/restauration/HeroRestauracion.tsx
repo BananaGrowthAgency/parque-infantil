@@ -56,10 +56,11 @@ export default function HeroRestauracion() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-xl"
+              className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight"
+              style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
               Savourez la pause au{" "}
-              <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
+              <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
                 Ludy&apos;cafet
               </span>{" "}
               ☕

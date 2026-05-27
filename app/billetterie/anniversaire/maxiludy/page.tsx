@@ -48,7 +48,7 @@ export default function MaxiludyPage() {
                 <div className="rounded-clay overflow-hidden shadow-clay-orange border-[3px] border-lk-orange/30">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/cumple.png"
+                    src="/images/home/cumple.png"
                     alt="Formule MaxiLudy — anniversaire chez Ludykid"
                     className="w-full h-48 md:h-full object-cover"
                   />

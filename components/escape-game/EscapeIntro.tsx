@@ -3,6 +3,7 @@ import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 import ClayCard from "../ui/ClayCard";
 import ClayButton from "../ui/ClayButton";
+import Wave from "../Wave";
 
 const FEATURES = [
   {
@@ -32,9 +33,9 @@ const FEATURES = [
   },
 ];
 
-export default function EscapeIntro() {
+export default function EscapeIntro({ nextBg = "#F4FBF4" }: { nextBg?: string }) {
   return (
-    <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#F4FBF4" }}>
+    <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: "#F4FBF4" }}>
       <div className="absolute top-6 left-4 opacity-25 animate-float pointer-events-none">
         <Doodle type="star" color="#2E9E2E" size={64} />
       </div>
@@ -45,7 +46,7 @@ export default function EscapeIntro() {
         <Doodle type="circle" color="#2E9E2E" size={48} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
           {/* Image gauche */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
@@ -116,6 +117,7 @@ export default function EscapeIntro() {
           </FadeInUp>
         </div>
       </div>
+      <Wave fill={nextBg} bg="#F4FBF4" />
     </section>
   );
 }

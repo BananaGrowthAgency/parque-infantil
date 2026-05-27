@@ -3,6 +3,7 @@ import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 import ClayCard from "../ui/ClayCard";
 import ClayButton from "../ui/ClayButton";
+import Wave from "../Wave";
 
 const FEATURES = [
   {
@@ -38,9 +39,9 @@ const PRICES = [
   { qty: "8 parties", price: "20 €" },
 ];
 
-export default function LaserIntro() {
+export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) {
   return (
-    <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#F5EEFF" }}>
+    <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: "#F5EEFF" }}>
       <div className="absolute top-6 left-4 opacity-25 animate-float pointer-events-none">
         <Doodle type="star" color="#7B35A0" size={64} />
       </div>
@@ -51,16 +52,16 @@ export default function LaserIntro() {
         <Doodle type="circle" color="#7B35A0" size={48} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
           {/* Image gauche */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
-            <div className="group relative h-full min-h-[420px] rounded-clay-lg overflow-hidden shadow-clay-purple transition-transform duration-500 hover:-translate-y-1">
+            <div className="group relative h-full min-h-[360px] rounded-clay-lg overflow-hidden shadow-clay-purple transition-transform duration-500 hover:-translate-y-1">
               <Image
                 src="/images/laser-game/laserSection1.jpg"
                 alt="Laser game enfant chez Ludykid Le Mans"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -129,6 +130,7 @@ export default function LaserIntro() {
           </FadeInUp>
         </div>
       </div>
+      <Wave fill={nextBg} bg="#F5EEFF" />
     </section>
   );
 }

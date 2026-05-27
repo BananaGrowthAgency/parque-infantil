@@ -9,9 +9,9 @@ import Galerie from "@/components/Galerie";
 import InfosPratiques from "@/components/InfosPratiques";
 
 export const metadata = {
-  title: "Escape Game enfant au Mans · Ludykid",
+  title: "Ludykid | Escape Game Enfant Le Mans",
   description:
-    "Escape Game enfant en réalité augmentée chez Ludykid Le Mans. Dès 9 ans, énigmes à résoudre en équipe, sans les parents. 3 € la partie par enfant.",
+    "À la recherche d'un escape game pour votre enfant au Mans ? Offrez-lui une aventure ludique en réalité augmentée qui stimule logique et esprit d'équipe.",
 };
 
 export default function EscapeGamePage() {
@@ -19,9 +19,9 @@ export default function EscapeGamePage() {
     <main className="bg-[#F4FBF4]">
       <Navbar />
       <HeroEscape />
-      <EscapeIntro />
-      <Cumple />
-      <Testimonios />
+      <EscapeIntro nextBg="#F5EEFF" />
+      <Cumple nextBg="white" tone="purple" reverse />
+      <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />
       <InfosPratiques />

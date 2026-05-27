@@ -34,7 +34,7 @@ export default function Dimanche() {
               style={{ minHeight: 380 }}
             >
               <Image
-                src="/images/dimanche-banner.png"
+                src="/images/anniversaire/dimanche-banner.png"
                 alt="Fête ton anniv' chez Ludykid -20% sur les formules le dimanche"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

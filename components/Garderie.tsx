@@ -1,167 +1,219 @@
 "use client";
 
+import { ReactNode, Fragment } from "react";
+import Image from "next/image";
 import Doodle from "./Doodle";
 import Wave from "./Wave";
 import FadeInUp from "./ui/FadeInUp";
-import SquiggleTitle from "./ui/SquiggleTitle";
 import ClayButton from "./ui/ClayButton";
 
-const TARIFS = [
-  { duration: "1 heure",   price: "10,00 €", note: "tarifs dégressifs" },
-  { duration: "2 heures",  price: "18,00 €", note: "tarifs dégressifs" },
-  { duration: "3 heures",  price: "24,00 €", note: "tarifs dégressifs" },
-];
+const BLUE = "#1877F2";
 
-
-export default function Garderie() {
+/* ── Section helper ─────────────────────────────────── */
+function SectionIntro({
+  title,
+  desc,
+  features,
+  cta,
+  ctaHref,
+  ctaTone,
+  image,
+  imageAlt,
+  reverse = false,
+  bg = "white",
+  accent = BLUE,
+  iconBg = "#E8F4FF",
+  shadow = "shadow-clay-blue",
+  nextBg,
+  tarifBlock,
+  ctaDotContent,
+}: {
+  title: ReactNode;
+  desc?: string;
+  features: { icon: string; label: string; desc?: string }[];
+  cta?: string;
+  ctaHref?: string;
+  ctaTone?: "blue" | "orange" | "purple" | "green" | "yellow";
+  image: string;
+  imageAlt: string;
+  reverse?: boolean;
+  bg?: string;
+  accent?: string;
+  iconBg?: string;
+  shadow?: string;
+  nextBg?: string;
+  tarifBlock?: ReactNode;
+  ctaDotContent?: ReactNode;
+}) {
   return (
-    <>
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#E8F7FF] pb-0">
-        {/* Doodles */}
-        <div className="absolute top-6 left-4 opacity-20 animate-float pointer-events-none">
-          <Doodle type="star" color="#1877F2" size={64} />
-        </div>
-        <div className="absolute top-12 right-10 opacity-15 animate-wiggle pointer-events-none">
-          <Doodle type="circle" color="#E8731A" size={52} />
-        </div>
-        <div className="absolute bottom-16 left-16 opacity-15 animate-float-slow pointer-events-none">
-          <Doodle type="swirl" color="#2E9E2E" size={50} />
-        </div>
-        <div className="absolute bottom-8 right-20 opacity-20 animate-wiggle pointer-events-none" style={{ animationDelay: "0.6s" }}>
-          <Doodle type="star2" color="#FFD600" size={48} />
-        </div>
+    <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: bg }}>
+      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
+        <div className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-stretch`}>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-16">
-          {/* Accroche */}
-          <FadeInUp y={16} delay={0.1} className="text-center mb-10 max-w-xl mx-auto">
-            <p className="font-fredoka text-xl md:text-2xl text-gray-700 font-bold mb-3">
-              Besoin de prendre du temps pour vous ?
-            </p>
-            <p className="font-nunito text-gray-500 text-base leading-relaxed">
-              Dès 4 ans, un service garderie vous est proposé. Vos enfants seront sous la surveillance de nos animateurs pendant que vous soufflez.
-            </p>
-          </FadeInUp>
-
-          {/* Carte tarifs */}
-          <FadeInUp y={20} delay={0.35}>
-            <div className="rounded-clay-lg border-[3px] border-[#1877F2] bg-white shadow-clay-blue overflow-hidden">
-              {/* Header */}
-              <div className="bg-[#1877F2] px-6 py-4 flex items-center gap-3">
-                <span className="text-2xl">💰</span>
-                <h2 className="font-fredoka font-extrabold text-white text-xl">Tarifs</h2>
-              </div>
-
-              <div className="p-6 space-y-4">
-                {TARIFS.map((t) => (
-                  <div
-                    key={t.duration}
-                    className="flex items-center justify-between rounded-clay border-2 border-[#1877F2]/15 bg-[#F0F7FF] px-5 py-3"
-                  >
-                    <span className="font-fredoka font-bold text-gray-700 text-base">{t.duration}</span>
-                    <div className="text-right">
-                      <span className="font-fredoka font-extrabold text-[#1877F2] text-xl">{t.price}</span>
-                      <span className="block font-nunito text-gray-400 text-xs">({t.note})</span>
-                    </div>
-                  </div>
-                ))}
-
-                <div className="rounded-clay border-2 border-lk-orange/25 bg-[#FFF8F0] px-5 py-3 flex items-start gap-3">
-                  <span className="text-lg mt-0.5">ℹ️</span>
-                  <div className="space-y-1">
-                    <p className="font-nunito text-sm text-gray-600">
-                      Renseignements à l&apos;accueil
-                    </p>
-                    <p className="font-nunito text-sm text-gray-500 italic">
-                      L&apos;entrée du parc est comprise dans les tarifs.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          {/* Image */}
+          <FadeInUp className="w-full md:w-1/2" y={28}>
+            <div className={`group relative h-full min-h-[380px] rounded-clay-lg overflow-hidden ${shadow} transition-transform duration-500 hover:-translate-y-1`}>
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </FadeInUp>
 
-          {/* CTA */}
-          <FadeInUp y={12} delay={0.42} className="flex justify-center mt-10">
-            <ClayButton href="/contact" tone="blue" size="lg">
-              Renseignements
-            </ClayButton>
+          {/* Card */}
+          <FadeInUp className="w-full md:w-1/2" delay={0.15} y={28}>
+            <div className="bg-white rounded-clay-lg shadow-clay p-7 h-full flex flex-col">
+              <h2 className="font-fredoka text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
+                {title}
+              </h2>
+              {desc && (
+                <p className="font-nunito text-gray-500 text-sm leading-relaxed mb-5">{desc}</p>
+              )}
+              <ul className="space-y-3 mb-4 flex-1">
+                {features.map((f) => (
+                  <li key={f.label} className={`flex gap-3 ${f.desc?.startsWith("—") ? "items-center" : "items-start"}`}>
+                    <span
+                      className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg flex-shrink-0 shadow-clay-inset"
+                      style={{ backgroundColor: iconBg }}
+                    >
+                      {f.icon}
+                    </span>
+                    <span className="font-nunito text-sm text-gray-700 leading-snug">
+                      {f.desc?.startsWith("—") ? (
+                        <span>
+                          <span className="font-bold text-gray-800">{f.label}</span>
+                          {" "}
+                          <span className="text-gray-500">{f.desc}</span>
+                        </span>
+                      ) : (
+                        <>
+                          <span className="font-bold block text-gray-800">{f.label}</span>
+                          {f.desc && <span className="text-gray-500">{f.desc}</span>}
+                        </>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              {tarifBlock && (
+                <div className="mb-5">{tarifBlock}</div>
+              )}
+              {cta && ctaHref && ctaTone && (
+                <div>
+                  <ClayButton href={ctaHref} tone={ctaTone} size="md" dotContent={ctaDotContent}>
+                    {cta}
+                  </ClayButton>
+                </div>
+              )}
+            </div>
           </FadeInUp>
         </div>
-      </section>
+      </div>
+      {nextBg && <Wave fill={nextBg} bg={bg} />}
+    </section>
+  );
+}
 
-      <Wave fill="#FFF8EC" bg="#E8F7FF" />
-
-      {/* ── LES JEUDIS DES NOUNOUS ───────────────────────────── */}
-      <section className="relative bg-[#FFF8EC] py-16 overflow-hidden">
-        <div className="absolute top-6 right-8 opacity-15 animate-float pointer-events-none">
-          <Doodle type="star" color="#E8731A" size={58} />
-        </div>
-        <div className="absolute bottom-8 left-10 opacity-15 animate-wiggle pointer-events-none">
-          <Doodle type="heart" color="#7B35A0" size={50} />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6">
-          <FadeInUp y={18} className="text-center mb-8">
-            <SquiggleTitle color="#E8731A">Les jeudis des Nounous 👩‍🍼</SquiggleTitle>
-          </FadeInUp>
-
-          <div className="flex flex-col md:flex-row gap-6 items-stretch">
-
-            {/* Description */}
-            <FadeInUp y={20} delay={0.1} className="w-full md:w-1/2">
-              <div className="rounded-clay-lg border-[3px] border-lk-orange/30 bg-white shadow-clay-orange p-6 h-full space-y-4">
-                <p className="font-nunito text-gray-600 text-base leading-relaxed">
-                  Nous proposons aux assistantes maternelles un jeudi matin par mois l&apos;accès à notre parc
-                  sur un temps qui leur est réservé, au tarif de 6&nbsp;€ par enfant de plus d&apos;un an.
-                </p>
-                <div className="flex items-center gap-3 rounded-clay border-2 border-lk-orange/20 bg-[#FFF4EC] px-4 py-3">
-                  <span className="text-2xl">🕤</span>
-                  <span className="font-fredoka font-bold text-gray-700 text-base">De 9h30 à 11h30</span>
-                </div>
-                <div className="flex items-start gap-3 rounded-clay border-2 border-[#7B35A0]/20 bg-[#F9F0FF] px-4 py-3">
-                  <span className="text-2xl">📅</span>
-                  <div>
-                    <p className="font-fredoka font-bold text-[#7B35A0] text-sm uppercase tracking-wide mb-0.5">Prochaines dates</p>
-                    <p className="font-nunito text-gray-700 text-sm font-bold">Jeudi 21 mai · Jeudi 16 juin</p>
-                  </div>
-                </div>
-              </div>
-            </FadeInUp>
-
-            {/* Tarif + infos */}
-            <FadeInUp y={20} delay={0.18} className="w-full md:w-1/2">
-              <div className="rounded-clay-lg border-[3px] border-lk-orange bg-white shadow-clay-orange overflow-hidden h-full">
-                <div className="bg-lk-orange px-6 py-4 flex items-center gap-3">
-                  <span className="text-2xl">💰</span>
-                  <h3 className="font-fredoka font-extrabold text-white text-xl">Tarif</h3>
-                </div>
-                <div className="p-6 flex flex-col gap-4">
-                  <div className="flex items-center justify-between rounded-clay border-2 border-lk-orange/15 bg-[#FFF4EC] px-5 py-4">
-                    <span className="font-fredoka font-bold text-gray-700 text-base">Par enfant</span>
-                    <span className="font-fredoka font-extrabold text-lk-orange text-2xl">6,00 €</span>
-                  </div>
-                  <p className="font-nunito text-gray-400 text-xs italic text-center">
-                    Pour les enfants de plus d&apos;un an
-                  </p>
-                  <div className="flex items-start gap-3 rounded-clay border-2 border-[#2E9E2E]/20 bg-[#EDFAED] px-4 py-3">
-                    <span className="text-lg mt-0.5">ℹ️</span>
-                    <p className="font-nunito text-sm text-gray-600">
-                      Créneau réservé exclusivement aux assistantes maternelles et leurs enfants.
-                    </p>
-                  </div>
-                  <div className="flex justify-center pt-2">
-                    <ClayButton href="/contact" tone="orange" size="md">
-                      Se renseigner
-                    </ClayButton>
-                  </div>
-                </div>
-              </div>
-            </FadeInUp>
-
+/* ── Main component ─────────────────────────────────── */
+export default function Garderie() {
+  return (
+    <>
+      {/* 1. Intro — Un espace de jeu et de découvertes */}
+      <SectionIntro
+        title="Un espace de jeu et de découvertes en toute confiance"
+        desc="Besoin de prendre du temps pour vous ? Dès 4 ans, un service garderie vous est proposé. Vos enfants seront sous la surveillance de nos animateurs."
+        features={[
+          { icon: "👦", label: "Dès 4 ans",              desc: "Un service garderie pour les enfants dès 4 ans." },
+          { icon: "🛡️", label: "Encadrement assuré",     desc: "Les enfants sont sous la surveillance d'animateurs." },
+          { icon: "🕐", label: "10,00 € l'heure (tarif dégressif)", desc: "Des tarifs dégressifs pour plus de temps et encore plus de plaisir !" },
+          { icon: "🎟️", label: "Entrée incluse",          desc: "L'entrée du parc est comprise dans les tarifs." },
+        ]}
+        tarifBlock={
+          <div className="rounded-clay bg-orange-50 border border-[#E8731A]/20 px-4 py-3 space-y-0.5">
+            <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">Tarifs :</p>
+            <p className="font-nunito text-sm text-gray-700">10,00€ l&apos;heure (tarif dégressif)</p>
+            <p className="font-nunito text-sm text-gray-500">(Renseignements à l&apos;accueil)</p>
+            <p className="font-nunito text-xs text-gray-400 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
           </div>
-        </div>
-      </section>
+        }
+        cta="Profitez de l'offre sur place"
+        ctaHref="/contact"
+        ctaTone="orange"
+        image="/images/garderie-intro.jpg"
+        imageAlt="Enfant jouant à la garderie Ludykid"
+        bg="#FFF8EC"
+        accent="#E8731A"
+        iconBg="#FFF0E0"
+        shadow="shadow-clay-orange"
+        nextBg="#F5EEFF"
+      />
+
+      {/* 2. Nounous */}
+      <SectionIntro
+        title={<>Le rendez-vous mensuel <span style={{ color: "#7B35A0" }}>des Nounous</span> 👩‍🍼</>}
+        desc="Nous proposons aux assistantes maternelles un jeudi matin par mois l'accès à notre parc sur un temps qui leur est réservé, au tarif de 6€ par enfant de plus d'un an."
+        features={[
+          { icon: "📅", label: "Un jeudi matin par mois",  desc: "Un moment dédié rien que pour vous et les enfants." },
+          { icon: "👫", label: "De 0 à 12 ans",            desc: "Une activité adaptée à tous les âges pour s'amuser en toute sécurité." },
+          { icon: "🎟️", label: "Tarif",                    desc: "6,00 € par enfant de plus d'un an." },
+          { icon: "🎁", label: "Un temps privilégié",      desc: "Pour jouer, se dépenser et partager de bons moments." },
+        ]}
+        cta="Contactez-nous pour plus d'infos !"
+        ctaHref="tel:+33243414869"
+        ctaTone="purple"
+        ctaDotContent={<span className="text-base leading-none">📞</span>}
+        image="/images/img_4094.jpg"
+        imageAlt="Enfants s'amusant à Ludykid"
+        reverse
+        bg="#F5EEFF"
+        accent="#7B35A0"
+        iconBg="#F0E8FF"
+        shadow="shadow-clay-purple"
+        nextBg="#EDFAED"
+      />
+
+      {/* 3. Grands */}
+      <SectionIntro
+        title="Un parc de jeux indoor pour les plus grands (4–12 ans)"
+        desc="Une aire de jeux intérieure géante pour se défouler : vos enfants grimpent, sautent, courent et relèvent des défis… sans jamais s'ennuyer. Ici, ils dépensent toute leur énergie et ressortent avec des étoiles plein les yeux."
+        features={[
+          { icon: "🤸", label: "Aventure",          desc: "— parcours, accrobranche, pont de singe" },
+          { icon: "⚡", label: "Fun & sensations",   desc: "— trampolines, toboggans, bouées" },
+          { icon: "🧠", label: "Jeux & défis",       desc: "— laser game, escape game" },
+          { icon: "🎮", label: "Interactif",         desc: "— aire de jeux digitale" },
+        ]}
+        image="/images/home/accrobranche-hero.jpg"
+        imageAlt="Parc de jeux indoor pour les grands chez Ludykid"
+        bg="#EDFAED"
+        accent="#2E9E2E"
+        iconBg="#E0F5E0"
+        shadow="shadow-clay-green"
+        nextBg="#FFF8DB"
+      />
+
+      {/* 4. Petits */}
+      <SectionIntro
+        title="Une aire de jeux intérieur pour les petits (1–3 ans)"
+        desc="Vos enfants découvrent le parc intérieur, explorent et s'amusent en toute sécurité, à leur rythme… Et vous profitez d'un moment de tranquillité."
+        features={[
+          { icon: "🌿", label: "Motricité",              desc: "— parcours adapté, jeux de construction" },
+          { icon: "🟡", label: "Éveil sensoriel",        desc: "— piscine à balles" },
+          { icon: "🛝", label: "Glisse douce",           desc: "— toboggans" },
+          { icon: "🛵", label: "Jeux mobiles",           desc: "— petites motos" },
+          { icon: "🔒", label: "Exploration sécurisée",  desc: "— parcours aventures adapté" },
+        ]}
+        image="/images/pelotas2.jpg"
+        imageAlt="Aire de jeux pour les petits chez Ludykid"
+        reverse
+        bg="#FFF8DB"
+        accent="#E8731A"
+        iconBg="#FFF5C0"
+        shadow="shadow-clay-yellow"
+        nextBg="white"
+      />
     </>
   );
 }
