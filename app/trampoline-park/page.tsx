@@ -19,7 +19,7 @@ export default function TrampolinePage() {
     <main className="bg-[#FFF8EC] min-h-screen">
       <Navbar />
       <HeroTrampoline />
-      <TrampolineIntro nextBg="#EDFAED" />
+      <TrampolineIntro nextBg="#F5EEFF" />
       <Cumple nextBg="white" tone="purple" />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
