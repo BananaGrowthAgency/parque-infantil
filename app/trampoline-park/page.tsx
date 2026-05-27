@@ -20,7 +20,7 @@ export default function TrampolinePage() {
       <Navbar />
       <HeroTrampoline />
       <TrampolineIntro nextBg="#F5EEFF" />
-      <Cumple nextBg="white" tone="purple" />
+      <Cumple nextBg="white" tone="purple" reverse />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />

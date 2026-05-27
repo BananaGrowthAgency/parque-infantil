@@ -20,7 +20,7 @@ export default function AccrobranchePage() {
       <Navbar />
       <HeroAccro />
       <AccroIntro nextBg="#F5EEFF" />
-      <Cumple nextBg="white" tone="purple" />
+      <Cumple nextBg="white" tone="purple" reverse />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />

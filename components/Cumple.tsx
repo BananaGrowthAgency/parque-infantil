@@ -16,7 +16,7 @@ const TONES: Record<CumpleTone, {
   purple: { sectionBg: "#F5EEFF", color: "#7B35A0", imageShadow: "shadow-clay-purple", badgeBg: "#7B35A0", iconBg: "#7B35A01F", buttonTone: "purple" },
 };
 
-export default function Cumple({ nextBg = "#FFF9E0", tone = "green" }: { nextBg?: string; tone?: CumpleTone }) {
+export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = false }: { nextBg?: string; tone?: CumpleTone; reverse?: boolean }) {
   const t = TONES[tone];
   return (
     <section id="cumple" className="relative overflow-hidden" style={{ backgroundColor: t.sectionBg }}>
@@ -34,7 +34,7 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green" }: { nextBg?
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+        <div className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-stretch`}>
           <FadeInUp className="w-full md:w-1/2" y={28}>
             <div className={`group relative h-full min-h-[380px] rounded-clay-lg overflow-hidden ${t.imageShadow} transition-transform duration-500 hover:-translate-y-1`}>
               <Image
