@@ -20,7 +20,7 @@ export default function HeroTrampoline() {
         setCurrent((c) => (c + 1) % SLIDES.length);
         setFading(false);
       }, 500);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
