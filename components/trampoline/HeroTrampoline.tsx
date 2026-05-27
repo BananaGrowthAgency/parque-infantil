@@ -29,10 +29,11 @@ export default function HeroTrampoline() {
               className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
-              Ludykid | Espace Trampoline Enfant{" "}
+              Ludykid | Espace{" "}
               <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
-                Le Mans
-              </span>
+                Trampoline
+              </span>{" "}
+              Enfant Le Mans
             </h1>
             <p
               className="font-nunito text-white/95 text-base md:text-lg mt-5"

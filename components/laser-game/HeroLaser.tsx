@@ -38,10 +38,11 @@ export default function HeroLaser() {
               className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight mb-5"
               style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
-              Ludykid | Laser Game Enfant{" "}
+              Ludykid |{" "}
               <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
-                Le Mans
-              </span>
+                Laser Game
+              </span>{" "}
+              Enfant Le Mans
             </motion.h1>
 
             <motion.p

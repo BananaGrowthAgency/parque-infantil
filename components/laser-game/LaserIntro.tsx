@@ -64,6 +64,14 @@ export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) 
                 className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div className="absolute bottom-5 left-5">
+                <span
+                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
+                  style={{ backgroundColor: "#7B35A0" }}
+                >
+                  💰 3 € la partie par enfant
+                </span>
+              </div>
             </div>
           </FadeInUp>
 
