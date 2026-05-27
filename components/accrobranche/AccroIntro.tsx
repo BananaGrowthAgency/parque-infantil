@@ -52,7 +52,7 @@ export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) 
           <FadeInUp className="w-full md:w-1/2" y={28}>
             <div className="group relative h-full min-h-[420px] rounded-clay-lg overflow-hidden shadow-clay-yellow transition-transform duration-500 hover:-translate-y-1">
               <Image
-                src="/images/seccion2.jpg"
+                src="/images/home/accrobranche-section1.jpg"
                 alt="Accrobranche enfant chez Ludykid Le Mans"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
