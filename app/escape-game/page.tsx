@@ -20,7 +20,7 @@ export default function EscapeGamePage() {
       <Navbar />
       <HeroEscape />
       <EscapeIntro />
-      <Cumple nextBg="white" />
+      <Cumple nextBg="white" tone="purple" />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />
