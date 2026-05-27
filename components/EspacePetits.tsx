@@ -158,7 +158,7 @@ export default function EspacePetits() {
 
           {/* CTA */}
           <FadeInUp y={12} delay={0.3} className="flex flex-wrap justify-center gap-4">
-            <ClayButton href="/billetterie" tone="orange" size="lg">
+            <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="orange" size="lg" target="_blank" rel="noopener noreferrer">
               Réserver maintenant
             </ClayButton>
             <ClayButton href="/tarifs" tone="yellow" size="lg">

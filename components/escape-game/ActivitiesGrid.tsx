@@ -54,7 +54,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Vos enfants s'éclatent en équipe dans un jeu d'aventure 100% fun et immersif !",
     image: "/images/seccion2.jpg",
     alt: "Laser game chez Ludykid",
-    href: "/billetterie",
+    href: "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr",
     icon: IconLaser,
   },
   {
@@ -62,7 +62,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Vos enfants prennent de la hauteur, se dépassent et gagnent en confiance !",
     image: "/images/seccion2.jpg",
     alt: "Accrobranche indoor chez Ludykid",
-    href: "/billetterie",
+    href: "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr",
     icon: IconAccrobranche,
   },
   {

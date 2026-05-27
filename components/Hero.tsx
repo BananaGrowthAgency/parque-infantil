@@ -65,7 +65,7 @@ export default function Hero() {
               <ClayButton href="/anniversaire" tone="purple" size="lg" className="w-full sm:w-auto">
                 Réserver votre anniversaire
               </ClayButton>
-              <ClayButton href="/billetterie" tone="orange" size="lg" className="w-full sm:w-auto">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="orange" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
                 Billetterie
               </ClayButton>
             </motion.div>

@@ -101,7 +101,7 @@ export default function TrampolineIntro({ nextBg = "#FFF8EC" }: { nextBg?: strin
                 ))}
               </ul>
 
-              <ClayButton href="/billetterie" tone="orange" size="md">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="orange" size="md" target="_blank" rel="noopener noreferrer">
                 Réserver
               </ClayButton>
             </ClayCard>

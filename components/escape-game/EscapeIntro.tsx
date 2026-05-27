@@ -110,7 +110,7 @@ export default function EscapeIntro({ nextBg = "#F4FBF4" }: { nextBg?: string })
                 ))}
               </ul>
 
-              <ClayButton href="/billetterie" tone="green" size="md">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="green" size="md" target="_blank" rel="noopener noreferrer">
                 Réserver
               </ClayButton>
             </ClayCard>

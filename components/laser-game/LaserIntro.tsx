@@ -131,7 +131,7 @@ export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) 
                 </div>
               </FadeInUp>
 
-              <ClayButton href="/billetterie" tone="purple" size="md">
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="md" target="_blank" rel="noopener noreferrer">
                 Réserver
               </ClayButton>
             </ClayCard>

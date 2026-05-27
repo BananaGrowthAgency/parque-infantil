@@ -110,10 +110,10 @@ export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) 
 
               {/* 2 CTAs côte à côte */}
               <div className="flex items-center gap-3 flex-wrap">
-                <ClayButton href="/billetterie" tone="yellow" size="md">
+                <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="yellow" size="md" target="_blank" rel="noopener noreferrer">
                   En savoir plus
                 </ClayButton>
-                <ClayButton href="/billetterie" tone="yellow" size="md">
+                <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="yellow" size="md" target="_blank" rel="noopener noreferrer">
                   Réserver
                 </ClayButton>
               </div>
