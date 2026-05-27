@@ -8,9 +8,9 @@ import ClayCard from "@/components/ui/ClayCard";
 import SquiggleTitle from "@/components/ui/SquiggleTitle";
 
 export const metadata = {
-  title: "Trampoline Park · Ludykid Le Mans",
+  title: "Ludykid | Espace Trampoline Enfant Le Mans",
   description:
-    "Un espace trampoline park unique au Mans : sauts, rebonds, figures… Adapté aux enfants 4–12 ans, encadré et sécurisé. Dès 4,50 € par enfant.",
+    "À la recherche d'un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s'amuser chez Ludykid.",
 };
 
 const FEATURES = [
@@ -56,14 +56,13 @@ export default function TrampolinePage() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-6 max-w-3xl">
               <h1 className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-xl">
-                Un espace{" "}
+                Ludykid | Espace Trampoline Enfant{" "}
                 <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
-                  Trampoline Parc
-                </span>{" "}
-                unique au Mans 🤸
+                  Le Mans
+                </span>
               </h1>
               <p className="font-nunito text-white/95 text-base md:text-lg mt-5 drop-shadow-lg">
-                Sauts, rebonds, figures… Un terrain de jeu dynamique pour se dépenser à fond, en toute sécurité.
+                À la recherche d&apos;un espace trampoline pour votre enfant au Mans ? Offrez-lui un espace ludique et sécurisé pour se dépenser et s&apos;amuser chez Ludykid.
               </p>
             </div>
           </div>
