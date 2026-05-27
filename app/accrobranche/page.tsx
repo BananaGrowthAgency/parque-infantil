@@ -9,9 +9,9 @@ import Galerie from "@/components/Galerie";
 import InfosPratiques from "@/components/InfosPratiques";
 
 export const metadata = {
-  title: "Accrobranche enfant au Mans · Ludykid",
+  title: "Ludykid | Parc Accrobranche Indoor Le Mans",
   description:
-    "Accrobranche indoor pour enfants chez Ludykid Le Mans. Parcours adapté 4–12 ans, passerelles, ponts et obstacles en hauteur. Inclus dans la structure de jeux.",
+    "À la recherche d'un accrobranche pour votre enfant au Mans ? Offrez-lui un parcours ludique et sécurisé pour développer agilité et confiance chez Ludykid.",
 };
 
 export default function AccrobranchePage() {
