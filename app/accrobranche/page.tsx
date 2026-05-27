@@ -20,8 +20,8 @@ export default function AccrobranchePage() {
       <Navbar />
       <HeroAccro />
       <AccroIntro />
-      <Cumple />
-      <Testimonios />
+      <Cumple nextBg="white" />
+      <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />
       <InfosPratiques />

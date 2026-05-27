@@ -4,7 +4,7 @@ import Wave from "./Wave";
 import FadeInUp from "./ui/FadeInUp";
 import SquiggleTitle from "./ui/SquiggleTitle";
 
-export default function Testimonios() {
+export default function Testimonios({ nextBg = "#FFF4EC" }: { nextBg?: string }) {
   return (
     <section className="pt-20 pb-0 bg-white relative overflow-hidden">
       <div className="absolute top-8 left-6 opacity-20 animate-float">
@@ -33,7 +33,7 @@ export default function Testimonios() {
         strategy="lazyOnload"
       />
 
-      <Wave fill="#FFF4EC" bg="white" />
+      <Wave fill={nextBg} bg="white" />
     </section>
   );
 }

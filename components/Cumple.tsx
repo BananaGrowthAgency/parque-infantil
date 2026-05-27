@@ -7,7 +7,7 @@ import FadeInUp from "./ui/FadeInUp";
 import ClayCard from "./ui/ClayCard";
 import ClayButton from "./ui/ClayButton";
 
-export default function Cumple() {
+export default function Cumple({ nextBg = "#FFF9E0" }: { nextBg?: string }) {
   return (
     <section id="cumple" className="relative overflow-hidden" style={{ backgroundColor: "#EDFAED" }}>
       <div className="absolute top-6 left-4 opacity-25 animate-float">
@@ -96,7 +96,7 @@ export default function Cumple() {
         </div>
       </div>
 
-      <Wave fill="#FFF9E0" bg="#EDFAED" flip />
+      <Wave fill={nextBg} bg="#EDFAED" flip />
     </section>
   );
 }

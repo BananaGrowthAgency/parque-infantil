@@ -20,8 +20,8 @@ export default function LaserGamePage() {
       <Navbar />
       <HeroLaser />
       <LaserIntro />
-      <Cumple />
-      <Testimonios />
+      <Cumple nextBg="white" />
+      <Testimonios nextBg="white" />
       <ActivitiesGrid />
       <Galerie />
       <InfosPratiques />
