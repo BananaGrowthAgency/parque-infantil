@@ -27,6 +27,7 @@ function SectionIntro({
   nextBg,
   tarifBlock,
   ctaDotContent,
+  badge,
 }: {
   title: ReactNode;
   desc?: string;
@@ -44,6 +45,7 @@ function SectionIntro({
   nextBg?: string;
   tarifBlock?: ReactNode;
   ctaDotContent?: ReactNode;
+  badge?: { text: string; bg: string };
 }) {
   return (
     <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: bg }}>
@@ -60,6 +62,16 @@ function SectionIntro({
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              {badge && (
+                <div className="absolute bottom-5 left-5">
+                  <span
+                    className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
+                    style={{ backgroundColor: badge.bg }}
+                  >
+                    {badge.text}
+                  </span>
+                </div>
+              )}
             </div>
           </FadeInUp>
 
@@ -144,6 +156,7 @@ export default function Garderie() {
         ctaTone="orange"
         image="/images/garderie-intro.jpg"
         imageAlt="Enfant jouant à la garderie Ludykid"
+        badge={{ text: "🕐 10,00 € / heure", bg: "#E8731A" }}
         bg="#FFF8EC"
         accent="#E8731A"
         iconBg="#FFF0E0"
@@ -167,6 +180,7 @@ export default function Garderie() {
         ctaDotContent={<span className="text-base leading-none">📞</span>}
         image="/images/img_4094.jpg"
         imageAlt="Enfants s'amusant à Ludykid"
+        badge={{ text: "💛 6,00 € / enfant", bg: "#7B35A0" }}
         reverse
         bg="#F5EEFF"
         accent="#7B35A0"
@@ -187,6 +201,7 @@ export default function Garderie() {
         ]}
         image="/images/home/accrobranche-hero.jpg"
         imageAlt="Parc de jeux indoor pour les grands chez Ludykid"
+        badge={{ text: "🧗 4–12 ans", bg: "#2E9E2E" }}
         bg="#EDFAED"
         accent="#2E9E2E"
         iconBg="#E0F5E0"
@@ -207,6 +222,7 @@ export default function Garderie() {
         ]}
         image="/images/pelotas2.jpg"
         imageAlt="Aire de jeux pour les petits chez Ludykid"
+        badge={{ text: "🎈 1–3 ans", bg: "#B8940A" }}
         reverse
         bg="#FFF8DB"
         accent="#E8731A"
