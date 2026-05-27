@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroGarderie from "@/components/garderie/HeroGarderie";
 import Garderie from "@/components/Garderie";
+import Testimonios from "@/components/Testimonios";
+import InfosPratiques from "@/components/InfosPratiques";
 import FadeInUp from "@/components/ui/FadeInUp";
 
 const BLUE = "#1877F2";
@@ -24,7 +26,7 @@ export default function GarderiePage() {
       <Navbar />
       <HeroGarderie />
 
-      {/* Tarjetas montadas sobre el corte del hero — mismo patrón que StatsBar */}
+      {/* Stats — 4 cartes image+texte */}
       <div className="relative z-10 -mt-10 sm:-mt-14 px-4 sm:px-6 mb-0">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 items-stretch">
           {FEATURES.map((f, i) => (
@@ -56,7 +58,9 @@ export default function GarderiePage() {
       </div>
 
       <Garderie />
-      <Footer waveBg="#FFF8EC" />
+      <Testimonios nextBg="#F9FAFB" />
+      <InfosPratiques />
+      <Footer waveBg="#F9FAFB" />
     </main>
   );
 }
