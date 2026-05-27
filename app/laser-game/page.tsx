@@ -9,7 +9,7 @@ import Galerie from "@/components/Galerie";
 import InfosPratiques from "@/components/InfosPratiques";
 
 export const metadata = {
-  title: "Ludykid Le Mans | Laser Game Enfant Le Mans",
+  title: "Ludykid | Laser Game Enfant Le Mans",
   description:
     "À la recherche d'un laser game pour votre enfant au Mans ? Offrez-lui une activité ludique qui développe esprit d'équipe et coordination chez Ludykid.",
 };
