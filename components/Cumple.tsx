@@ -46,7 +46,7 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
               />
               <div className="absolute bottom-5 left-5">
                 <span
-                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float"
+                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
                   style={{ backgroundColor: t.badgeBg }}
                 >
                   👉 Dès 10,50€ / enfant
