@@ -6,7 +6,7 @@ export default function Logo({ size = "sm" }: { size?: "sm" | "md" | "lg" }) {
   const h = heights[size];
   return (
     <Image
-      src="/images/logo.jpeg"
+      src="/images/iconos/logo.jpeg"
       alt="Ludykid"
       width={h * 3}
       height={h}

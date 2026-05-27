@@ -34,11 +34,11 @@ function PngIcon({ src, size = 52 }: { src: string; size?: number }) {
 }
 
 const stats = [
-  { icon: "/images/medaille.png",      label: "Depuis 15 ans" },
-  { icon: "/images/etoile.png",        label: "200+ Avis 5/5" },
-  { icon: "/images/reseau.png",        label: "1200 m2" },
-  { icon: "/images/enfants.png",       label: "1 à 12 ans" },
-  { icon: "/images/faire-la-fete.png", label: "Anniversaire\nclé en main" },
+  { icon: "/images/iconos/medaille.png",      label: "Depuis 15 ans" },
+  { icon: "/images/iconos/etoile.png",        label: "200+ Avis 5/5" },
+  { icon: "/images/iconos/reseau.png",        label: "1200 m2" },
+  { icon: "/images/iconos/enfants.png",       label: "1 à 12 ans" },
+  { icon: "/images/iconos/faire-la-fete.png", label: "Anniversaire\nclé en main" },
 ];
 
 export default function StatsBar() {
@@ -47,9 +47,13 @@ export default function StatsBar() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
           {stats.map((s, i) => (
-            <FadeInUp key={s.label} delay={i * 0.08} y={32}>
+            <FadeInUp key={s.label} delay={i * 0.08} y={32} className={i === stats.length - 1 ? "col-span-2 sm:col-span-1" : ""}>
               <div
-                className="group h-full flex flex-col items-center justify-center gap-2 text-center px-3 py-4 rounded-clay-lg bg-white border-[3px] shadow-clay transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                className={`group h-full flex flex-col items-center justify-center gap-2 text-center px-3 py-4 rounded-clay-lg bg-white border-[3px] shadow-clay transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] ${
+                  i === stats.length - 1
+                    ? "w-[calc(50%-0.5rem)] mx-auto sm:w-auto sm:mx-0"
+                    : ""
+                }`}
                 style={{ borderColor: ACCENTS[i % ACCENTS.length] }}
               >
                 <PngIcon src={s.icon} />

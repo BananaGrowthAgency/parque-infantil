@@ -5,14 +5,21 @@ const NAV = [
   { label: "Accueil", href: "/" },
   { label: "Attractions", href: "/#atracciones" },
   { label: "Anniversaire", href: "/anniversaire" },
-  { label: "Tarifs", href: "/#infos" },
+  { label: "Tarifs", href: "/tarifs" },
   { label: "Infos pratiques", href: "/#infos" },
 ];
 
+const NAV_ACTIVITES = [
+  { label: "Restauration", href: "/restauration" },
+  { label: "Garderie", href: "/garderie" },
+  { label: "Trampoline Parc", href: "/trampoline-park" },
+  { label: "Escape Game", href: "/escape-game" },
+  { label: "Laser Game", href: "/laser-game" },
+  { label: "Accrobranche", href: "/accrobranche" },
+];
+
 const LEGAL = [
-  { label: "Confidentialité", href: "#" },
-  { label: "Cookies", href: "#" },
-  { label: "Mentions légales", href: "#" },
+  { label: "Mentions légales", href: "/mentions-legales" },
 ];
 
 const SOCIALS = [
@@ -64,12 +71,12 @@ const SOCIALS = [
 
 export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gray-900 text-white relative overflow-hidden" style={{ marginTop: -2 }}>
       <Wave fill="#111827" bg={waveBg} flip />
 
       <div className="pt-12 pb-8">
         <div className="max-w-6xl mx-auto px-6 relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-10">
             <div>
               <Logo size="sm" />
               <p className="mt-5 text-sm text-gray-300 font-nunito leading-relaxed max-w-xs">
@@ -98,6 +105,21 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
               </h3>
               <ul className="space-y-3 text-gray-200 text-sm font-nunito">
                 {NAV.map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="hover:text-white transition-colors">
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-fredoka text-xl font-extrabold text-[#2E9E2E] mb-5">
+                Activités
+              </h3>
+              <ul className="space-y-3 text-gray-200 text-sm font-nunito">
+                {NAV_ACTIVITES.map((l) => (
                   <li key={l.label}>
                     <a href={l.href} className="hover:text-white transition-colors">
                       {l.label}

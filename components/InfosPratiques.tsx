@@ -4,6 +4,7 @@ import { useState } from "react";
 import Doodle from "./Doodle";
 import FadeInUp from "./ui/FadeInUp";
 import SquiggleTitle from "./ui/SquiggleTitle";
+import Wave from "./Wave";
 
 const HORARIOS = [
   {
@@ -48,11 +49,12 @@ const FAQS = [
   },
 ];
 
-export default function InfosPratiques() {
+export default function InfosPratiques({ showTopWave = true }: { showTopWave?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="infos" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section id="infos" className="pb-20 bg-gray-50 relative overflow-hidden">
+      {showTopWave && <Wave fill="white" bg="#F9FAFB" flipY />}
       <div className="absolute top-8 right-8 opacity-15 animate-float">
         <Doodle type="star" color="#FFD600" size={70} />
       </div>

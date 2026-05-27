@@ -30,29 +30,42 @@ export default function Hero() {
         <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-transparent to-[#FFF4EC] pointer-events-none" />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-6 max-w-3xl">
+          <div className="text-center px-4 w-full max-w-4xl">
+
             <motion.h1
-              initial={reduce ? false : { opacity: 0, y: 24 }}
+              initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight mb-7 drop-shadow-xl"
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.34, 1.56, 0.64, 1] }}
+              className="font-fredoka text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4"
+              style={{ textShadow: "0 0 6px rgba(0,0,0,0.9), 1px 1px 4px rgba(0,0,0,0.7)" }}
             >
-              Le parc indoor préféré des{" "}
-              <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
+              Ludykid Le Mans | Parc de jeux indoor{" "}
+              <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow" style={{ textShadow: "none" }}>
                 enfants
               </span>{" "}
-              au Mans
+              (1–12 ans)
             </motion.h1>
+
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={reduce ? undefined : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+              className="font-nunito text-sm md:text-base text-white/85 leading-relaxed max-w-2xl mx-auto mb-6"
+              style={{ textShadow: "0 0 5px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.6)" }}
+            >
+              Plaine de jeux intérieure au Mans : Ludykid accueille les enfants de 1 à 12 ans avec 1200 m² d&apos;activités, anniversaires clé en main et espace restauration
+            </motion.p>
+
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
-              className="flex items-center justify-center gap-3 flex-wrap"
+              transition={{ duration: 0.7, delay: 0.35, ease: [0.34, 1.56, 0.64, 1] }}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xs sm:max-w-none mx-auto"
             >
-              <ClayButton href="/anniversaire" tone="purple" size="lg">
+              <ClayButton href="/anniversaire" tone="purple" size="lg" className="w-full sm:w-auto">
                 Réserver votre anniversaire
               </ClayButton>
-              <ClayButton href="/billetterie" tone="orange" size="lg">
+              <ClayButton href="/billetterie" tone="orange" size="lg" className="w-full sm:w-auto">
                 Billetterie
               </ClayButton>
             </motion.div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { useRouter } from "next/navigation";
 
 const SLOTS = [
   { start: "10:00", end: "12:30" },
@@ -36,18 +35,10 @@ export default function MaxiludyBooking() {
   const [date, setDate] = useState(TODAY);
   const [selected, setSelected] = useState<string | null>(null);
   const dateRef = useRef<HTMLInputElement>(null);
-  const router = useRouter();
-
   const total = (participants * PRICE).toFixed(2).replace(".", ",");
 
-  function goToReservation(slotStart: string, slotEnd: string) {
-    const params = new URLSearchParams({
-      date,
-      slot: slotStart,
-      end: slotEnd,
-      participants: String(participants),
-    });
-    router.push(`/billetterie/anniversaire/maxiludy/reservation?${params.toString()}`);
+  function goToReservation() {
+    window.open("https://ludykid.qweekle.com/shop/ludykid/booking?lang=fr", "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -127,7 +118,7 @@ export default function MaxiludyBooking() {
               <button
                 key={key}
                 type="button"
-                onClick={() => { setSelected(key); goToReservation(slot.start, slot.end); }}
+                onClick={() => { setSelected(key); goToReservation(); }}
                 className={`flex flex-col items-center gap-1 px-3 py-3 rounded-clay border-2 font-fredoka transition-all duration-200 hover:scale-[1.03] active:scale-95 ${
                   isSelected
                     ? "bg-[#1877F2] border-[#1877F2] text-white shadow-clay-blue"

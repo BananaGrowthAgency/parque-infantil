@@ -10,9 +10,9 @@ import PhotosAnniv from "@/components/anniversaire/PhotosAnniv";
 import InfosAnniv from "@/components/anniversaire/InfosAnniv";
 
 export const metadata = {
-  title: "Anniversaire – Ludykid Le Mans",
+  title: "Ludykid Le Mans | Anniversaire enfant inoubliable dès 10,50€",
   description:
-    "Fêtez l'anniversaire de votre enfant chez Ludykid au Mans. 4 formules au choix, -20% le dimanche. Réservez en ligne.",
+    "Organisez un anniversaire enfant au Mans sans stress. Aire de jeux intérieure couverte. Formules clés en main. Gâteau & fun garantis. Choisissez votre formule.",
 };
 
 // Colores de fondo por sección — referenciados aquí para las olas de transición

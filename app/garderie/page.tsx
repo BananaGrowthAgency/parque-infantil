@@ -1,0 +1,66 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroGarderie from "@/components/garderie/HeroGarderie";
+import Garderie from "@/components/Garderie";
+import Testimonios from "@/components/Testimonios";
+import InfosPratiques from "@/components/InfosPratiques";
+import FadeInUp from "@/components/ui/FadeInUp";
+
+const ORANGE = "#E8731A";
+
+const FEATURES = [
+  { icon: "/images/iconos/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
+  { icon: "/images/iconos/medaille.png",                 label: "Animateurs qualifiés", desc: "surveillance permanente" },
+  { icon: "/images/iconos/garderie-icon-activites.png",  label: "Activités encadrées",  desc: "jeux, jeux de société" },
+  { icon: "/images/iconos/garderie-icon-entree.png",     label: "Entrée incluse",       desc: "accès au parc compris" },
+];
+
+export const metadata = {
+  title: "Ludykid Le Mans | Garderie enfant parc indoor dès 4 ans",
+  description: "À la recherche d'une garderie au Mans ? Confiez votre enfant dès 4 ans à un parc indoor sécurisé avec jeux, activités ludiques et animateurs.",
+};
+
+export default function GarderiePage() {
+  return (
+    <main className="bg-[#FFF8EC] min-h-screen">
+      <Navbar />
+      <HeroGarderie />
+
+      {/* Stats — 4 cartes image+texte */}
+      <div className="relative z-10 -mt-10 sm:-mt-14 px-4 sm:px-6 mb-0">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 items-stretch">
+          {FEATURES.map((f, i) => (
+            <FadeInUp key={f.label} y={20} delay={0.08 + i * 0.08} className="h-full">
+              <div className="h-full rounded-clay-lg border-2 border-[#E8731A]/20 bg-white shadow-clay p-4 text-center space-y-1.5">
+                <div
+                  aria-hidden="true"
+                  className="mx-auto"
+                  style={{
+                    width: 64,
+                    height: 64,
+                    backgroundColor: ORANGE,
+                    WebkitMaskImage: `url(${f.icon})`,
+                    maskImage: `url(${f.icon})`,
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskPosition: "center",
+                    maskPosition: "center",
+                    WebkitMaskSize: "contain",
+                    maskSize: "contain",
+                  }}
+                />
+                <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">{f.label}</p>
+                <p className="font-nunito text-gray-400 text-xs">{f.desc}</p>
+              </div>
+            </FadeInUp>
+          ))}
+        </div>
+      </div>
+
+      <Garderie />
+      <Testimonios nextBg="#F9FAFB" />
+      <InfosPratiques showTopWave={false} />
+      <Footer waveBg="#F9FAFB" />
+    </main>
+  );
+}

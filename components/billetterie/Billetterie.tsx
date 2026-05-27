@@ -250,6 +250,7 @@ export default function Billetterie() {
             <button
               type="button"
               disabled={totalItems === 0}
+              onClick={() => window.open("https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr", "_blank", "noopener,noreferrer")}
               className="w-full py-3 rounded-clay font-fredoka font-extrabold text-base text-[#3A2A00] shadow-clay-yellow transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
               style={{ backgroundColor: "#FFD600" }}
             >

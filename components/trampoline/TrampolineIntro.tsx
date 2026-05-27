@@ -1,0 +1,115 @@
+import Image from "next/image";
+import Doodle from "../Doodle";
+import FadeInUp from "../ui/FadeInUp";
+import ClayCard from "../ui/ClayCard";
+import ClayButton from "../ui/ClayButton";
+import Wave from "../Wave";
+
+const FEATURES = [
+  {
+    icon: "⚡",
+    label: "2 grands trampolines",
+    desc: "Plusieurs espaces pour sauter, rebondir et tester ses figures.",
+  },
+  {
+    icon: "🔒",
+    label: "Sécurité et encadrement",
+    desc: "Des installations sécurisées et des animateurs attentifs pour jouer en toute sérénité.",
+  },
+  {
+    icon: "😄",
+    label: "Se dépenser et s'amuser",
+    desc: "Toute l'énergie et la joie de rebondir dans une ambiance joyeuse et dynamique.",
+  },
+  {
+    icon: "🎂",
+    label: "Idéal pour un anniversaire",
+    desc: "Une activité originale pour fêter un anniversaire et partager un super moment.",
+  },
+];
+
+export default function TrampolineIntro({ nextBg = "#FFF8EC" }: { nextBg?: string }) {
+  return (
+    <section className="relative pt-16 overflow-hidden" style={{ backgroundColor: "#FFF8EC" }}>
+      <div className="absolute top-6 left-4 opacity-25 animate-float pointer-events-none">
+        <Doodle type="star" color="#E8731A" size={64} />
+      </div>
+      <div className="absolute top-12 right-8 opacity-20 animate-wiggle pointer-events-none">
+        <Doodle type="swirl" color="#E8731A" size={70} />
+      </div>
+      <div className="absolute bottom-8 left-20 opacity-20 animate-float pointer-events-none" style={{ animationDelay: "1s" }}>
+        <Doodle type="circle" color="#E8731A" size={48} />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
+        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+          {/* Image gauche */}
+          <FadeInUp className="w-full md:w-1/2" y={28}>
+            <div className="group relative h-full min-h-[380px] rounded-clay-lg overflow-hidden shadow-clay-orange transition-transform duration-500 hover:-translate-y-1">
+              <Image
+                src="/images/home/trampoline2.jpg"
+                alt="Enfant qui saute sur le trampoline chez Ludykid Le Mans"
+                fill
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute bottom-5 left-5">
+                <span
+                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
+                  style={{ backgroundColor: "#E8731A" }}
+                >
+                  👉 Dès 4,50 € / enfant
+                </span>
+              </div>
+            </div>
+          </FadeInUp>
+
+          {/* Contenu droit */}
+          <FadeInUp className="w-full md:w-1/2" delay={0.15} y={28}>
+            <ClayCard size="lg" tone="white" className="relative h-full overflow-hidden">
+              <div className="absolute top-5 right-5 opacity-25">
+                <Doodle type="star" color="#E8731A" size={56} />
+              </div>
+
+              <h2 className="font-fredoka text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
+                Offrez à votre enfant
+                <br />
+                une aventure fun et sécurisée !
+              </h2>
+              <p className="font-nunito text-gray-600 leading-relaxed mb-6 text-sm">
+                Chez Ludykid au Mans, vos enfants profitent d&apos;un espace trampoline adapté à tous les âges.
+                Ils se dépensent et s&apos;amusent dans un environnement pensé pour eux.
+                Une activité ludique, accessible et énergisante !
+              </p>
+
+              <ul className="space-y-3 mb-7">
+                {FEATURES.map((f, i) => (
+                  <FadeInUp key={f.label} delay={0.2 + i * 0.05} y={12}>
+                    <li className="flex items-start gap-3">
+                      <span
+                        className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg flex-shrink-0 shadow-clay-inset"
+                        style={{ backgroundColor: "#E8731A1F" }}
+                      >
+                        {f.icon}
+                      </span>
+                      <span className="font-nunito text-sm text-gray-700 leading-snug">
+                        <span className="font-bold block text-gray-800">{f.label}</span>
+                        <span className="text-gray-500">{f.desc}</span>
+                      </span>
+                    </li>
+                  </FadeInUp>
+                ))}
+              </ul>
+
+              <ClayButton href="/billetterie" tone="orange" size="md">
+                Réserver
+              </ClayButton>
+            </ClayCard>
+          </FadeInUp>
+        </div>
+      </div>
+
+      <Wave fill={nextBg} bg="#FFF8EC" />
+    </section>
+  );
+}

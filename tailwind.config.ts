@@ -19,7 +19,7 @@ const config: Config = {
           green: "#2E9E2E",
           yellow: "#FFD600",
           red: "#E8731A",
-          blue: "#2E9E2E",
+          blue: "#1877F2",
           pink: "#7B35A0",
         },
       },
@@ -51,6 +51,10 @@ const config: Config = {
           "0 12px 24px -10px rgba(255, 0, 51, 0.45), 0 4px 8px -2px rgba(0,0,0,0.06), inset 0 -4px 0 0 rgba(0,0,0,0.08), inset 0 2px 0 0 rgba(255,255,255,0.5)",
       },
       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
         wiggle: {
           "0%,100%": { transform: "rotate(-6deg)" },
           "50%": { transform: "rotate(6deg)" },
@@ -70,6 +74,7 @@ const config: Config = {
         },
       },
       animation: {
+        marquee: "marquee 80s linear infinite",
         wiggle: "wiggle 2.5s ease-in-out infinite",
         float: "floatUp 3s ease-in-out infinite",
         "float-slow": "floatUp 5s ease-in-out infinite",

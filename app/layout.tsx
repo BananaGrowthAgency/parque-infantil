@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
+import PromoBanner from "@/components/PromoBanner";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -15,9 +16,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Ludykid – Le parc indoor préféré des enfants",
+  title: "Ludykid Le Mans | Parc de jeux indoor enfants (1–12 ans)",
   description:
-    "Plus de 1 500 m² de fun couvert pour les enfants de 1 à 12 ans. Structure multi-jeux, trampolines, piscine à balles et anniversaires inoubliables.",
+    "Plaine de jeux intérieure au Mans : Ludykid accueille les enfants de 1 à 12 ans avec 1200 m² d'activités, anniversaires clé en main et espace restauration",
 };
 
 export default function RootLayout({
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${fredoka.variable} ${nunito.variable} font-nunito bg-white`}>
+        <PromoBanner />
         {children}
       </body>
     </html>

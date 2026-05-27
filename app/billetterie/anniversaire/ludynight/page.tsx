@@ -55,7 +55,7 @@ export default function LudynightPage() {
                 <div className="rounded-clay overflow-hidden shadow-clay border-[3px] border-lk-yellow/40">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/cumple.png"
+                    src="/images/home/cumple.png"
                     alt="Ludynight — soirée anniversaire chez Ludykid"
                     className="w-full h-48 md:h-full object-cover"
                   />

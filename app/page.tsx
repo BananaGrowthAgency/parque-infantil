@@ -14,10 +14,19 @@ export default function Home() {
       <Navbar />
       <Hero />
       <StatsBar />
-      <Atracciones />
+
+      {/* Espace petits + Parc indoor → Cumple */}
+      <Atracciones sectionId="atracciones" from={0} to={2} lastBg="#EDFAED" />
       <Cumple />
-      <Galerie />
+
+      {/* Restauration → Testimonios */}
+      <Atracciones from={2} to={3} lastBg="#ffffff" />
       <Testimonios />
+
+      {/* Trampoline + Laser + Escape + Accrobranche → Galerie */}
+      <Atracciones from={3} to={7} lastBg="#ffffff" />
+      <Galerie />
+
       <InfosPratiques />
       <Footer />
     </main>

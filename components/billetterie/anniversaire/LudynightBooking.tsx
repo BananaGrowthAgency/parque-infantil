@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { useRouter } from "next/navigation";
 
 const TODAY = new Date().toISOString().split("T")[0];
 const PRICE = 11;
@@ -62,21 +61,13 @@ export default function LudynightBooking() {
   const [date, setDate] = useState(getNextLuydnight);
   const [selected, setSelected] = useState(false);
   const dateRef = useRef<HTMLInputElement>(null);
-  const router = useRouter();
-
   const prevDay = addDays(date, -1);
   const nextDay = addDays(date, 1);
   const hasSlot = isLudynightDate(date);
   const nextLudy = nextLudynightAfter(date);
 
   function goToReservation() {
-    const params = new URLSearchParams({
-      date,
-      slot: SLOT_START,
-      end: SLOT_END,
-      participants: String(participants),
-    });
-    router.push(`/billetterie/anniversaire/ludynight/reservation?${params.toString()}`);
+    window.open("https://ludykid.qweekle.com/shop/ludykid/booking?lang=fr", "_blank", "noopener,noreferrer");
   }
 
   return (

@@ -19,7 +19,7 @@ export default function RestaurationPage() {
       <HeroRestauracion />
 
       {/* Barra informativa — misma posición que StatsBar en home */}
-      <div className="relative z-10 -mt-10 sm:-mt-14 px-4 sm:px-8 lg:px-16 mb-10">
+      <div className="relative z-10 -mt-28 sm:-mt-14 px-4 sm:px-8 lg:px-16 mb-10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
           <FadeInUp delay={0.05}>
             <div className="h-full flex items-start gap-4 px-6 py-5 rounded-clay-lg bg-white border-[3px] border-lk-green shadow-clay-green">
