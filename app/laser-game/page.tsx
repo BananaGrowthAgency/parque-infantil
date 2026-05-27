@@ -19,7 +19,7 @@ export default function LaserGamePage() {
     <main className="bg-[#F5EEFF]">
       <Navbar />
       <HeroLaser />
-      <LaserIntro />
+      <LaserIntro nextBg="#EDFAED" />
       <Cumple nextBg="white" />
       <Testimonios nextBg="white" />
       <ActivitiesGrid />
