@@ -35,9 +35,9 @@ export default function HeroEscape() {
               transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
               className="font-fredoka text-4xl md:text-6xl font-extrabold text-white leading-tight mb-5 drop-shadow-xl"
             >
-              Escape Game enfant{" "}
+              Ludykid | Escape Game Enfant{" "}
               <span className="inline-block px-3 py-1 rounded-clay bg-lk-yellow text-[#3A2A00] -rotate-2 shadow-clay-yellow">
-                au Mans
+                Le Mans
               </span>
             </motion.h1>
 
