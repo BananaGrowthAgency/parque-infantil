@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { ReactNode } from "react";
 import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
+
+const ACCENT = "#E8731A";
 
 type Activity = {
   title: string;
@@ -9,46 +10,8 @@ type Activity = {
   image: string;
   alt: string;
   href: string;
-  icon: ReactNode;
+  iconSrc: string;
 };
-
-const IconEscape = (
-  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="7" y="14" width="18" height="13" rx="2" />
-    <path d="M11 14v-4a5 5 0 0 1 10 0v4" />
-    <circle cx="16" cy="20" r="1.5" fill="currentColor" stroke="none" />
-    <path d="M16 21.5v2" />
-  </svg>
-);
-
-const IconAccrobranche = (
-  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="16" cy="7" r="2" />
-    <path d="M16 9v5" />
-    <path d="M10 14h12" />
-    <path d="M10 14l-3 8h5l4-4 4 4h5l-3-8" />
-    <path d="M8 22v4M24 22v4" />
-  </svg>
-);
-
-const IconLaser = (
-  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 16h14l3 2v3h-3l-2-2h-3l-2 2H7l-3-2v-3z" />
-    <path d="M22 11l3-2M25 14h3M22 17l3 2" />
-    <circle cx="8" cy="18.5" r="0.8" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-const IconResto = (
-  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 8h7l-1 3h-5z" />
-    <path d="M8 11l1 13h4l1-13" />
-    <path d="M11 6v2" />
-    <path d="M18 18a4 4 0 0 1 8 0v1h-8z" />
-    <path d="M17 20h10v2H17z" />
-    <path d="M19 22l1 4h4l1-4" />
-  </svg>
-);
 
 const ACTIVITIES: Activity[] = [
   {
@@ -57,7 +20,7 @@ const ACTIVITIES: Activity[] = [
     image: "/images/escape-game/section1.jpg",
     alt: "Escape game enfant chez Ludykid",
     href: "/escape-game",
-    icon: IconEscape,
+    iconSrc: "/images/iconos/icones-services/escapeGame.png",
   },
   {
     title: "Accrobranche",
@@ -65,7 +28,7 @@ const ACTIVITIES: Activity[] = [
     image: "/images/accrobranche.JPG",
     alt: "Accrobranche indoor chez Ludykid",
     href: "/accrobranche",
-    icon: IconAccrobranche,
+    iconSrc: "/images/iconos/icones-services/accrobranche.png",
   },
   {
     title: "Laser game",
@@ -73,7 +36,7 @@ const ACTIVITIES: Activity[] = [
     image: "/images/laser-game/laserSection1.jpg",
     alt: "Laser game enfant chez Ludykid",
     href: "/laser-game",
-    icon: IconLaser,
+    iconSrc: "/images/iconos/icones-services/laserGame.png",
   },
   {
     title: "Restauration",
@@ -81,35 +44,35 @@ const ACTIVITIES: Activity[] = [
     image: "/images/home/bar.png",
     alt: "Ludy'cafet chez Ludykid",
     href: "/restauration",
-    icon: IconResto,
+    iconSrc: "/images/iconos/icones-services/cafet.png",
   },
 ];
 
 export default function ActivitiesGrid() {
   return (
-    <section className="py-20 relative overflow-hidden bg-white">
+    <section className="py-10 sm:py-20 relative overflow-hidden bg-white">
       <div className="absolute top-10 left-6 opacity-30 pointer-events-none">
-        <Doodle type="zigzag" color="#E8731A" size={64} />
+        <Doodle type="zigzag" color={ACCENT} size={64} />
       </div>
       <div className="absolute top-12 right-8 opacity-25 pointer-events-none">
-        <Doodle type="star" color="#E8731A" size={48} />
+        <Doodle type="star" color={ACCENT} size={48} />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <FadeInUp>
-          <h2 className="text-center font-fredoka font-extrabold text-3xl md:text-5xl tracking-tight">
+          <h2 className="text-center font-fredoka font-extrabold text-2xl sm:text-3xl md:text-5xl tracking-tight">
             <span className="text-[#0F1B5C]">Ludykid </span>
             <span className="text-lk-orange">c&apos;est aussi :</span>
           </h2>
         </FadeInUp>
 
-        <div className="relative mt-12">
+        <div className="relative mt-6 sm:mt-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ACTIVITIES.map((a, i) => (
               <FadeInUp key={a.title} delay={0.08 + i * 0.07}>
                 <div className="h-full flex flex-col">
                   <div className="relative bg-white rounded-clay-lg shadow-clay flex flex-col h-full overflow-hidden">
-                    <div className="relative h-64 w-full overflow-hidden">
+                    <div className="relative h-44 sm:h-64 w-full overflow-hidden">
                       <Image
                         src={a.image}
                         alt={a.alt}
@@ -120,8 +83,19 @@ export default function ActivitiesGrid() {
                     </div>
 
                     <div className="relative -mt-9 mx-auto z-10">
-                      <div className="w-[72px] h-[72px] rounded-full bg-white shadow-clay-sm flex items-center justify-center text-lk-orange">
-                        <div className="w-9 h-9">{a.icon}</div>
+                      <div className="w-[72px] h-[72px] rounded-full bg-white shadow-clay-sm flex items-center justify-center">
+                        <div
+                          aria-hidden="true"
+                          style={{
+                            width: 40, height: 40,
+                            backgroundColor: ACCENT,
+                            WebkitMaskImage: `url(${a.iconSrc})`,
+                            maskImage: `url(${a.iconSrc})`,
+                            WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat",
+                            WebkitMaskPosition: "center", maskPosition: "center",
+                            WebkitMaskSize: "contain", maskSize: "contain",
+                          }}
+                        />
                       </div>
                     </div>
 

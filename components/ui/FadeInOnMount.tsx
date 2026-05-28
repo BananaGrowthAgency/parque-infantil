@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -18,20 +19,20 @@ export default function FadeInOnMount({
   duration = 0.55,
   className = "",
 }: FadeInOnMountProps) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   const prefersReduced = useReducedMotion();
-  if (prefersReduced) {
+
+  if (!mounted || prefersReduced) {
     return <div className={className}>{children}</div>;
   }
+
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration,
-        delay,
-        ease: [0.34, 1.56, 0.64, 1],
-      }}
+      transition={{ duration, delay, ease: [0.34, 1.56, 0.64, 1] }}
     >
       {children}
     </motion.div>

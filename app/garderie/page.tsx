@@ -8,6 +8,8 @@ import FadeInUp from "@/components/ui/FadeInUp";
 
 const ORANGE = "#E8731A";
 
+const ACCENTS = ["#E8731A", "#7B35A0", "#2E9E2E", "#FFD600"];
+
 const FEATURES = [
   { icon: "/images/iconos/enfants.png",                  label: "Dès 4 ans",            desc: "adapté aux tout-petits" },
   { icon: "/images/iconos/medaille.png",                 label: "Animateurs qualifiés", desc: "surveillance permanente" },
@@ -31,7 +33,7 @@ export default function GarderiePage() {
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 items-stretch">
           {FEATURES.map((f, i) => (
             <FadeInUp key={f.label} y={20} delay={0.08 + i * 0.08} className="h-full">
-              <div className="h-full rounded-clay-lg border-2 border-[#E8731A]/20 bg-white shadow-clay p-4 text-center space-y-1.5">
+              <div className="h-full rounded-clay-lg border-[3px] bg-white shadow-clay p-4 text-center space-y-1.5" style={{ borderColor: ACCENTS[i] }}>
                 <div
                   aria-hidden="true"
                   className="mx-auto"

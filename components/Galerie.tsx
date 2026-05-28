@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import SquiggleTitle from "./ui/SquiggleTitle";
+import FadeInUp from "./ui/FadeInUp";
 
 type Slide =
   | { type?: "image"; src: string; alt: string }
@@ -23,7 +24,10 @@ const photos: Slide[] = [
   { src: "/images/home/cumple.png",       alt: "Fête d'anniversaire" },
   { src: "/images/107904131_565022047520507_1011703251537892967_n.jpg", alt: "Moments en famille" },
   { src: "/images/logo-foto.jpg",    alt: "Ludykid" },
-  { src: "/images/seccion4.png",     alt: "Espace famille" },
+  { src: "/images/home/trampoline.jpg", alt: "Parc de trampolines" },
+  { src: "/images/laser-game.jpg",   alt: "Laser Game Ludykid" },
+  { src: "/images/img_4094.jpg",     alt: "Aventures Ludykid" },
+  { src: "/images/img_4095.jpg",     alt: "Jeux et animations" },
 ];
 
 const BRAND = "#2E9E2E";
@@ -104,9 +108,11 @@ export default function Galerie() {
             "radial-gradient(ellipse 70% 80% at 50% 50%, #eaf8ea 0%, transparent 70%)",
         }}
       />
-      <SquiggleTitle color={BRAND} className="relative z-10 mb-12 px-6">
-        Ludykid en photos 📸
-      </SquiggleTitle>
+      <FadeInUp className="relative z-10 mb-12 px-6">
+        <SquiggleTitle color={BRAND}>
+          Ludykid en photos 📸
+        </SquiggleTitle>
+      </FadeInUp>
 
       {/* Carrusel — ancho total */}
       <div
@@ -224,30 +230,32 @@ export default function Galerie() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-6 px-6" role="tablist" aria-label="Sélection photo">
-        {photos.map((_, i) => {
-          const active = i === index;
-          return (
-            <button
-              key={i}
-              role="tab"
-              aria-selected={active}
-              aria-label={`Aller à la photo ${i + 1}`}
-              onClick={() => goTo(i)}
-              className="h-2 rounded-full transition-all duration-300"
-              style={{
-                width: active ? 28 : 8,
-                backgroundColor: active ? BRAND : "#cfe9cf",
-              }}
-            />
-          );
-        })}
-      </div>
+      <FadeInUp delay={0.1} y={12}>
+        <div className="flex justify-center gap-2 mt-6 px-6" role="tablist" aria-label="Sélection photo">
+          {photos.map((_, i) => {
+            const active = i === index;
+            return (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={active}
+                aria-label={`Aller à la photo ${i + 1}`}
+                onClick={() => goTo(i)}
+                className="h-2 rounded-full transition-all duration-300"
+                style={{
+                  width: active ? 28 : 8,
+                  backgroundColor: active ? BRAND : "#cfe9cf",
+                }}
+              />
+            );
+          })}
+        </div>
 
-      {/* Contador */}
-      <div className="text-center mt-3 font-fredoka text-sm text-gray-400">
-        {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-      </div>
+        {/* Contador */}
+        <div className="text-center mt-3 font-fredoka text-sm text-gray-400">
+          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </div>
+      </FadeInUp>
     </section>
   );
 }

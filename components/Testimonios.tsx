@@ -44,7 +44,7 @@ export default function Testimonios({ nextBg = "#FFF4EC" }: { nextBg?: string })
       </FadeInUp>
 
       <div className="w-full px-0 relative z-10">
-        <div className="elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a" data-elfsight-app-lazy />
+        <div className="elfsight-app-82bae877-7f5c-4732-ac4f-3cea8aa6ed5a" />
       </div>
 
       <Wave fill={nextBg} bg="white" />

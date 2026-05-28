@@ -46,11 +46,11 @@ export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) 
         <Doodle type="circle" color="#FFD600" size={48} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
-        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-10 sm:pb-16 relative">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-stretch">
           {/* Image gauche */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
-            <div className="group relative h-full min-h-[420px] rounded-clay-lg overflow-hidden shadow-clay-yellow transition-transform duration-500 hover:-translate-y-1">
+            <div className="group relative h-full min-h-[240px] sm:min-h-[420px] rounded-clay-lg overflow-hidden shadow-clay-yellow transition-transform duration-500 hover:-translate-y-1">
               <Image
                 src="/images/home/accrobranche-section1.jpg"
                 alt="Accrobranche enfant chez Ludykid Le Mans"
@@ -58,6 +58,14 @@ export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) 
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div className="absolute bottom-5 left-5">
+                <span
+                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
+                  style={{ backgroundColor: "#B8940A" }}
+                >
+                  🧗 Activité dès 4 ans
+                </span>
+              </div>
             </div>
           </FadeInUp>
 
@@ -68,7 +76,7 @@ export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) 
                 <Doodle type="star" color="#FFD600" size={56} />
               </div>
 
-              <h2 className="font-fredoka text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
+              <h2 className="font-fredoka text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
                 Offrez à votre enfant
                 <br />
                 une aventure fun et sécurisée !
@@ -100,15 +108,9 @@ export default function AccroIntro({ nextBg = "#FFF8CC" }: { nextBg?: string }) 
                 ))}
               </ul>
 
-              {/* 2 CTAs côte à côte */}
-              <div className="flex items-center gap-3 flex-wrap">
-                <ClayButton href="/billetterie" tone="yellow" size="md">
-                  En savoir plus
-                </ClayButton>
-                <ClayButton href="/billetterie" tone="yellow" size="md">
-                  Réserver
-                </ClayButton>
-              </div>
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="yellow" size="md" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
+                Réserver
+              </ClayButton>
             </ClayCard>
           </FadeInUp>
         </div>

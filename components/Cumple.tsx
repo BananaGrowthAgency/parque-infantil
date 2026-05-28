@@ -33,10 +33,10 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
         <Doodle type="swirl" color={t.color} size={52} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-stretch`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+        <div className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-4 sm:gap-8 items-stretch`}>
           <FadeInUp className="w-full md:w-1/2" y={28}>
-            <div className={`group relative h-full min-h-[380px] rounded-clay-lg overflow-hidden ${t.imageShadow} transition-transform duration-500 hover:-translate-y-1`}>
+            <div className={`group relative h-full min-h-[240px] sm:min-h-[380px] rounded-clay-lg overflow-hidden ${t.imageShadow} transition-transform duration-500 hover:-translate-y-1`}>
               <Image
                 src="/images/home/cumple.png"
                 alt="Anniversaire enfant chez Ludykid"
@@ -46,7 +46,7 @@ export default function Cumple({ nextBg = "#FFF9E0", tone = "green", reverse = f
               />
               <div className="absolute bottom-5 left-5">
                 <span
-                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float"
+                  className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
                   style={{ backgroundColor: t.badgeBg }}
                 >
                   👉 Dès 10,50€ / enfant

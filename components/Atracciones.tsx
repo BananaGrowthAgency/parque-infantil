@@ -29,7 +29,7 @@ const secciones = [
     doodle: { type: "star" as const, color: "#E8731A" },
     objectPosition: "center 35%",
     cta: "Réserver maintenant",
-    ctaHref: "/billetterie",
+    ctaHref: "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr",
     claySh: "shadow-clay-orange",
     tone: "orange" as Tone,
   },
@@ -52,7 +52,7 @@ const secciones = [
     doodle: { type: "swirl" as const, color: "#7B35A0" },
     objectPosition: "center center",
     cta: "Réserver maintenant",
-    ctaHref: "/billetterie",
+    ctaHref: "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr",
     claySh: "shadow-clay-purple",
     tone: "purple" as Tone,
   },
@@ -175,7 +175,7 @@ const secciones = [
     doodle: { type: "star" as const, color: "#FFD600" },
     objectPosition: "center center",
     cta: "En savoir plus",
-    ctaHref: "/billetterie",
+    ctaHref: "/accrobranche",
     claySh: "shadow-clay-yellow",
     tone: "yellow" as Tone,
   },
@@ -225,7 +225,7 @@ export default function Atracciones({ from = 0, to = secciones.length, lastBg = 
                   {s.precio && (
                     <div className="absolute bottom-5 left-5">
                       <span
-                        className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float"
+                        className="font-fredoka font-bold text-white text-sm px-5 py-2.5 rounded-full shadow-clay-sm animate-float inline-flex items-center gap-2"
                         style={{ backgroundColor: s.color }}
                       >
                         👉 {s.precio}
@@ -283,7 +283,7 @@ export default function Atracciones({ from = 0, to = secciones.length, lastBg = 
                   )}
 
                   <div className="flex flex-wrap gap-3">
-                    <ClayButton href={s.ctaHref} tone={s.tone} size="md">
+                    <ClayButton href={s.ctaHref} tone={s.tone} size="md" {...(s.ctaHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                       {s.cta}
                     </ClayButton>
                     {"cta2" in s && (s as unknown as { cta2: string; ctaHref2: string }).cta2 && (
