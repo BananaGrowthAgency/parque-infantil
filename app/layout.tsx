@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import PromoBanner from "@/components/PromoBanner";
 import "./globals.css";
@@ -15,6 +15,11 @@ const nunito = Nunito({
   variable: "--font-nunito",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Ludykid Le Mans | Parc de jeux indoor enfants (1–12 ans)",
   description:
@@ -25,7 +30,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es">
+    <html lang="fr">
       <body className={`${fredoka.variable} ${nunito.variable} font-nunito bg-white`}>
         <PromoBanner />
         {children}

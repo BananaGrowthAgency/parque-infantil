@@ -10,21 +10,21 @@ const FORMULES = [
     price: "17,50€ / enfant",
     note: "De 4 à 15 enfants",
     color: "#E8731A",
-    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires/formule-maxiludy?lang=fr",
   },
   {
     name: "Ludykid",
     price: "14,50€ / enfant",
     note: "De 4 à 15 enfants",
     color: "#7B35A0",
-    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires/formule-ludykid?lang=fr",
   },
   {
     name: "Libre",
     price: "10,50€ /enfant",
     note: "De 8 à 15 enfants",
     color: "#2E9E2E",
-    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires/formule-libre?lang=fr",
   },
   {
     name: "Ludynight",
@@ -32,7 +32,7 @@ const FORMULES = [
     note: "Minimum 15 enfants",
     color: "#FFD600",
     textColor: "#3A2A00",
-    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires?lang=fr",
+    href: "https://ludykid.qweekle.com/shop/ludykid/anniversaires/ludynight?lang=fr",
   },
 ];
 

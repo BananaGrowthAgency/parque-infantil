@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, useInView } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 type FadeInUpProps = {
@@ -22,25 +22,45 @@ export default function FadeInUp({
 }: FadeInUpProps) {
   const prefersReduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {
-    once,
-    amount: 0.1,
-    margin: "0px 0px -10% 0px",
-  });
-  const [forceVisible, setForceVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(false);
 
+  // Paso 1: marcar montado (render separado del paso 2)
   useEffect(() => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
-    if (inViewport) setForceVisible(true);
+    setMounted(true);
   }, []);
 
-  if (prefersReduced) {
-    return <div className={className}>{children}</div>;
-  }
+  // Paso 2: solo tras el montado, observar el motion.div real
+  useEffect(() => {
+    if (!mounted) return;
+    const el = ref.current;
+    if (!el) { setVisible(true); return; }
 
-  const visible = isInView || forceVisible;
+    // Ya en viewport al cargar → visible de inmediato (la animación parte de initial)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 50 && rect.bottom > -50) {
+      setVisible(true);
+      return;
+    }
+
+    // Fuera del viewport → observar scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          if (once) observer.disconnect();
+        }
+      },
+      { rootMargin: "50px 0px 50px 0px", threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [mounted, once]);
+
+  // SSR / reduced motion: div visible sin inline-style (sin riesgo de contenido invisible)
+  if (!mounted || prefersReduced) {
+    return <div ref={ref} className={className}>{children}</div>;
+  }
 
   return (
     <motion.div

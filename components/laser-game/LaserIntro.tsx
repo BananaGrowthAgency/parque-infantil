@@ -52,11 +52,11 @@ export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) 
         <Doodle type="circle" color="#7B35A0" size={48} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
-        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-10 sm:pb-16 relative">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-stretch">
           {/* Image gauche */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
-            <div className="group relative h-full min-h-[360px] rounded-clay-lg overflow-hidden shadow-clay-purple transition-transform duration-500 hover:-translate-y-1">
+            <div className="group relative h-full min-h-[240px] sm:min-h-[360px] rounded-clay-lg overflow-hidden shadow-clay-purple transition-transform duration-500 hover:-translate-y-1">
               <Image
                 src="/images/laser-game/laserSection1.jpg"
                 alt="Laser game enfant chez Ludykid Le Mans"
@@ -82,7 +82,7 @@ export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) 
                 <Doodle type="star" color="#7B35A0" size={56} />
               </div>
 
-              <h2 className="font-fredoka text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
+              <h2 className="font-fredoka text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
                 Offrez à votre enfant
                 <br />
                 une aventure fun et sécurisée !
@@ -131,8 +131,8 @@ export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) 
                 </div>
               </FadeInUp>
 
-              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="md" target="_blank" rel="noopener noreferrer">
-                Réserver
+              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="md" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
+                Profitez de l&apos;offre sur place
               </ClayButton>
             </ClayCard>
           </FadeInUp>

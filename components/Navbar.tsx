@@ -15,7 +15,7 @@ const ACTIVITE_ITEMS = [
 const PHONE_COLORS: Record<string, { bg: string; icon: string }> = {
   "/":                { bg: "#FFF3E6", icon: "#E8731A" },
   "/escape-game":     { bg: "#E8F7E8", icon: "#2E9E2E" },
-  "/accrobranche":    { bg: "#FFF9E0", icon: "#FFD600" },
+  "/accrobranche":    { bg: "#FFF8CC", icon: "#B8940A" },
   "/laser-game":      { bg: "#F5EEFF", icon: "#7B35A0" },
   "/trampoline-park": { bg: "#FFF3E6", icon: "#E8731A" },
   "/anniversaire":    { bg: "#F5EEFF", icon: "#7B35A0" },
@@ -76,7 +76,7 @@ export default function Navbar() {
     PHONE_COLORS[Object.keys(PHONE_COLORS).find((k) => k !== "/" && pathname.startsWith(k)) ?? "/"] ??
     PHONE_COLORS["/"];
 
-  const navClass = `fixed z-50 transition-all duration-300 ${
+  const navClass = `fixed z-50 transition-[top,left,right,border-radius,box-shadow,background-color] duration-300 ${
     scrolled ? CLAY_SCROLLED : "top-9 left-0 right-0 bg-white"
   }`;
 
@@ -116,7 +116,7 @@ export default function Navbar() {
                     : "text-gray-600 hover:text-lk-orange"
                 }`}
               >
-                Activité
+                Activités
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 ${activiteOpen ? "rotate-180" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
@@ -165,11 +165,14 @@ export default function Navbar() {
 
             <a
               href="tel:+33243414869"
-              className="w-11 h-11 flex items-center justify-center rounded-full shadow-clay-inset transition-all duration-300 hover:scale-110 hover:rotate-6"
+              className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
               style={{ backgroundColor: phoneColor.bg }}
-              aria-label="Appeler"
+              aria-label="Appeler pour réserver"
             >
-              {phoneIcon(22)}
+              {phoneIcon(20)}
+              <span className="font-fredoka font-bold text-sm" style={{ color: phoneColor.icon }}>
+                Réserver
+              </span>
             </a>
           </div>
 
@@ -177,13 +180,21 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-2">
             <a
               href="tel:+33243414869"
-              className="w-9 h-9 flex items-center justify-center rounded-full shadow-clay-inset transition-all duration-300"
+              className="flex items-center gap-1.5 pl-2.5 pr-3 py-1.5 rounded-full shadow-clay-inset transition-all duration-300 hover:scale-105"
               style={{ backgroundColor: phoneColor.bg }}
-              aria-label="Appeler"
+              aria-label="Appeler pour réserver"
             >
-              {phoneIcon(18)}
+              {phoneIcon(16)}
+              <span className="font-fredoka font-bold text-xs" style={{ color: phoneColor.icon }}>
+                Réserver
+              </span>
             </a>
-            <button onClick={() => setMenuOpen(!menuOpen)} className="p-2 text-gray-700">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-3 text-gray-700 cursor-pointer touch-manipulation"
+              aria-label="Menu"
+              aria-expanded={menuOpen}
+            >
               <div className="w-6 flex flex-col gap-1.5">
                 <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
                 <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
@@ -205,7 +216,7 @@ export default function Navbar() {
               className="font-fredoka py-2.5 border-b border-gray-50 text-lg flex w-full items-center justify-between"
             >
               <span className={`rounded-full px-3 py-1 flex items-center gap-1 ${activiteIsActive ? "text-lk-orange bg-[#FFEFE2]" : "text-gray-700"}`}>
-                Activité
+                Activités
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 ${activiteMobile ? "rotate-180" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
@@ -251,7 +262,7 @@ export default function Navbar() {
           })}
 
           <div className="mt-3 self-stretch flex justify-center">
-            <ClayButton href="tel:+33" tone="orange" size="md" onClick={() => setMenuOpen(false)}>
+            <ClayButton href="tel:+33243414869" tone="orange" size="md" onClick={() => setMenuOpen(false)}>
               📞 Appeler
             </ClayButton>
           </div>

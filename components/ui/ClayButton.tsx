@@ -81,6 +81,7 @@ type ClayButtonProps = {
   className?: string;
   ariaLabel?: string;
   dotContent?: ReactNode;
+  disabled?: boolean;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "onClick" | "className" | "children" | "aria-label">;
 
 export default function ClayButton({
@@ -93,6 +94,7 @@ export default function ClayButton({
   className = "",
   ariaLabel,
   dotContent,
+  disabled = false,
   ...rest
 }: ClayButtonProps) {
   const t = tones[tone];
@@ -124,7 +126,7 @@ export default function ClayButton({
     </>
   );
 
-  const base = `group inline-flex items-center justify-between gap-3 rounded-full ${t.bg} ${t.shadow} ${sz.pad} transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0 active:scale-100 ${className}`;
+  const base = `group inline-flex items-center justify-between gap-3 rounded-full ${t.bg} ${t.shadow} ${sz.pad} transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] active:translate-y-0 active:scale-100 ${disabled ? "opacity-60 pointer-events-none" : ""} ${className}`;
 
   if (href) {
     return (
@@ -134,7 +136,7 @@ export default function ClayButton({
     );
   }
   return (
-    <button type={type} onClick={onClick} aria-label={ariaLabel} className={base}>
+    <button type={type} onClick={onClick} aria-label={ariaLabel} disabled={disabled} className={base}>
       {inner}
     </button>
   );

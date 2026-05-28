@@ -80,7 +80,7 @@ export default function Footer({ waveBg = "#F9FAFB" }: { waveBg?: string }) {
             <div>
               <Logo size="sm" />
               <p className="mt-5 text-sm text-gray-300 font-nunito leading-relaxed max-w-xs">
-                Le parc de jeux indoor préféré des enfants. Plus de 1 500 m² de fun couvert pour toute la famille, ouvert 7 jours sur 7.
+                Le parc de jeux indoor préféré des enfants. 1 200 m² de fun couvert pour toute la famille, ouvert du mercredi au dimanche.
               </p>
               <div className="mt-6 flex gap-3">
                 {SOCIALS.map((s) => (

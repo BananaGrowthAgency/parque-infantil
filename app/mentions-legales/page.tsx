@@ -115,7 +115,7 @@ const SECTIONS = [
           Les utilisateurs sont informés de la présence de ces cookies, de la possibilité qui leur est offerte de les refuser et du fait que la désactivation des cookies peut techniquement limiter leur accès à tout ou partie du site. Il est par ailleurs possible de désactiver les cookies en paramétrant son navigateur.
         </p>
         <p className="mt-3">
-          Tout utilisateur du site <a href="https://www.ludykid.com" className="text-lk-green underline hover:opacity-80 transition-opacity">https://www.ludykid.com</a> reconnaît avoir pris connaissance des mentions légales d&apos;information ci-dessus exposées et les avoir acceptées.
+          Tout utilisateur du site <a href="https://www.ludykid.com" className="text-lk-green underline hover:opacity-80 transition-opacity">https://www.ludykid.com</a>{" "}reconnaît avoir pris connaissance des mentions légales d&apos;information ci-dessus exposées et les avoir acceptées.
         </p>
       </>
     ),
