@@ -19,7 +19,7 @@ export default function Hero() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="none"
             aria-label="Enfants qui s'amusent à Ludykid"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />

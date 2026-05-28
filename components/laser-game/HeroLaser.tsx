@@ -18,7 +18,7 @@ export default function HeroLaser() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="none"
             aria-label="Laser game enfant chez Ludykid"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
