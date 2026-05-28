@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Doodle from "../Doodle";
+import FadeInUp from "../ui/FadeInUp";
 import SquiggleTitle from "../ui/SquiggleTitle";
 
 type Slide =
@@ -116,9 +117,11 @@ export default function PhotosAnniv() {
         }}
       />
 
-      <SquiggleTitle color="#2E9E2E" className="relative z-10 mb-10 px-6">
-        Anniversaire Ludykid en photos 📸
-      </SquiggleTitle>
+      <FadeInUp className="relative z-10 mb-10 px-6">
+        <SquiggleTitle color="#2E9E2E">
+          Anniversaire Ludykid en photos 📸
+        </SquiggleTitle>
+      </FadeInUp>
 
       {/* Carrusel */}
       <div
@@ -235,30 +238,32 @@ export default function PhotosAnniv() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-6 px-6" role="tablist" aria-label="Sélection photo">
-        {photos.map((_, i) => {
-          const active = i === index;
-          return (
-            <button
-              key={i}
-              role="tab"
-              aria-selected={active}
-              aria-label={`Aller à la photo ${i + 1}`}
-              onClick={() => goTo(i)}
-              className="h-2 rounded-full transition-all duration-300"
-              style={{
-                width: active ? 28 : 8,
-                backgroundColor: active ? BRAND : DOT_INACTIVE,
-              }}
-            />
-          );
-        })}
-      </div>
+      <FadeInUp delay={0.1} y={12}>
+        <div className="flex justify-center gap-2 mt-6 px-6" role="tablist" aria-label="Sélection photo">
+          {photos.map((_, i) => {
+            const active = i === index;
+            return (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={active}
+                aria-label={`Aller à la photo ${i + 1}`}
+                onClick={() => goTo(i)}
+                className="h-2 rounded-full transition-all duration-300"
+                style={{
+                  width: active ? 28 : 8,
+                  backgroundColor: active ? BRAND : DOT_INACTIVE,
+                }}
+              />
+            );
+          })}
+        </div>
 
-      {/* Contador */}
-      <div className="text-center mt-3 font-fredoka text-sm text-gray-500">
-        {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-      </div>
+        {/* Contador */}
+        <div className="text-center mt-3 font-fredoka text-sm text-gray-500">
+          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </div>
+      </FadeInUp>
     </section>
   );
 }

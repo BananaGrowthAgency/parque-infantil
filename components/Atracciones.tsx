@@ -175,7 +175,7 @@ const secciones = [
     doodle: { type: "star" as const, color: "#FFD600" },
     objectPosition: "center center",
     cta: "En savoir plus",
-    ctaHref: "https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr",
+    ctaHref: "/accrobranche",
     claySh: "shadow-clay-yellow",
     tone: "yellow" as Tone,
   },

@@ -7,10 +7,10 @@ import ClayButton from "./ui/ClayButton";
 import FadeInUp from "./ui/FadeInUp";
 
 export default function ContactForm() {
-  const [nom, setNom] = useState("");
-  const [email, setEmail] = useState("");
+  const [nom, setNom]       = useState("");
+  const [email, setEmail]   = useState("");
   const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+  const [sent, setSent]     = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,7 +103,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex justify-end">
-              <ClayButton type="submit" tone="purple" size="md">
+              <ClayButton type="submit" tone="purple" size="md" className="w-full sm:w-auto">
                 Valider ✉️
               </ClayButton>
             </div>

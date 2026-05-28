@@ -62,15 +62,15 @@ export default function InfosPratiques({ showTopWave = true }: { showTopWave?: b
         <Doodle type="heart" color="#7B35A0" size={56} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <FadeInUp className="mb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <FadeInUp className="mb-8 sm:mb-12">
           <SquiggleTitle color="#E8731A">Infos pratiques</SquiggleTitle>
         </FadeInUp>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <FadeInUp delay={0.05}>
             <div
-              className="h-full rounded-clay-lg p-7 shadow-clay-orange transition-transform duration-300 hover:-translate-y-1"
+              className="h-full rounded-clay-lg p-4 sm:p-7 shadow-clay-orange transition-transform duration-300 hover:-translate-y-1"
               style={{ backgroundColor: "#FFF4EC" }}
             >
               <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">
@@ -104,7 +104,7 @@ export default function InfosPratiques({ showTopWave = true }: { showTopWave?: b
 
           <FadeInUp delay={0.1}>
             <div
-              className="h-full rounded-clay-lg p-7 shadow-clay-purple transition-transform duration-300 hover:-translate-y-1"
+              className="h-full rounded-clay-lg p-4 sm:p-7 shadow-clay-purple transition-transform duration-300 hover:-translate-y-1"
               style={{ backgroundColor: "#F5EEFF" }}
             >
               <h3 className="font-fredoka text-xl font-bold mb-5 flex items-center gap-2">

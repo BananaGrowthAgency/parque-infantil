@@ -46,11 +46,11 @@ export default function EscapeIntro({ nextBg = "#F4FBF4" }: { nextBg?: string })
         <Doodle type="circle" color="#2E9E2E" size={48} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pb-16 relative">
-        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-10 sm:pb-16 relative">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-stretch">
           {/* Image gauche */}
           <FadeInUp className="w-full md:w-1/2" y={28}>
-            <div className="group relative h-full min-h-[380px] rounded-clay-lg overflow-hidden shadow-clay-green transition-transform duration-500 hover:-translate-y-1">
+            <div className="group relative h-full min-h-[240px] sm:min-h-[380px] rounded-clay-lg overflow-hidden shadow-clay-green transition-transform duration-500 hover:-translate-y-1">
               <Image
                 src="/images/escape-game/section1.jpg"
                 alt="Escape Game enfant chez Ludykid Le Mans"
@@ -78,7 +78,7 @@ export default function EscapeIntro({ nextBg = "#F4FBF4" }: { nextBg?: string })
                 <Doodle type="star" color="#2E9E2E" size={56} />
               </div>
 
-              <h2 className="font-fredoka text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
+              <h2 className="font-fredoka text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 leading-snug">
                 Offrez à votre enfant
                 <br />
                 une aventure inoubliable !

@@ -51,7 +51,7 @@ const ACTIVITIES: Activity[] = [
 
 export default function ActivitiesGrid() {
   return (
-    <section className="py-20 relative overflow-hidden bg-white">
+    <section className="py-10 sm:py-20 relative overflow-hidden bg-white">
       <div className="absolute top-10 left-6 opacity-30 pointer-events-none">
         <Doodle type="zigzag" color={ACCENT} size={64} />
       </div>
@@ -61,19 +61,19 @@ export default function ActivitiesGrid() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <FadeInUp>
-          <h2 className="text-center font-fredoka font-extrabold text-3xl md:text-5xl tracking-tight">
+          <h2 className="text-center font-fredoka font-extrabold text-2xl sm:text-3xl md:text-5xl tracking-tight">
             <span className="text-[#0F1B5C]">Ludykid </span>
             <span className="text-lk-yellow">c&apos;est aussi :</span>
           </h2>
         </FadeInUp>
 
-        <div className="relative mt-12">
+        <div className="relative mt-6 sm:mt-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ACTIVITIES.map((a, i) => (
               <FadeInUp key={a.title} delay={0.08 + i * 0.07}>
                 <div className="h-full flex flex-col">
                   <div className="relative bg-white rounded-clay-lg shadow-clay flex flex-col h-full overflow-hidden">
-                    <div className="relative h-64 w-full overflow-hidden">
+                    <div className="relative h-44 sm:h-64 w-full overflow-hidden">
                       <Image
                         src={a.image}
                         alt={a.alt}
