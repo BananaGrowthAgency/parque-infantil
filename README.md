@@ -1,4 +1,4 @@
-# 🎠 Planeta Feliz — Landing Page Parque Infantil
+# 🎠 Ludykid — Landing Page Parque Infantil
 
 Landing page completa para un parque infantil, construida con **Next.js 14** y **Tailwind CSS**.
 
