@@ -1,28 +1,61 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import ClayButton from "./ui/ClayButton";
 
 export default function Hero() {
   const reduce = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [loadVideo, setLoadVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+
+  // Charge la vidéo seulement après le 1er rendu (le poster reste le LCP, rapide)
+  useEffect(() => {
+    if (reduce) return;
+    const start = () => setLoadVideo(true);
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(start, { timeout: 2500 });
+      return () => window.cancelIdleCallback?.(id);
+    }
+    const id = window.setTimeout(start, 1500);
+    return () => window.clearTimeout(id);
+  }, [reduce]);
+
+  useEffect(() => {
+    if (loadVideo) videoRef.current?.play().catch(() => {});
+  }, [loadVideo]);
 
   return (
     <section id="inicio" className="relative pt-16 bg-[#FFF4EC]">
       <div className="relative h-[68vh] min-h-[560px] sm:min-h-[520px]">
 
-        {/* Capa vídeo con su propio overflow-hidden */}
+        {/* Capa media con su propio overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            src="/images/hero-header.mp4"
-            poster="/images/autos.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            aria-label="Enfants qui s'amusent à Ludykid"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+          {/* Poster optimisé (next/image priority) = élément LCP, rapide */}
+          <Image
+            src="/images/autos.jpg"
+            alt="Enfants qui s'amusent à Ludykid Le Mans"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
+          {/* Vidéo chargée en lazy, fondu par-dessus le poster une fois prête */}
+          {loadVideo && (
+            <video
+              ref={videoRef}
+              src="/images/hero-header.mp4"
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-hidden="true"
+              onCanPlay={() => setVideoReady(true)}
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-transparent" />
           <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-[#FFF4EC]/0 to-[#FFF4EC] pointer-events-none" />
         </div>

@@ -1,27 +1,59 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import ClayButton from "../ui/ClayButton";
 
 export default function HeroLaser() {
   const reduce = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [loadVideo, setLoadVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+
+  useEffect(() => {
+    if (reduce) return;
+    const start = () => setLoadVideo(true);
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(start, { timeout: 2500 });
+      return () => window.cancelIdleCallback?.(id);
+    }
+    const id = window.setTimeout(start, 1500);
+    return () => window.clearTimeout(id);
+  }, [reduce]);
+
+  useEffect(() => {
+    if (loadVideo) videoRef.current?.play().catch(() => {});
+  }, [loadVideo]);
 
   return (
     <section id="hero-laser" className="relative pt-16 bg-[#F5EEFF]">
       <div className="relative h-[55vh] min-h-[400px] sm:h-[68vh] sm:min-h-[460px]">
-        {/* Capa vídeo — sube 64px para que el navbar tape la franja negra inicial */}
+        {/* Capa media — sube 64px para que el navbar tape la franja negra inicial */}
         <div className="absolute -top-16 bottom-0 inset-x-0 overflow-hidden">
-          <video
-            src="/images/anniv-laser.mp4"
-            poster="/images/seccion2.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            aria-label="Laser game enfant chez Ludykid"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+          {/* Poster optimisé = LCP rapide */}
+          <Image
+            src="/images/seccion2.jpg"
+            alt="Laser game enfant chez Ludykid Le Mans"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
+          {/* Vidéo lazy, fondu une fois prête */}
+          {loadVideo && (
+            <video
+              ref={videoRef}
+              src="/images/anniv-laser.mp4"
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-hidden="true"
+              onCanPlay={() => setVideoReady(true)}
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-transparent" />
           <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-[#F5EEFF]/0 via-[#F5EEFF]/85 to-[#F5EEFF] pointer-events-none" />
         </div>
