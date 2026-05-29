@@ -2,7 +2,6 @@ import Image from "next/image";
 import Doodle from "../Doodle";
 import FadeInUp from "../ui/FadeInUp";
 import ClayCard from "../ui/ClayCard";
-import ClayButton from "../ui/ClayButton";
 import Wave from "../Wave";
 
 const FEATURES = [
@@ -131,9 +130,9 @@ export default function LaserIntro({ nextBg = "#F5EEFF" }: { nextBg?: string }) 
                 </div>
               </FadeInUp>
 
-              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="md" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-                Profitez de l&apos;offre sur place
-              </ClayButton>
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-sm shadow-clay-sm" style={{ backgroundColor: "#7B35A01F", color: "#7B35A0" }}>
+                📍 Disponible uniquement sur place
+              </span>
             </ClayCard>
           </FadeInUp>
         </div>

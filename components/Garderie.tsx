@@ -144,16 +144,18 @@ export default function Garderie() {
           { icon: "🎟️", label: "Entrée incluse",          desc: "L'entrée du parc est comprise dans les tarifs." },
         ]}
         tarifBlock={
-          <div className="rounded-clay bg-orange-50 border border-[#E8731A]/20 px-4 py-3 space-y-0.5">
-            <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">Tarifs :</p>
-            <p className="font-nunito text-sm text-gray-700">10,00€ l&apos;heure (tarif dégressif)</p>
-            <p className="font-nunito text-sm text-gray-500">(Renseignements à l&apos;accueil)</p>
-            <p className="font-nunito text-xs text-gray-400 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
+          <div className="space-y-3">
+            <div className="rounded-clay bg-orange-50 border border-[#E8731A]/20 px-4 py-3 space-y-0.5">
+              <p className="font-fredoka font-extrabold text-[#E8731A] text-sm">Tarifs :</p>
+              <p className="font-nunito text-sm text-gray-700">10,00€ l&apos;heure (tarif dégressif)</p>
+              <p className="font-nunito text-sm text-gray-500">(Renseignements à l&apos;accueil)</p>
+              <p className="font-nunito text-xs text-gray-400 italic">L&apos;entrée du parc est comprise dans les tarifs.</p>
+            </div>
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-sm shadow-clay-sm" style={{ backgroundColor: "#FFF0E0", color: "#E8731A" }}>
+              📍 Disponible uniquement sur place
+            </span>
           </div>
         }
-        cta="Profitez de l'offre sur place"
-        ctaHref="/contact"
-        ctaTone="orange"
         image="/images/garderie-intro.jpg"
         imageAlt="Enfant jouant à la garderie Ludykid"
         badge={{ text: "🕐 10,00 € / heure", bg: "#E8731A" }}
