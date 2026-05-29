@@ -6,18 +6,18 @@ import Logo from "./Logo";
 import ClayButton from "./ui/ClayButton";
 
 const ACTIVITE_ITEMS = [
-  { label: "Escape Game",        href: "/escape-game",    hover: "hover:text-lk-green",  hoverBg: "hover:bg-[#E8F7E8]", active: "text-lk-green",  softBg: "#E8F7E8" },
-  { label: "Accrobranche",       href: "/accrobranche",   hover: "hover:text-lk-yellow", hoverBg: "hover:bg-[#FFF9E0]", active: "text-lk-yellow", softBg: "#FFF9E0" },
-  { label: "Laser Game",         href: "/laser-game",     hover: "hover:text-lk-purple", hoverBg: "hover:bg-[#F5EEFF]", active: "text-lk-purple", softBg: "#F5EEFF" },
-  { label: "Trampoline Parc",    href: "/trampoline-park",hover: "hover:text-lk-orange", hoverBg: "hover:bg-[#FFEFE2]", active: "text-lk-orange", softBg: "#FFEFE2" },
+  { label: "Escape Game",        href: "/escape-game-le-mans",    hover: "hover:text-lk-green",  hoverBg: "hover:bg-[#E8F7E8]", active: "text-lk-green",  softBg: "#E8F7E8" },
+  { label: "Accrobranche",       href: "/accrobranche-le-mans",   hover: "hover:text-lk-yellow", hoverBg: "hover:bg-[#FFF9E0]", active: "text-lk-yellow", softBg: "#FFF9E0" },
+  { label: "Laser Game",         href: "/laser-game-le-mans",     hover: "hover:text-lk-purple", hoverBg: "hover:bg-[#F5EEFF]", active: "text-lk-purple", softBg: "#F5EEFF" },
+  { label: "Trampoline Parc",    href: "/trampoline-park-le-mans",hover: "hover:text-lk-orange", hoverBg: "hover:bg-[#FFEFE2]", active: "text-lk-orange", softBg: "#FFEFE2" },
 ];
 
 const PHONE_COLORS: Record<string, { bg: string; icon: string }> = {
   "/":                { bg: "#FFF3E6", icon: "#E8731A" },
-  "/escape-game":     { bg: "#E8F7E8", icon: "#2E9E2E" },
-  "/accrobranche":    { bg: "#FFF8CC", icon: "#B8940A" },
-  "/laser-game":      { bg: "#F5EEFF", icon: "#7B35A0" },
-  "/trampoline-park": { bg: "#FFF3E6", icon: "#E8731A" },
+  "/escape-game-le-mans":     { bg: "#E8F7E8", icon: "#2E9E2E" },
+  "/accrobranche-le-mans":    { bg: "#FFF8CC", icon: "#B8940A" },
+  "/laser-game-le-mans":      { bg: "#F5EEFF", icon: "#7B35A0" },
+  "/trampoline-park-le-mans": { bg: "#FFF3E6", icon: "#E8731A" },
   "/anniversaire":    { bg: "#F5EEFF", icon: "#7B35A0" },
   "/restauration/boissons-chaudes": { bg: "#FFF3E6", icon: "#E8731A" },
   "/restauration/boissons-fraiches": { bg: "#FFF9E0", icon: "#FFD600" },

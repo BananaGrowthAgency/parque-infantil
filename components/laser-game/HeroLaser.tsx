@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import ClayButton from "../ui/ClayButton";
 
 export default function HeroLaser() {
   const reduce = useReducedMotion();
@@ -12,8 +11,8 @@ export default function HeroLaser() {
         {/* Capa vídeo — sube 64px para que el navbar tape la franja negra inicial */}
         <div className="absolute -top-16 bottom-0 inset-x-0 overflow-hidden">
           <video
-            src="/images/anniv-laser.mp4"
-            poster="/images/seccion2.jpg"
+            src="/images/laser-game/anniv-laser.mp4"
+            poster="/images/home/seccion2.jpg"
             autoPlay
             muted
             loop
@@ -59,9 +58,9 @@ export default function HeroLaser() {
               transition={{ duration: 0.7, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
               className="flex items-center justify-center"
             >
-              <ClayButton href="https://ludykid.qweekle.com/shop/ludykid/ticketing?lang=fr" tone="purple" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-                Profitez de l&apos;offre sur place
-              </ClayButton>
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#7B35A0" }}>
+                📍 Disponible uniquement sur place
+              </span>
             </motion.div>
           </div>
         </div>

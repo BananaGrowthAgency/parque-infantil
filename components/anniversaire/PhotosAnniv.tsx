@@ -12,11 +12,11 @@ type Slide =
 
 const photos: Slide[] = [
   { type: "video", src: "/images/anniversaire/anniv-fiesta-1.mp4", alt: "Moment de fête chez Ludykid" },
-  { type: "video", src: "/images/anniv-toboggan.mp4", alt: "Toboggan Ludykid" },
+  { type: "video", src: "/images/anniversaire/anniv-toboggan.mp4", alt: "Toboggan Ludykid" },
   { type: "video", src: "/images/anniversaire/anniv-fiesta-2.mp4", alt: "Soufflage des bougies" },
-  { type: "video", src: "/images/anniv-autos.mp4",    alt: "Autos tamponneuses" },
+  { type: "video", src: "/images/anniversaire/anniv-autos.mp4",    alt: "Autos tamponneuses" },
   { type: "video", src: "/images/anniversaire/anniv-fiesta-3.mp4", alt: "Les enfants fêtent ensemble" },
-  { type: "video", src: "/images/anniv-laser.mp4",    alt: "Laser game" },
+  { type: "video", src: "/images/laser-game/anniv-laser.mp4",      alt: "Laser game" },
 ];
 
 const BRAND = "#2E9E2E";

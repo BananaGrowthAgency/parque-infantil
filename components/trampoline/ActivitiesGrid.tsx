@@ -19,7 +19,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Résoudre des énigmes, coopérer et faire preuve de logique pour réussir à sortir avant la fin du temps !",
     image: "/images/escape-game/section1.jpg",
     alt: "Escape game enfant chez Ludykid",
-    href: "/escape-game",
+    href: "/escape-game-le-mans",
     iconSrc: "/images/iconos/icones-services/escapeGame.png",
   },
   {
@@ -27,7 +27,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Un parcours indoor en hauteur pour se dépenser et gagner en confiance entre amis !",
     image: "/images/accrobranche.JPG",
     alt: "Accrobranche indoor chez Ludykid",
-    href: "/accrobranche",
+    href: "/accrobranche-le-mans",
     iconSrc: "/images/iconos/icones-services/accrobranche.png",
   },
   {
@@ -35,7 +35,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Vos enfants s'éclatent en équipe dans un jeu d'aventure 100% fun et immersif !",
     image: "/images/laser-game/laserSection1.jpg",
     alt: "Laser game enfant chez Ludykid",
-    href: "/laser-game",
+    href: "/laser-game-le-mans",
     iconSrc: "/images/iconos/icones-services/laserGame.png",
   },
   {
