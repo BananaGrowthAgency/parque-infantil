@@ -12,10 +12,10 @@ const NAV = [
 const NAV_ACTIVITES = [
   { label: "Restauration", href: "/restauration" },
   { label: "Garderie", href: "/garderie" },
-  { label: "Trampoline Parc", href: "/trampoline-park" },
-  { label: "Escape Game", href: "/escape-game" },
-  { label: "Laser Game", href: "/laser-game" },
-  { label: "Accrobranche", href: "/accrobranche" },
+  { label: "Trampoline Parc", href: "/trampoline-park-le-mans" },
+  { label: "Escape Game", href: "/escape-game-le-mans" },
+  { label: "Laser Game", href: "/laser-game-le-mans" },
+  { label: "Accrobranche", href: "/accrobranche-le-mans" },
 ];
 
 const LEGAL = [

@@ -20,7 +20,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Résoudre des énigmes, coopérer et faire preuve de logique pour réussir à sortir avant la fin du temps !",
     image: "/images/escape-game/section1.jpg",
     alt: "Escape game enfant chez Ludykid",
-    href: "/escape-game",
+    href: "/escape-game-le-mans",
     iconSrc: "/images/iconos/icones-services/escapeGame.png",
   },
   {
@@ -28,7 +28,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Sauter, rebondir, jouer… Vos enfants se défoulent en toute sécurité !",
     image: "/images/home/seccion3.jpg",
     alt: "Trampoline park chez Ludykid",
-    href: "/trampoline-park",
+    href: "/trampoline-park-le-mans",
     iconSrc: "/images/iconos/icones-services/trampoline.png",
   },
   {
@@ -36,7 +36,7 @@ const ACTIVITIES: Activity[] = [
     desc: "Vos enfants s'éclatent en équipe dans un jeu d'aventure 100% fun et immersif !",
     image: "/images/laser-game/laserSection1.jpg",
     alt: "Laser game enfant chez Ludykid",
-    href: "/laser-game",
+    href: "/laser-game-le-mans",
     iconSrc: "/images/iconos/icones-services/laserGame.png",
   },
   {

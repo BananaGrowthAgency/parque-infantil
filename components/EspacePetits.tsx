@@ -24,7 +24,7 @@ const GALLERY = [
   { src: "/images/tunel.jpg",        alt: "Tunnel d'exploration" },
   { src: "/images/home/tobogan-azul.jpg", alt: "Toboggans bleus" },
   { src: "/images/tobogan-tubo.jpg", alt: "Toboggan tube" },
-  { src: "/images/seccion4.png",     alt: "Espace famille" },
+  { src: "/images/img_4095.jpg",     alt: "Espace famille" },
 ];
 
 export default function EspacePetits() {

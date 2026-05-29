@@ -4,9 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 const VIDEOS = [
-  "/images/resto-video-1.mp4",
-  "/images/resto-video-2.mp4",
-  "/images/resto-video-3.mp4",
+  "/images/restauration/resto-video-1.mp4",
+  "/images/restauration/resto-video-2.mp4",
+  "/images/restauration/resto-video-3.mp4",
 ];
 
 export default function HeroRestauracion() {

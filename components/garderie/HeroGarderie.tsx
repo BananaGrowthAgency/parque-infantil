@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import ClayButton from "@/components/ui/ClayButton";
 
 export default function HeroGarderie() {
   const reduce = useReducedMotion();
@@ -72,9 +71,9 @@ export default function HeroGarderie() {
               animate={reduce ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
             >
-              <ClayButton href="/contact" tone="orange" size="lg" className="w-full sm:w-auto">
-                Profitez de l&apos;offre sur place
-              </ClayButton>
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-fredoka font-bold text-white text-sm shadow-clay-sm animate-float" style={{ backgroundColor: "#E8731A" }}>
+                📍 Disponible uniquement sur place
+              </span>
             </motion.div>
           </div>
         </div>
